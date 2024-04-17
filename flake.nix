@@ -39,6 +39,7 @@
           ./modules/plasma
           ./modules/via
           ./modules/samba
+          ./modules/corectrl
 
           # ./modules/gitlab-runner
 
