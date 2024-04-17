@@ -1,0 +1,82 @@
+{ pkgs, ... }:
+
+{
+  system.stateVersion = "23.11";
+
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernelParams = [ "amd_pstate=active" ];
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    kernel.sysctl = {
+      "fs.inotify.max_user_instances" = 1000000;
+      "fs.inotify.max_user_watches" = 1000000;
+      "fs.inotify.max_queued_events" = 100000;
+    };
+  };
+
+  virtualisation = {
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
+  };
+
+  services.postgresql = {
+    enable = true;
+  };
+
+  services.fwupd.enable = true;
+
+  fonts = {
+    fontconfig.enable = true;
+
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      cantarell-fonts
+      (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+    ];
+  };
+
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+
+  time.timeZone = "Asia/Kuala_Lumpur";
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
+  users.users.hao = {
+    isNormalUser = true;
+    description = "hao";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "i2c"
+      "docker"
+    ];
+  };
+
+  programs.fish.enable = true;
+  users.users.hao.shell = pkgs.fish;
+
+  environment.sessionVariables = {
+    # Hint electron apps to use wayland:
+    NIXOS_OZONE_WL = "1";
+
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  };
+}

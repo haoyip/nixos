@@ -1,0 +1,19 @@
+import = ["~/.config/alacritty/theme/catppuccin-frappe.toml"]
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "caskaydiacove nerd font"
+
+[window]
+decorations = "full"
+dynamic_title = true
+
+[window.dimensions]
+columns = 128
+lines = 36
+
+[window.padding]
+x = 4
+y = 4

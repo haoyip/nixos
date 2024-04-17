@@ -1,0 +1,37 @@
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      -- never auto install anything
+      ensure_installed = {
+        "bash",
+        "c",
+        "css",
+        "fish",
+        "git_config",
+        "gitcommit",
+        "gitignore",
+        "html",
+        "javascript",
+        "json",
+        "just",
+        "kdl",
+        "lua",
+        "markdown",
+        "nix",
+        "python",
+        "query",
+        "rust",
+        "sql",
+        "ssh_config",
+        "terraform",
+        "toml",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "vue",
+        "yaml",
+      },
+    },
+  },
+}
