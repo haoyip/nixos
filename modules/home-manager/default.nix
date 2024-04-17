@@ -31,22 +31,6 @@
     wl-clipboard
     zoxide
 
-    # desktop tools
-    aha
-    clinfo
-    ddcutil
-    glxinfo
-    pciutils
-    vulkan-tools
-    wayland-utils
-    xdg-utils
-
-    # desktop theming
-    bibata-cursors
-    catppuccin-kde
-    catppuccin-gtk
-    tela-circle-icon-theme
-
     # desktop apps
     mpv
 

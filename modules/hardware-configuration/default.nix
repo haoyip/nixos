@@ -18,23 +18,23 @@
     KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
   '';
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8629-09A4";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/8629-09A4";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+  };
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
-      fsType = "btrfs";
-      options = [ "subvol=@" "noatime" "compress=zstd:1" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
+    fsType = "btrfs";
+    options = [ "subvol=@" "noatime" "compress=zstd:1" ];
+  };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "noatime" "compress=zstd:1" ];
-    };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
+    fsType = "btrfs";
+    options = [ "subvol=@home" "noatime" "compress=zstd:1" ];
+  };
 
   swapDevices = [
   ];
@@ -54,5 +54,7 @@
   environment.systemPackages = with pkgs; [
     solaar
     logitech-udev-rules
+
+    ddcutil
   ];
 }

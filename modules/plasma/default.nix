@@ -15,4 +15,21 @@
     khelpcenter
     print-manager
   ];
+
+  environment.systemPackages = with pkgs; [
+    # desktop theming
+    bibata-cursors
+    catppuccin-kde
+    catppuccin-gtk
+    tela-circle-icon-theme
+
+    # firmware & driver tools
+    aha
+    clinfo
+    glxinfo
+    pciutils
+    vulkan-tools
+    wayland-utils
+    xdg-utils
+  ];
 }
