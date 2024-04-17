@@ -20,11 +20,6 @@
   };
 
   outputs = inputs @ { ... }:
-    let
-      overlays = [
-        inputs.neovim-nightly-overlay.overlay
-      ];
-    in
     {
       nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -45,7 +40,7 @@
 
           inputs.home-manager.nixosModules.home-manager
           {
-            nixpkgs = { inherit overlays; };
+            nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
 
             home-manager.users.hao = import ./modules/home-manager;
             home-manager.useGlobalPkgs = true;
