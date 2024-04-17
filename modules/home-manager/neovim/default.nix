@@ -19,6 +19,7 @@
       nil
       nodePackages.typescript-language-server
       nodePackages.volar
+      rust-analyzer
       tailwindcss-language-server
       taplo
       vscode-langservers-extracted
