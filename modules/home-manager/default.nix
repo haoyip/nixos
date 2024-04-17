@@ -9,7 +9,6 @@
   imports = [
     ./alacritty
     ./btop
-    ./cargo
     ./firefox
     ./fish
     ./git
@@ -61,14 +60,8 @@
     cargo-outdated
     cargo-watch
     cargo-wizard
-    clang
     just
-    mold-wrapped
     nodejs
-    openssl
-    pkg-config
-    rustup
-    sqlx-cli
     tailwindcss
     trunk
 
