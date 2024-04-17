@@ -8,9 +8,8 @@
   hardware.enableRedistributableFirmware = true;
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.supportedFilesystems = [ "btrfs" ];
 
   hardware.i2c.enable = true;
 
@@ -19,19 +18,25 @@
     KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
   '';
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/fbdbc338-e6f9-44da-955e-620a2cbdb852";
-    fsType = "btrfs";
-    options = [ "subvol=@" "noatime" "compress=zstd:1" ];
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/8629-09A4";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/A77D-2BA5";
-    fsType = "vfat";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
+      fsType = "btrfs";
+      options = [ "subvol=@" "noatime" "compress=zstd:1" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "noatime" "compress=zstd:1" ];
+    };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/73732a6e-e582-4e5e-9ff4-08031e5cc2d5"; }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
