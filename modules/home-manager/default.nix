@@ -36,7 +36,6 @@
 
     # dev
     bacon
-    bun
     bunyan-rs
     cargo-expand
     cargo-leptos
@@ -44,10 +43,6 @@
     cargo-outdated
     cargo-watch
     cargo-wizard
-    just
-    nodejs
-    tailwindcss
-    trunk
 
     # linter, formatter
     leptosfmt
