@@ -38,7 +38,6 @@
     bacon
     bunyan-rs
     cargo-expand
-    cargo-leptos
     cargo-machete
     cargo-outdated
     cargo-watch
