@@ -9,6 +9,7 @@
   imports = [
     ./alacritty
     ./btop
+    ./direnv
     ./firefox
     ./fish
     ./git
