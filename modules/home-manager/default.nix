@@ -31,6 +31,11 @@
     wl-clipboard
     zoxide
 
+    # nix
+    nh
+    nix-output-monitor
+    nvd
+
     # desktop apps
     mpv
 

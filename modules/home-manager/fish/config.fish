@@ -33,7 +33,7 @@ abbr -a scs 'systemctl status'
 abbr -a ssh 'TERM=xterm-256color ssh'
 abbr -a t tldr
 abbr -a tf terraform
-abbr -a v vault
+abbr -a v 'nom develop --command "fish"'
 
 # Git
 abbr -a g git
