@@ -11,6 +11,9 @@
       # treesitter build tools
       gcc
 
+      # telescope-fzf-native
+      cmake
+
       # language server
       docker-compose-language-service
       dockerfile-language-server-nodejs
