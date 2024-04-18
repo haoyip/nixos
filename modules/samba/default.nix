@@ -1,11 +1,12 @@
 {
   services.samba = {
     enable = true;
+    openFirewall = true;
 
     extraConfig = ''
       workgroup = WORKGROUP
-      server string = smbnix
-      netbios name = smbnix
+      server string = b450
+      netbios name = b450
       security = user 
       #use sendfile = yes
       #max protocol = smb2
@@ -15,11 +16,10 @@
       guest account = nobody
       map to guest = bad user
 
-      [hao]
-      path = /mnt/media/
-      public = no
-      writable = yes
-      valid users = hao
+      [media]
+      path = /media/8tb_1/media/
+      public = yes
+      writable = no
     '';
   };
 }

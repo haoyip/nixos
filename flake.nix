@@ -35,6 +35,7 @@
           ./modules/via
           ./modules/samba
           ./modules/corectrl
+          ./modules/firewall
 
           # ./modules/gitlab-runner
 

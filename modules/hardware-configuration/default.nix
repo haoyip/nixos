@@ -36,6 +36,17 @@
     options = [ "subvol=@home" "noatime" "compress=zstd:1" ];
   };
 
+  fileSystems."/media/8tb_1" = {
+    device = "/dev/disk/by-label/8tb_1";
+    fsType = "btrfs";
+    options = [
+      "noatime"
+      "compress=zstd:3"
+
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
+  };
+
   swapDevices = [
   ];
 
