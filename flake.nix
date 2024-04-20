@@ -17,6 +17,11 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     flatpaks.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { ... }:
@@ -27,6 +32,8 @@
         modules = [
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
 
+          ./modules/sops
+
           ./modules/hardware-configuration
           ./modules/configuration
 
@@ -36,8 +43,9 @@
           ./modules/samba
           ./modules/corectrl
           ./modules/firewall
+          ./modules/gitlab-runner
 
-          # ./modules/gitlab-runner
+          inputs.sops-nix.nixosModules.sops
 
           inputs.home-manager.nixosModules.home-manager
           {

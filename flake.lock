@@ -9,11 +9,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1713561108,
-        "narHash": "sha256-p5ZPdGzSC++fqu1wiV0t/MLqGBJaHn0qdOaYbiaQBVY=",
+        "lastModified": 1713585804,
+        "narHash": "sha256-sTakCbZ+Ij43E4Lp4cfzvKJC/9T+11CCLI3V59BUHz0=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "b953007b74e01a814f1091b5599874be9af34bd2",
+        "rev": "e6962046cc97b46f112381d186b62197c301afb7",
         "type": "gitlab"
       },
       "original": {
@@ -235,13 +235,29 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1713297878,
-        "narHash": "sha256-hOkzkhLT59wR8VaMbh1ESjtZLbGi+XNaBN6h49SPqEc=",
+        "lastModified": 1713434076,
+        "narHash": "sha256-+/p5edwlkqKZc6GDAQl+92Hoe1f3NNbUF9uj+X9H3pU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "66adc1e47f8784803f2deb6cacd5e07264ec2d5c",
+        "rev": "8494ae076b7878d61a7d2d25e89a847fe8f8364c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1713537308,
+        "narHash": "sha256-XtTSSIB2DA6tOv+l0FhvfDMiyCmhoRbNB+0SeInZkbk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5c24cf2f0a12ad855f444c30b2421d044120c66f",
         "type": "github"
       },
       "original": {
@@ -256,7 +272,29 @@
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1713532771,
+        "narHash": "sha256-vfKxhYVMzG2tg48/1rewBoSLCrKIjQsG1j7Nm/Y2gf4=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "a929a011a09db735abc45a8a45d1ff7fdee62755",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "systems": {
