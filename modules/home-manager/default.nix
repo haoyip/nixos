@@ -31,6 +31,7 @@
     tealdeer
     wl-clipboard
     zoxide
+    xh
 
     # nix
     nh
