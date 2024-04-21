@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nh os switch .
+nh os switch . --hostname $(cat /etc/hostname)

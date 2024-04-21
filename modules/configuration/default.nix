@@ -44,7 +44,7 @@
     ];
   };
 
-  networking.hostName = "nixos";
+  networking.hostName = "b450";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Kuala_Lumpur";

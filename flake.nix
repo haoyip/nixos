@@ -25,16 +25,21 @@
   };
 
   outputs = inputs @ { ... }:
-    {
-      nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+    let
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
 
-        modules = [
+      buildConfig = modules: { inherit modules system specialArgs; };
+      buildSystem = modules: inputs.nixpkgs.lib.nixosSystem (buildConfig modules);
+    in
+    {
+      nixosConfigurations = {
+        b450 = buildSystem [
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
 
           ./modules/sops
 
-          ./modules/hardware-configuration
+          ./modules/hardware-configuration/default.nix
           ./modules/configuration
 
           ./modules/flatpak
