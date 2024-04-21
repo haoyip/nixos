@@ -18,13 +18,6 @@
     };
   };
 
-  virtualisation = {
-    docker = {
-      enable = true;
-      storageDriver = "btrfs";
-    };
-  };
-
   services.postgresql = {
     enable = true;
   };
@@ -64,7 +57,6 @@
       "networkmanager"
       "wheel"
       "i2c"
-      "docker"
     ];
   };
 

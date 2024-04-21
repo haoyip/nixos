@@ -62,6 +62,7 @@
           ./modules/via
           ./modules/samba
           ./modules/corectrl
+          ./modules/docker
           ./modules/gitlab-runner
           ./modules/flatpak
 
