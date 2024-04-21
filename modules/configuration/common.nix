@@ -5,7 +5,6 @@
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelParams = [ "amd_pstate=active" ];
 
     loader = {
       systemd-boot.enable = true;
@@ -44,7 +43,6 @@
     ];
   };
 
-  networking.hostName = "b450";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Kuala_Lumpur";

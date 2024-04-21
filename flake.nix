@@ -29,38 +29,52 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
 
-      buildConfig = modules: { inherit modules system specialArgs; };
-      buildSystem = modules: inputs.nixpkgs.lib.nixosSystem (buildConfig modules);
+      commonModules = [
+        { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
+
+        ./modules/configuration/common.nix
+        ./modules/plasma
+
+        inputs.home-manager.nixosModules.home-manager
+        {
+          nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+
+          home-manager.users.hao = import ./modules/home-manager;
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
+      ];
+
+      buildConfig = modules: {
+        inherit modules system specialArgs;
+      };
+
+      buildSystem = modules: inputs.nixpkgs.lib.nixosSystem (buildConfig (modules ++ commonModules));
     in
     {
       nixosConfigurations = {
         b450 = buildSystem [
-          { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
+          ./modules/hardware-configuration/b450.nix
+          ./modules/configuration/b450.nix
 
-          ./modules/sops
-
-          ./modules/hardware-configuration/default.nix
-          ./modules/configuration
-
-          ./modules/flatpak
-          ./modules/plasma
           ./modules/via
           ./modules/samba
           ./modules/corectrl
           ./modules/firewall
           ./modules/gitlab-runner
+          ./modules/flatpak
 
+          ./modules/sops
           inputs.sops-nix.nixosModules.sops
+        ];
 
-          inputs.home-manager.nixosModules.home-manager
-          {
-            nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+        mate = buildSystem [
+          ./modules/hardware-configuration/mate.nix
+          ./modules/configuration/mate.nix
 
-            home-manager.users.hao = import ./modules/home-manager;
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
+          ./modules/plasma
+          ./modules/firewall
         ];
       };
     };
