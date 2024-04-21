@@ -34,6 +34,7 @@
 
         ./modules/configuration/common.nix
         ./modules/plasma
+        ./modules/firewall
 
         inputs.home-manager.nixosModules.home-manager
         {
@@ -61,7 +62,6 @@
           ./modules/via
           ./modules/samba
           ./modules/corectrl
-          ./modules/firewall
           ./modules/gitlab-runner
           ./modules/flatpak
 
@@ -72,9 +72,6 @@
         mate = buildSystem [
           ./modules/hardware-configuration/mate.nix
           ./modules/configuration/mate.nix
-
-          ./modules/plasma
-          ./modules/firewall
         ];
       };
     };
