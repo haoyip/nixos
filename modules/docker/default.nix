@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   virtualisation = {
     docker = {
@@ -7,4 +9,8 @@
   };
 
   users.users.hao.extraGroups = [ "docker" ];
+
+  environment.systemPackages = with pkgs; [
+    dive
+  ];
 }
