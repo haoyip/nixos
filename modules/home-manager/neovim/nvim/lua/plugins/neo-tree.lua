@@ -20,6 +20,9 @@ return {
         ".tmp",
         "dist",
         ".editorconfig",
+        ".direnv",
+        ".envrc",
+        "flake.lock",
 
         -- Javascript
         "node_modules",
@@ -31,6 +34,7 @@ return {
         ".eslintrc.cjs",
 
         -- Rust
+        ".cargo",
         "Cargo.lock",
         "target",
         ".sqlx",
