@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
     flatpaks.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 
     sops-nix = {
@@ -36,6 +38,8 @@
 
         inputs.home-manager.nixosModules.home-manager
         {
+          nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+
           home-manager.users.hao = import ./modules/home-manager;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
