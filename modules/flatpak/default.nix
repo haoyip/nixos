@@ -14,6 +14,7 @@
       "com.valvesoftware.Steam"
       "net.ankiweb.Anki"
       "com.discordapp.Discord"
+      "org.kde.krita"
     ];
   };
 }
