@@ -38,6 +38,8 @@ return {
         "Cargo.lock",
         "target",
         ".sqlx",
+        "rust-toolchain.toml",
+        "rustfmt.toml",
 
         -- Terraform
         ".terraform",
