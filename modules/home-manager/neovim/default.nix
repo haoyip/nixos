@@ -19,10 +19,11 @@
       dockerfile-language-server-nodejs
       hadolint
       lua-language-server
+      markdownlint-cli
+      marksman
       nil
       nodePackages.typescript-language-server
       nodePackages.volar
-      rust-analyzer
       tailwindcss-language-server
       taplo
       vscode-langservers-extracted
