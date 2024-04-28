@@ -13,18 +13,23 @@ return {
       hide_dotfiles = false,
 
       hide_by_name = {
-        -- General
+        -- general
         ".git",
         ".gitignore",
         ".dockerignore",
         ".tmp",
         "dist",
         ".editorconfig",
+
+        -- nix
+        "flake.lock",
+        "result",
+
+        -- direnv
         ".direnv",
         ".envrc",
-        "flake.lock",
 
-        -- Javascript
+        -- javascript
         "node_modules",
         ".nuxt",
         ".output",
@@ -33,7 +38,7 @@ return {
         ".prettierignore",
         ".eslintrc.cjs",
 
-        -- Rust
+        -- rust
         ".cargo",
         "Cargo.lock",
         "target",
@@ -41,13 +46,13 @@ return {
         "rust-toolchain.toml",
         "rustfmt.toml",
 
-        -- Terraform
+        -- terraform
         ".terraform",
         ".terraform.lock.hcl",
         "terraform.tfstate",
         "terraform.tfstate.backup",
 
-        -- Misc.
+        -- misc.
         ".strapi",
         ".strapi-updater.json",
       },
