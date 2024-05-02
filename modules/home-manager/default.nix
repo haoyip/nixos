@@ -27,6 +27,8 @@
     fswatch
     fzf
     jaq
+    lsof
+    psmisc
     ripgrep
     tealdeer
     wl-clipboard
