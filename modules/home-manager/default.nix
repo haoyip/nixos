@@ -22,16 +22,16 @@
     # cli
     bat
     eza
+    fastfetch
     fd
     fswatch
     fzf
     jaq
-    neofetch
     ripgrep
     tealdeer
     wl-clipboard
-    zoxide
     xh
+    zoxide
 
     # nix
     nh
