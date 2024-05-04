@@ -28,6 +28,7 @@
     fzf
     jaq
     lsof
+    nmap
     psmisc
     ripgrep
     tealdeer
