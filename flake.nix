@@ -16,8 +16,6 @@
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    flatpaks.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,7 +62,6 @@
           ./modules/corectrl
           ./modules/docker
           ./modules/gitlab-runner
-          ./modules/flatpak
 
           ./modules/sops
           inputs.sops-nix.nixosModules.sops
