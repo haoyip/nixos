@@ -7,19 +7,19 @@ local Util = require("lazyvim.util")
 -- typo helpers
 do
   vim.api.nvim_create_user_command("Q", function()
-    vim.api.nvim_exec("q", false)
+    vim.api.nvim_exec2("q", {})
   end, {})
 
   vim.api.nvim_create_user_command("W", function()
-    vim.api.nvim_exec("w", false)
+    vim.api.nvim_exec2("w", {})
   end, {})
 
   vim.api.nvim_create_user_command("Qw", function()
-    vim.api.nvim_exec("qw", false)
+    vim.api.nvim_exec2("qw", {})
   end, {})
 
   vim.api.nvim_create_user_command("Qa", function()
-    vim.api.nvim_exec("qa", false)
+    vim.api.nvim_exec2("qa", {})
   end, {})
 end
 
