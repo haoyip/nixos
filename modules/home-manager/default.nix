@@ -56,6 +56,7 @@
     # linter, formatter
     leptosfmt
     nixpkgs-fmt
+    rustywind
     shfmt
     stylua
   ];

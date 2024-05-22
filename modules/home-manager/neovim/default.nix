@@ -38,7 +38,6 @@
     configFile."nvim/init.lua".source = ./nvim/init.lua;
     configFile."nvim/lazyvim.json".source = ./nvim/lazyvim.json;
     configFile."nvim/lua".source = ./nvim/lua;
-    configFile."nvim/leptosfmt.toml".source = ./nvim/leptosfmt.toml;
     configFile."nvim/stylua.toml".source = ./nvim/stylua.toml;
   };
 }
