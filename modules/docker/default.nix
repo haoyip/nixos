@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   virtualisation = {
     docker = {
       enable = true;
@@ -8,7 +6,7 @@
     };
   };
 
-  users.users.hao.extraGroups = [ "docker" ];
+  users.users.hao.extraGroups = ["docker"];
 
   environment.systemPackages = with pkgs; [
     dive

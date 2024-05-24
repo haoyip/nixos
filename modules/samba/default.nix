@@ -7,7 +7,7 @@
       workgroup = WORKGROUP
       server string = b450
       netbios name = b450
-      security = user 
+      security = user
       #use sendfile = yes
       #max protocol = smb2
       # note: localhost is the ipv6 localhost ::1

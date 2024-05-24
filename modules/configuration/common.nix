@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   system.stateVersion = "23.11";
 
   boot = {
@@ -32,7 +30,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
       cantarell-fonts
-      (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+      (nerdfonts.override {fonts = ["CascadiaCode"];})
     ];
   };
 

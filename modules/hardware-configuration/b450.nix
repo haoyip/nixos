@@ -1,15 +1,19 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   hardware.enableRedistributableFirmware = true;
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = [ "amd_pstate=active" ];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+  boot.kernelModules = ["kvm-amd"];
+  boot.kernelParams = ["amd_pstate=active"];
 
   hardware.i2c.enable = true;
 
@@ -21,19 +25,19 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/8629-09A4";
     fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
+    options = ["fmask=0022" "dmask=0022"];
   };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
     fsType = "btrfs";
-    options = [ "subvol=@" "noatime" "compress=zstd:1" ];
+    options = ["subvol=@" "noatime" "compress=zstd:1"];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
     fsType = "btrfs";
-    options = [ "subvol=@home" "noatime" "compress=zstd:1" ];
+    options = ["subvol=@home" "noatime" "compress=zstd:1"];
   };
 
   fileSystems."/media/8tb_1" = {
@@ -48,7 +52,7 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/d543fe22-4619-4f40-bc12-9f86e3111e69"; }
+    {device = "/dev/disk/by-uuid/d543fe22-4619-4f40-bc12-9f86e3111e69";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

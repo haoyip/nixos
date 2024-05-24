@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.stateVersion = "23.11";
 
   home.username = "hao";
@@ -54,11 +52,10 @@
     cargo-wizard
 
     # linter, formatter
+    alejandra
     leptosfmt
-    nixpkgs-fmt
     rustywind
     shfmt
     stylua
   ];
 }
-

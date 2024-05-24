@@ -5,6 +5,7 @@ return {
       rust = { "rustywind", "leptosfmt", "rustfmt" },
       html = { "prettier", "rustywind" },
       vue = { "prettier", "rustywind" },
+      nix = { "alejandra" },
     },
   },
 }
