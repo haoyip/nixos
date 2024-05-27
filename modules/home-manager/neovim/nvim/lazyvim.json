@@ -15,5 +15,8 @@
     "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.ui.mini-indentscope"
   ],
-  "version": 4
+  "news": {
+    "NEWS.md": "4964"
+  },
+  "version": 5
 }
