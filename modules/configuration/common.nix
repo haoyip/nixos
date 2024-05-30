@@ -37,7 +37,21 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Kuala_Lumpur";
-  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+
+    inputMethod = {
+      enabled = "fcitx5";
+      fcitx5 = {
+        addons = with pkgs; [
+          fcitx5-mozc
+          fcitx5-chinese-addons
+          fcitx5-configtool
+        ];
+      };
+    };
+  };
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -69,4 +83,10 @@
   environment.variables = {
     EDITOR = "nvim";
   };
+  #
+  # environment.systemPackages = with pkgs; [
+  #   fcitx5
+  #   fcitx5-chinese-addons
+  #   fcitx5-configtool
+  # ];
 }

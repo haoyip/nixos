@@ -30,4 +30,9 @@
     wayland-utils
     xdg-utils
   ];
+
+  i18n.inputMethod.fcitx5 = {
+    plasma6Support = true;
+    waylandFrontend = true;
+  };
 }
