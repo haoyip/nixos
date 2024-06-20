@@ -5,6 +5,7 @@
     profiles.hao = {
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         bitwarden
+        cookie-quick-manager
         disable-javascript
         multi-account-containers
         return-youtube-dislikes
