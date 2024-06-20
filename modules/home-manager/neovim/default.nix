@@ -20,8 +20,8 @@
       markdownlint-cli
       marksman
       nil
-      nodePackages.typescript-language-server
       nodePackages.volar
+      nodePackages.typescript-language-server
       rust-analyzer
       tailwindcss-language-server
       taplo

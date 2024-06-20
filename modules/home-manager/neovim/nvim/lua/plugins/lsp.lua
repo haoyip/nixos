@@ -23,12 +23,9 @@ return {
           },
         },
       },
-      nil_ls = {
-        formatting = {
-          command = { "nixpkgs-fmt" },
-        },
-      },
+      nil_ls = {},
       volar = {},
+      tsserver = {},
     },
   },
 }
