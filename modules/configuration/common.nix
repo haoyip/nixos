@@ -83,10 +83,4 @@
   environment.variables = {
     EDITOR = "nvim";
   };
-  #
-  # environment.systemPackages = with pkgs; [
-  #   fcitx5
-  #   fcitx5-chinese-addons
-  #   fcitx5-configtool
-  # ];
 }
