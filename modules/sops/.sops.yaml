@@ -1,7 +1,0 @@
-keys:
-  - &hao age1k7jvdp7nz2ns5rf5lah4n8jmkqs7vzh77g502lrffzyve946f3tqa09z83
-creation_rules:
-  - path_regex: secrets.yaml$
-    key_groups:
-      - age:
-          - *hao

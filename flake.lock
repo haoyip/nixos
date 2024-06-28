@@ -59,6 +59,24 @@
         "type": "github"
       }
     },
+    "mysecrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719552143,
+        "narHash": "sha256-YUcxCJsFlNrsn5A1rkJ8u3RM0MmirdPLnd4FcvyvDFs=",
+        "ref": "main",
+        "rev": "e6e35768bf56ce2353756f1f5b7302382a09a9ab",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@gitlab/haoyiphoh/nixos-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@gitlab/haoyiphoh/nixos-secrets.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1719254875,
@@ -94,6 +112,7 @@
       "inputs": {
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
+        "mysecrets": "mysecrets",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix"
       }

@@ -18,6 +18,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mysecrets = {
+      url = "git+ssh://git@gitlab/haoyiphoh/nixos-secrets.git?ref=main&shallow=1";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {...}: let
@@ -59,7 +64,6 @@
         ./modules/gitlab-runner
 
         ./modules/sops
-        inputs.sops-nix.nixosModules.sops
       ];
 
       mate = buildSystem [
