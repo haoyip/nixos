@@ -30,6 +30,7 @@
       ./modules/configuration/common.nix
       ./modules/plasma
       ./modules/firewall
+      ./modules/scripts
 
       inputs.home-manager.nixosModules.home-manager
       {
