@@ -35,4 +35,6 @@
     plasma6Support = true;
     waylandFrontend = true;
   };
+
+  programs.kdeconnect.enable = true;
 }
