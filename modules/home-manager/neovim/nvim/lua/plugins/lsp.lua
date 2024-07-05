@@ -24,7 +24,6 @@ return {
         },
       },
       nil_ls = {},
-      volar = {},
       tsserver = {},
     },
   },
