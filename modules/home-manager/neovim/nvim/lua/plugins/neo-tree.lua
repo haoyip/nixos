@@ -60,7 +60,7 @@ return {
 
     opts.window = {
       position = "right",
-      width = "36",
+      width = "46",
     }
 
     return opts
