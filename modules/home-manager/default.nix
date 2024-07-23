@@ -50,6 +50,8 @@
     cargo-outdated
     cargo-watch
     cargo-wizard
+    just
+    flyctl
 
     # linter, formatter
     alejandra
