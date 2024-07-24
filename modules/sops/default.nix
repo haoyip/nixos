@@ -17,6 +17,19 @@ in {
 
     secrets = {
       gitlab-runner-docker-token = {};
+      hao-password = {};
+
+      "private_keys/me_gitlab" = {
+        path = "/home/hao/.ssh/me_gitlab";
+        owner = "hao";
+        mode = "400";
+      };
+
+      "private_keys/me_github" = {
+        path = "/home/hao/.ssh/me_github";
+        owner = "hao";
+        mode = "400";
+      };
     };
   };
 

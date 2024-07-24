@@ -64,6 +64,7 @@
         ./modules/gitlab-runner
 
         ./modules/sops
+        ./modules/ssh
       ];
 
       mate = buildSystem [
