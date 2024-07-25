@@ -17,7 +17,6 @@ in {
 
     secrets = {
       gitlab-runner-docker-token = {};
-      hao-password = {};
 
       "private_keys/me_gitlab" = {
         path = "/home/hao/.ssh/me_gitlab";

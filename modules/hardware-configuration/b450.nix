@@ -22,26 +22,28 @@
     KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
   '';
 
+  boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/08c779b2-1244-4a9c-a21f-2bbb568f3e34";
+
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/8629-09A4";
+    device = "/dev/disk/by-uuid/3363-D424";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
+    device = "/dev/disk/by-uuid/9a07ea48-ceca-4825-8fa8-855e673f48da";
     fsType = "btrfs";
     options = ["subvol=@" "noatime" "compress=zstd:1"];
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/2e74f06d-f401-42bc-b2a4-5cfb00bcd777";
+    device = "/dev/disk/by-uuid/9a07ea48-ceca-4825-8fa8-855e673f48da";
     fsType = "btrfs";
     options = ["subvol=@home" "noatime" "compress=zstd:1"];
   };
 
-  fileSystems."/media/8tb_1" = {
-    device = "/dev/disk/by-label/8tb_1";
+  fileSystems."/data/8tb_1" = {
+    device = "/dev/disk/by-uuid/9fc6b93d-2949-4df3-bcd4-daf36d233a69";
     fsType = "btrfs";
     options = [
       "noatime"
@@ -52,7 +54,9 @@
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/d543fe22-4619-4f40-bc12-9f86e3111e69";}
+    {
+      device = "/dev/disk/by-uuid/452fe62c-b40e-4d49-814e-007394dc8b13";
+    }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

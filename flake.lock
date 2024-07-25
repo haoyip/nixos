@@ -9,11 +9,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1721707400,
-        "narHash": "sha256-09jb7g2M7wC7RyVih98lIer+wylgcWabCxCgILepGAw=",
+        "lastModified": 1721880192,
+        "narHash": "sha256-COA+qQZzgK/YfJhKCqTXuq05wpP97SR4U8uGG80MqJ4=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "67153a545bb69b86b8b4c80ac7fbf8eca644462e",
+        "rev": "b457eedf1ee1da5a7917098f8ad6339243b73959",
         "type": "gitlab"
       },
       "original": {
@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721714663,
-        "narHash": "sha256-ZDW5+rlROxaOuoEfIQM7Gqhoa+WALEYdYIiZhyJjAu0=",
+        "lastModified": 1721852138,
+        "narHash": "sha256-JH8N5uoqoVA6erV4O40VtKKHsnfmhvMGbxMNDLtim5o=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7560dc942a6fbd37ebd1310b3dbda513de2d4b82",
+        "rev": "304a011325b7ac7b8c9950333cd215a7aa146b0e",
         "type": "github"
       },
       "original": {
@@ -62,10 +62,10 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1721780415,
-        "narHash": "sha256-//PnUfJBHEPCmbeEPM0qviwN/Pw1D0b+SS2dqq9+hjA=",
+        "lastModified": 1721893175,
+        "narHash": "sha256-YtZyAmt7zv3TFp0snEjPF9oL2JvUa9b5FYAiwgNEoIs=",
         "ref": "main",
-        "rev": "659ed3d31020c6838fdf4086abfb9e7282a44130",
+        "rev": "3ef7bce31a5ae70cef8f169ea61c9c90b32d4237",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab/haoyiphoh/nixos-secrets.git"

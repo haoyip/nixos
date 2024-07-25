@@ -1,9 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
-  system.stateVersion = "23.11";
+{pkgs, ...}: {
+  system.stateVersion = "24.05";
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
@@ -66,15 +62,8 @@
     jack.enable = true;
   };
 
-  # Decrypt ta-password to /run/secrets-for-users/ so it can be used to create the user
-  sops.secrets.hao-password.neededForUsers = true;
-
-  # Required for password to be set via sops during system activation
-  users.mutableUsers = false;
-
   users.users.hao = {
     isNormalUser = true;
-    hashedPasswordFile = config.sops.secrets.hao-password.path;
     shell = pkgs.fish;
     description = "hao";
     extraGroups = [
