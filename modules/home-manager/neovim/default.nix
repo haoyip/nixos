@@ -11,6 +11,7 @@
 
       # telescope-fzf-native
       cmake
+      gnumake
 
       # language server
       docker-compose-language-service
