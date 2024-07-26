@@ -15,6 +15,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    kdePackages.sddm-kcm
+
     # desktop theming
     bibata-cursors
     catppuccin-kde
