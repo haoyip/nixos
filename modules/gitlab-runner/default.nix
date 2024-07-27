@@ -1,4 +1,8 @@
 {config, ...}: {
+  sops.secrets = {
+    gitlab-runner-docker-token = {};
+  };
+
   services.gitlab-runner = {
     enable = true;
 

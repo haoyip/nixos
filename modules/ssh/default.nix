@@ -1,4 +1,16 @@
 {
+  sops.secrets = {
+    "private_keys/me_gitlab" = {
+      path = "/home/hao/.ssh/me_gitlab";
+      owner = "hao";
+    };
+
+    "private_keys/me_github" = {
+      path = "/home/hao/.ssh/me_github";
+      owner = "hao";
+    };
+  };
+
   programs.ssh = {
     extraConfig = ''
       Host gitlab
