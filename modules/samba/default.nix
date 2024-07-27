@@ -17,7 +17,7 @@
       map to guest = bad user
 
       [media]
-      path = /media/8tb_1/media/
+      path = /data/8tb_1/media/
       public = yes
       writable = no
     '';
