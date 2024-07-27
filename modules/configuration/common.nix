@@ -23,7 +23,11 @@
   services.fwupd.enable = true;
 
   fonts = {
-    fontconfig.enable = true;
+    fontconfig = {
+      enable = true;
+      subpixel.rgba = "rgb";
+      hinting.style = "slight";
+    };
 
     packages = with pkgs; [
       noto-fonts
