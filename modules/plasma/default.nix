@@ -1,7 +1,12 @@
 {pkgs, ...}: {
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+
+    theme = "catppuccin-mocha";
+  };
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration
@@ -15,12 +20,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    kdePackages.sddm-kcm
-
     # desktop theming
     bibata-cursors
-    catppuccin-kde
     catppuccin-gtk
+    catppuccin-kde
+    catppuccin-sddm
     tela-circle-icon-theme
 
     # firmware & driver tools
