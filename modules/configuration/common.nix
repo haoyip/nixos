@@ -33,7 +33,6 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      cantarell-fonts
       (nerdfonts.override {fonts = ["CascadiaCode"];})
     ];
   };
@@ -86,5 +85,7 @@
 
   environment.variables = {
     EDITOR = "nvim";
+    TERM = "alacritty";
+    TERMINAL = "alacritty";
   };
 }
