@@ -37,9 +37,25 @@
     xdg-utils
   ];
 
-  i18n.inputMethod.fcitx5 = {
-    plasma6Support = true;
-    waylandFrontend = true;
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+
+      fcitx5 = {
+        plasma6Support = true;
+        waylandFrontend = true;
+
+        addons = with pkgs; [
+          fcitx5-chinese-addons
+          fcitx5-configtool
+          fcitx5-mozc
+          fcitx5-nord
+        ];
+      };
+    };
   };
 
   programs.kdeconnect.enable = true;
