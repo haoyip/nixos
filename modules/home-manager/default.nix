@@ -28,6 +28,7 @@
     lsof
     nmap
     psmisc
+    pgcli
     ripgrep
     tealdeer
     wl-clipboard

@@ -16,10 +16,6 @@
     };
   };
 
-  services.postgresql = {
-    enable = true;
-  };
-
   services.fwupd.enable = true;
 
   fonts = {
