@@ -17,7 +17,8 @@
       executor = "docker";
       dockerImage = "scratch";
       dockerVolumes = ["/cache" "/var/run/docker.sock:/var/run/docker.sock"];
-      registrationConfigFile = builtins.toFile "registration.sh" ''
+
+      authenticationTokenConfigFile = builtins.toFile "config.sh" ''
         export CI_SERVER_URL="https://gitlab.com"
         export REGISTRATION_TOKEN="$(cat ${config.sops.secrets.gitlab-runner-docker-token.path})"
       '';
