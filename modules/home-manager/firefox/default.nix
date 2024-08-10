@@ -38,6 +38,7 @@
         "extensions.pocket.enabled" = false;
         "media.ffmpeg.vaapi.enabled" = true;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
+        "middlemouse.paste" = false;
 
         "full-screen-api.transition-duration.enter" = "0 0";
         "full-screen-api.transition-duration.leave" = "0 0";
