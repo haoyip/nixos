@@ -20,6 +20,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    kdePackages.kcolorchooser
+
     # desktop theming
     bibata-cursors
     catppuccin-gtk
