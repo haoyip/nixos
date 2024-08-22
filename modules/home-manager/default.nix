@@ -41,7 +41,9 @@
     nvd
 
     # desktop apps
+    easyeffects
     mpv
+    wireshark
 
     # dev
     bacon
