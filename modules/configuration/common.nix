@@ -33,7 +33,10 @@
     ];
   };
 
-  networking.networkmanager.enable = true;
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+  ];
 
   time.timeZone = "Asia/Kuala_Lumpur";
 
@@ -51,7 +54,6 @@
     shell = pkgs.fish;
     description = "hao";
     extraGroups = [
-      "networkmanager"
       "wheel"
       "i2c"
     ];
