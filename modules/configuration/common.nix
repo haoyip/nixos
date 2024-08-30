@@ -30,6 +30,8 @@
       noto-fonts-cjk
       noto-fonts-emoji
       (nerdfonts.override {fonts = ["CascadiaCode"];})
+      (texlive.withPackages
+        (ps: [ps.josefin]))
     ];
   };
 
