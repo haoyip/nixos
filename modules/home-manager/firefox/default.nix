@@ -87,6 +87,26 @@
             definedAliases = ["@nw"];
           };
 
+          "Crate" = {
+            urls = [{template = "https://crates.io/search?q={searchTerms}";}];
+            definedAliases = ["@crate"];
+          };
+
+          "Docs.rs" = {
+            urls = [{template = "https://docs.rs/{searchTerms}/latest/{searchTerms}";}];
+            definedAliases = ["@docs"];
+          };
+
+          "Rust std" = {
+            urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
+            definedAliases = ["@std"];
+          };
+
+          "Youtube" = {
+            urls = [{template = "https://www.youtube.com/results?search_query={searchTerms}";}];
+            definedAliases = ["@yt"];
+          };
+
           "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
 
           "Bing".metaData.hidden = true;
@@ -95,7 +115,7 @@
 
         default = "DuckDuckGo";
         force = true;
-        order = ["DuckDuckGo" "Google"];
+        order = ["DuckDuckGo" "Google" "Youtube" "NixOS Wiki" "Nix Packages" "Crate" "Docs.rs" "Rust std"];
       };
     };
   };
