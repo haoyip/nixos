@@ -27,6 +27,10 @@
       taplo
       vscode-langservers-extracted
       yaml-language-server
+
+      # nodejs runtime for prettier to work
+      nodejs
+      nodePackages.prettier
     ];
   };
 
