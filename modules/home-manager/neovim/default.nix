@@ -18,7 +18,7 @@
       dockerfile-language-server-nodejs
       hadolint
       lua-language-server
-      markdownlint-cli
+      markdownlint-cli2
       marksman
       nil
       nodePackages.typescript-language-server
