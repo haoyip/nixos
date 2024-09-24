@@ -50,6 +50,7 @@
     bacon
     bunyan-rs
     cargo-expand
+    cargo-generate
     cargo-machete
     cargo-outdated
     cargo-watch
@@ -64,4 +65,6 @@
     shfmt
     stylua
   ];
+
+  home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;
 }
