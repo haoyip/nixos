@@ -27,7 +27,6 @@
     catppuccin-gtk
     catppuccin-kde
     catppuccin-sddm
-    tela-circle-icon-theme
 
     # firmware & driver tools
     aha
