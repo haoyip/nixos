@@ -21,12 +21,14 @@ alias http xh
 # General abbr
 abbr -a d cdh
 abbr -a e vi
+abbr -a f 'nix flake'
 abbr -a gg lazygit
 abbr -a j cd # zoxide
 abbr -a ji cdi # zoxide
 abbr -a l ls
 abbr -a la 'ls -la'
 abbr -a m 'zellij -s $(tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")'
+abbr -a n nix
 abbr -a o xdg-open
 abbr -a sc systemctl
 abbr -a scs 'systemctl status'
