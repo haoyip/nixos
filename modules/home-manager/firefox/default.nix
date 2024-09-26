@@ -35,6 +35,7 @@
         "browser.download.panel.shown" = true;
         "browser.toolbars.bookmarks.visibility" = "never";
         "dom.security.https_only_mode" = true;
+        "dom.private-attribution.submission.enabled" = false;
         "extensions.pocket.enabled" = false;
         "media.ffmpeg.vaapi.enabled" = true;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
