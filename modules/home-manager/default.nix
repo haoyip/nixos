@@ -49,9 +49,11 @@
     # dev
     bacon
     bunyan-rs
+    cargo-deny
     cargo-expand
     cargo-generate
     cargo-machete
+    cargo-nextest
     cargo-outdated
     cargo-watch
     cargo-wizard
