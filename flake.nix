@@ -23,11 +23,26 @@
       url = "git+ssh://git@gitlab/haoyiphoh/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
+
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {...}: let
     system = "x86_64-linux";
-    specialArgs = {inherit inputs;};
+
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      overlays = [
+        (final: prev: {
+          zjstatus = inputs.zjstatus.packages.${prev.system}.default;
+        })
+      ];
+    };
+
+    specialArgs = {inherit inputs pkgs;};
 
     commonModules = [
       {nix.settings.experimental-features = ["nix-command" "flakes"];}
@@ -42,7 +57,7 @@
         home-manager.users.hao = import ./modules/home-manager;
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {inherit inputs;};
+        home-manager.extraSpecialArgs = {inherit inputs pkgs;};
       }
     ];
 

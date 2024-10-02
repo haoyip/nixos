@@ -4,7 +4,7 @@ simplified_ui true
 default_shell "fish"
 pane_frames false
 theme "catppuccin-frappe"
-default_layout "compact"
+default_layout "default"
 
 keybinds clear-defaults=true {
   shared {
@@ -14,6 +14,16 @@ keybinds clear-defaults=true {
     bind "Alt -" { Resize "Decrease"; }
     bind "Alt t" { NewTab; }
     bind "Alt x" { CloseFocus; }
+
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
+    bind "Alt 3" { GoToTab 3; }
+    bind "Alt 4" { GoToTab 4; }
+    bind "Alt 5" { GoToTab 5; }
+    bind "Alt 6" { GoToTab 6; }
+    bind "Alt 7" { GoToTab 7; }
+    bind "Alt 8" { GoToTab 8; }
+    bind "Alt 9" { GoToTab 9; }
   }
   shared_except "normal" {
     bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -32,11 +42,11 @@ keybinds clear-defaults=true {
     bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
     bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
     bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
-    bind "," { SwitchToMode "RenameTab"; }
 
     // Unused default keybinds
     // bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
     // bind "c" { NewTab; SwitchToMode "Normal"; }
+    // bind "," { SwitchToMode "RenameTab"; }
 
     // Custom keybinds
     bind "q" { Quit; }
@@ -45,6 +55,7 @@ keybinds clear-defaults=true {
     bind "x" { CloseFocus; SwitchToMode "Normal"; }
     bind "N" { GoToNextTab; SwitchToMode "Normal"; }
     bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+    bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
 
     //bind "n" "Tab" { MovePane; }
     bind "H" { MovePane "Left"; }
@@ -118,6 +129,7 @@ keybinds clear-defaults=true {
     bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
     bind "d" { HalfPageScrollDown; }
     bind "u" { HalfPageScrollUp; }
+    bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
   }
   search {
     bind "Ctrl s" { SwitchToMode "Normal"; }
@@ -133,6 +145,7 @@ keybinds clear-defaults=true {
     bind "c" { SearchToggleOption "CaseSensitivity"; }
     bind "w" { SearchToggleOption "Wrap"; }
     bind "o" { SearchToggleOption "WholeWord"; }
+    bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
   }
   entersearch {
     bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
