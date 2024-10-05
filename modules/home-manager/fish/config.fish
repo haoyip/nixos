@@ -66,3 +66,10 @@ abbr -a dk docker
 abbr -a dc 'docker compose'
 abbr -a dps 'docker ps'
 abbr -a dl 'docker logs'
+
+# If in alacritty, start zellij
+if test $TERM = alacritty && not set -q ZELLIJ
+    zellij -s (tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")
+
+    kill $fish_pid
+end

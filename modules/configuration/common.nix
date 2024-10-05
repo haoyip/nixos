@@ -70,7 +70,5 @@
 
   environment.variables = {
     EDITOR = "nvim";
-    TERM = "alacritty";
-    TERMINAL = "alacritty";
   };
 }
