@@ -12,6 +12,12 @@ return {
       ft = { "json" },
       mode = "n",
     },
+    {
+      "<leader>o",
+      "<cmd>Telescope find_files<cr>",
+      desc = "Find Files (Root Dir)",
+      mode = "n",
+    },
   },
 
   opts = {
