@@ -10,7 +10,7 @@ return {
       skip_confirm_for_simple_edits = true,
 
       view_options = {
-        show_hidden = true,
+        show_hidden = false,
         natural_order = true,
         is_always_hidden = function(name, _)
           return name == ".." or name == ".git"
@@ -23,9 +23,9 @@ return {
     })
 
     -- Open parent directory in current window
-    vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+    -- vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
 
     -- Open parent directory in floating window
-    vim.keymap.set("n", "<C-1>", require("oil").toggle_float)
+    vim.keymap.set("n", "-", require("oil").toggle_float)
   end,
 }

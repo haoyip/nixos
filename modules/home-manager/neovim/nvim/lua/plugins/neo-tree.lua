@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = false,
 
   keys = {
     { "<A-1>", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
