@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -20,7 +24,7 @@
       lua-language-server
       markdownlint-cli2
       marksman
-      nil
+      nixd
       nodePackages.typescript-language-server
       rust-analyzer
       tailwindcss-language-server
@@ -33,6 +37,9 @@
       nodePackages.prettier
     ];
   };
+
+  # for nixd
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   xdg = {
     enable = true;

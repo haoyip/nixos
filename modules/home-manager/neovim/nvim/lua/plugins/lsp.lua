@@ -23,7 +23,7 @@ return {
           },
         },
       },
-      nil_ls = {},
+      nixd = {},
       tsserver = {},
     },
   },
