@@ -17,6 +17,7 @@ alias grep rg
 alias jq jaq
 alias cl wl-copy
 alias http xh
+alias note "vi '/data/8tb_1/HY/Library/Notes/' -c 'cd /data/8tb_1/HY/Library/Notes/'"
 
 # General abbr
 abbr -a d cdh
