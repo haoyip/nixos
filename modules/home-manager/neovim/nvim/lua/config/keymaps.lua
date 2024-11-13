@@ -70,11 +70,5 @@ end, { desc = "Format" })
 vim.keymap.set("n", "<A-i>", vim.lsp.buf.hover, { desc = "Show hover" })
 vim.keymap.set("n", "<A-o>", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
--- resume telescope
--- vim.keymap.set("n", "<A-2>", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
-
--- workspace diagnostic
-vim.keymap.set("n", "<A-2>", "<leader>xX", { remap = true })
-
 -- window
 vim.keymap.set("n", "<C-A-w>", "<C-w>c", { desc = "Delete Window" })

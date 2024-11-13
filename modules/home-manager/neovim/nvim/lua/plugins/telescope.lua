@@ -13,7 +13,7 @@ return {
       mode = "n",
     },
     {
-      "<leader>o",
+      "<leader>n",
       "<cmd>Telescope find_files<cr>",
       desc = "Find Files (Root Dir)",
       mode = "n",
