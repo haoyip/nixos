@@ -27,6 +27,7 @@
       nixd
       nodePackages.typescript-language-server
       rust-analyzer
+      tabby-agent
       tailwindcss-language-server
       taplo
       vscode-langservers-extracted
