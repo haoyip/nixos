@@ -46,6 +46,7 @@
 
     commonModules = [
       {nix.settings.experimental-features = ["nix-command" "flakes"];}
+      {programs.nix-ld.enable = true;}
 
       ./modules/configuration/common.nix
       ./modules/plasma
