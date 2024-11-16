@@ -57,8 +57,9 @@
     cargo-outdated
     cargo-watch
     cargo-wizard
-    just
+    distrobox
     flyctl
+    just
 
     # linter, formatter
     alejandra
