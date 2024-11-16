@@ -29,7 +29,7 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      (nerdfonts.override {fonts = ["CascadiaCode"];})
+      (nerdfonts.override {fonts = ["CascadiaCode" "FantasqueSansMono"];})
       (texlive.withPackages
         (ps: [ps.josefin]))
     ];
