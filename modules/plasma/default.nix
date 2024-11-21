@@ -21,6 +21,7 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.kcolorchooser
+    kcalc
 
     # desktop theming
     bibata-cursors
