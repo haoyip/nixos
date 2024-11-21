@@ -25,12 +25,12 @@
       markdownlint-cli2
       marksman
       nixd
-      nodePackages.typescript-language-server
       rust-analyzer
       tabby-agent
       tailwindcss-language-server
       taplo
       vscode-langservers-extracted
+      vtsls
       yaml-language-server
 
       # nodejs runtime for prettier to work

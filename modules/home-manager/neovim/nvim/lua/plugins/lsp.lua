@@ -24,7 +24,6 @@ return {
         },
       },
       nixd = {},
-      tsserver = {},
       tabby_ml = {},
     },
   },
