@@ -4,8 +4,6 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-
-    theme = "catppuccin-mocha";
   };
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -27,7 +25,6 @@
     bibata-cursors
     catppuccin-gtk
     catppuccin-kde
-    catppuccin-sddm
 
     # firmware & driver tools
     aha
@@ -53,8 +50,6 @@
         addons = with pkgs; [
           fcitx5-chinese-addons
           fcitx5-configtool
-          fcitx5-mozc
-          fcitx5-nord
         ];
       };
     };
