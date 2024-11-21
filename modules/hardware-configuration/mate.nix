@@ -34,6 +34,22 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
+  networking.wireless.iwd = {
+    enable = true;
+
+    settings = {
+      IPv6 = {
+        Enabled = true;
+      };
+      Settings = {
+        AutoConnect = false;
+      };
+      General = {
+        EnableNetworkConfiguration = true;
+      };
+    };
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
