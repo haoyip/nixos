@@ -31,6 +31,7 @@
       taplo
       vscode-langservers-extracted
       vtsls
+      vue-language-server
       yaml-language-server
 
       # nodejs runtime for prettier to work
