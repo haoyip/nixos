@@ -19,6 +19,7 @@ return {
         "lua",
         "markdown",
         "nix",
+        "php",
         "python",
         "query",
         "rust",

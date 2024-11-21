@@ -60,6 +60,8 @@
     distrobox
     flyctl
     just
+    php83Packages.php-codesniffer
+    php83Packages.php-cs-fixer
 
     # linter, formatter
     alejandra

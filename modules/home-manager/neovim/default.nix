@@ -25,6 +25,7 @@
       markdownlint-cli2
       marksman
       nixd
+      phpactor
       rust-analyzer
       tabby-agent
       tailwindcss-language-server
