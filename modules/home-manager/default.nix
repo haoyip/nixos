@@ -65,6 +65,7 @@
 
     # linter, formatter
     alejandra
+    blade-formatter
     leptosfmt
     rustywind
     shfmt

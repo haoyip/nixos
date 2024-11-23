@@ -51,5 +51,8 @@
     configFile."nvim/lazyvim.json".source = ./nvim/lazyvim.json;
     configFile."nvim/lua".source = ./nvim/lua;
     configFile."nvim/stylua.toml".source = ./nvim/stylua.toml;
+
+    configFile."nvim/after/queries/blade/highlights.scm".source = ./blade/highlights.scm;
+    configFile."nvim/after/queries/blade/injections.scm".source = ./blade/injections.scm;
   };
 }
