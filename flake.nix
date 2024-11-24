@@ -72,6 +72,7 @@
       b450 = buildSystem [
         ./modules/hardware-configuration/b450.nix
         ./modules/configuration/b450.nix
+        ./modules/wireguard/b450.nix
 
         ./modules/via
         ./modules/samba
@@ -86,6 +87,7 @@
       mate = buildSystem [
         ./modules/hardware-configuration/mate.nix
         ./modules/configuration/mate.nix
+        ./modules/wireguard/mate.nix
       ];
     };
   };
