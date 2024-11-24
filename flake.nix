@@ -88,6 +88,9 @@
         ./modules/hardware-configuration/mate.nix
         ./modules/configuration/mate.nix
         ./modules/wireguard/mate.nix
+
+        ./modules/sops
+        ./modules/ssh
       ];
     };
   };
