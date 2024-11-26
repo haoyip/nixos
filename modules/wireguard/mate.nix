@@ -1,14 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{config, ...}: {
   sops.secrets = {
-    "wireguard/mate/private_key" = {
-      path = "/sops/wireguard/mate.txt";
-      owner = "root";
-    };
-
+    "wireguard/mate/private_key" = {};
     "wireguard/b450/endpoint" = {};
   };
 
@@ -16,13 +8,13 @@
 
   networking.wg-quick.interfaces = {
     wg0 = {
-      privateKeyFile = "/sops/wireguard/mate.txt";
+      privateKeyFile = config.sops.secrets."wireguard/mate/private_key".path;
 
       address = ["10.0.0.2/24"];
       listenPort = 51700;
 
       postUp = ''
-        ${pkgs.wireguard-tools}/bin/wg set wg0 peer z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno= \
+        wg set wg0 peer z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno= \
         endpoint "$(cat ${config.sops.secrets."wireguard/b450/endpoint".path}):51700"
       '';
 

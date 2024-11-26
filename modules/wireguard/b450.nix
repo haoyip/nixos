@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   sops.secrets = {
-    "wireguard/b450/private_key" = {
-      path = "/sops/wireguard/b450.txt";
-      owner = "root";
-    };
+    "wireguard/b450/private_key" = {};
   };
 
   networking.nat.enable = true;
@@ -20,7 +21,7 @@
 
   networking.wg-quick.interfaces = {
     wg0 = {
-      privateKeyFile = "/sops/wireguard/b450.txt";
+      privateKeyFile = config.sops.secrets."wireguard/b450/private_key".path;
 
       address = ["10.0.0.1/24"];
       listenPort = 51700;
