@@ -79,6 +79,7 @@
         ./modules/corectrl
         ./modules/docker
         ./modules/gitlab-runner
+        ./modules/update-ddns
 
         ./modules/sops
         ./modules/ssh
