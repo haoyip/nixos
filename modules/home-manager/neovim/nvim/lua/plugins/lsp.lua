@@ -25,6 +25,13 @@ return {
       },
       nixd = {},
       tabby_ml = {},
+      volar = {
+        init_options = {
+          vue = {
+            hybridMode = true,
+          },
+        },
+      },
     },
   },
 }
