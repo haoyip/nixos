@@ -27,7 +27,6 @@
       nixd
       phpactor
       rust-analyzer
-      tabby-agent
       tailwindcss-language-server
       taplo
       vscode-langservers-extracted

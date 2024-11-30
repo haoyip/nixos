@@ -9,6 +9,7 @@ return {
           },
         },
       },
+
       tailwindcss = {
         -- exclude a filetype from the default_config
         -- filetypes_exclude = { "markdown" },
@@ -23,8 +24,9 @@ return {
           },
         },
       },
+
       nixd = {},
-      tabby_ml = {},
+
       volar = {
         init_options = {
           vue = {
