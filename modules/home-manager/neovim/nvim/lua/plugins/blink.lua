@@ -10,6 +10,8 @@ return {
         ["<A-l>"] = { "accept", "fallback" },
         ["<C-e>"] = { "scroll_documentation_down", "fallback" },
         ["<C-y>"] = { "scroll_documentation_up", "fallback" },
+
+        ["<CR>"] = {},
       },
     },
   },
