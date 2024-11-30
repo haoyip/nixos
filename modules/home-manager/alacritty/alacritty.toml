@@ -5,7 +5,6 @@ import = ["~/.config/alacritty/theme/catppuccin-frappe.toml"]
 size = 14.0
 
 [font.normal]
-# family = "caskaydiacove nerd font"
 family = "fantasquesansm nerd font"
 
 [window]
