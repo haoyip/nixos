@@ -52,6 +52,7 @@
       ./modules/plasma
       ./modules/firewall
       ./modules/scripts
+      ./modules/maintenance
 
       inputs.home-manager.nixosModules.home-manager
       {
