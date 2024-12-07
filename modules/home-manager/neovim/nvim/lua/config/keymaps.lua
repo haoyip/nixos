@@ -86,3 +86,7 @@ vim.keymap.set("i", "<A-e>", "$", { desc = "Quick '$'" })
 -- quick navigate
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
+
+-- center screeen after page up/down
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")

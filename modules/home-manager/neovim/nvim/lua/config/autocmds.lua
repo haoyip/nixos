@@ -4,3 +4,7 @@
 
 -- Open help in vertical split
 vim.cmd("autocmd! FileType help wincmd L")
+
+-- keep window position when switching buffers
+vim.cmd("autocmd! BufLeave * let b:winview = winsaveview()")
+vim.cmd("autocmd! BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif")
