@@ -58,8 +58,9 @@ vim.keymap.set({ "c" }, "<C-v>", "<C-r>+", { desc = "Paste from system clipboard
 --  rebind v-block
 vim.keymap.set({ "n", "v" }, "<leader><C-v>", "<C-v>", { desc = "v-block" })
 
--- delete a character after the cursor
+-- insert mode delete motion
 vim.keymap.set("i", "<C-l>", "<Del>", { desc = "Delete a character after the cursor" })
+vim.keymap.set("i", "<C-d>", "<esc>ldwi", { desc = "Delete a word after the cursor" })
 
 -- format
 vim.keymap.set({ "n", "v" }, "<A-f>", function()
@@ -72,3 +73,16 @@ vim.keymap.set("n", "<A-o>", vim.diagnostic.open_float, { desc = "Line Diagnosti
 
 -- window
 vim.keymap.set("n", "<C-A-w>", "<C-w>c", { desc = "Delete Window" })
+
+-- change inner word
+vim.keymap.set("n", "<A-c>", "ciw", { desc = "Change inner Word" })
+vim.keymap.set("n", "<A-C>", "ciW", { desc = "Change inner WORD" })
+
+-- quick type
+vim.keymap.set("i", "<A-f>", "->", { desc = "Quick '->'" })
+vim.keymap.set("i", "<A-g>", "<space>=><space>", { desc = "Quick ' => '" })
+vim.keymap.set("i", "<A-e>", "$", { desc = "Quick '$'" })
+
+-- quick navigate
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
