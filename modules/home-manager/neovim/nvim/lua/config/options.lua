@@ -12,3 +12,7 @@ vim.g.snacks_animate = false
 -- Disable auto comments when opening a new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+if vim.g.neovide then
+  vim.g.neovide_scroll_animation_length = 0.15
+end

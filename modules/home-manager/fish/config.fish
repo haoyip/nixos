@@ -21,7 +21,7 @@ alias note "vi '/data/8tb_1/HY/Library/Notes/' -c 'cd /data/8tb_1/HY/Library/Not
 
 # General abbr
 abbr -a d cdh
-abbr -a e vi
+abbr -a e neovide --fork
 abbr -a f 'nix flake'
 abbr -a gg lazygit
 abbr -a j cd # zoxide

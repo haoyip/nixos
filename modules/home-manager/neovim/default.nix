@@ -35,6 +35,12 @@
     ];
   };
 
+  programs.neovide = {
+    enable = true;
+
+    settings = {};
+  };
+
   # for nixd
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
