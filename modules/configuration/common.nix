@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
