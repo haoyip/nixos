@@ -40,6 +40,11 @@
           zjstatus = inputs.zjstatus.packages.${prev.system}.default;
         })
       ];
+
+      config.allowUnfreePredicate = pkg:
+        builtins.elem (pkgs.lib.getName pkg) [
+          "msodbcsql18"
+        ];
     };
 
     specialArgs = {inherit inputs pkgs;};
@@ -81,6 +86,7 @@
         ./modules/docker
         ./modules/gitlab-runner
         ./modules/update-ddns
+        ./modules/odbc
 
         ./modules/sops
         ./modules/ssh
