@@ -89,7 +89,7 @@
         ./modules/odbc
 
         ./modules/sops
-        ./modules/ssh/keys.nix
+        ./modules/ssh/b450.nix
         ./modules/ssh/openssh.nix
       ];
 
@@ -97,9 +97,6 @@
         ./modules/hardware-configuration/mate.nix
         ./modules/configuration/mate.nix
         ./modules/wireguard/mate.nix
-
-        ./modules/sops
-        ./modules/ssh
       ];
     };
   };
