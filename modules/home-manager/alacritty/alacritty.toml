@@ -10,11 +10,4 @@ family = "fantasquesansm nerd font"
 [window]
 decorations = "full"
 dynamic_title = true
-
-[window.dimensions]
-columns = 128
-lines = 36
-
-[window.padding]
-x = 4
-y = 4
+startup_mode = "Maximized"

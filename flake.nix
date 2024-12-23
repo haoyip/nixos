@@ -89,7 +89,8 @@
         ./modules/odbc
 
         ./modules/sops
-        ./modules/ssh
+        ./modules/ssh/keys.nix
+        ./modules/ssh/openssh.nix
       ];
 
       mate = buildSystem [
