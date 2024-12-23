@@ -20,12 +20,12 @@ if vim.g.neovide then
     vim.opt.guifont = "FantasqueSansM Nerd Font:h" .. guifontsize
   end
 
-  vim.keymap.set({ "n", "i", "v" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v" }, "<C-->", ":lua DecreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v" }, "<C-0>", ":lua SetFontSize(13)<CR>")
+  vim.keymap.set({ "n", "i", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "i", "v", "c" }, "<C-->", ":lua DecreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "i", "v", "c" }, "<C-0>", ":lua SetFontSize(13)<CR>")
 
-  vim.keymap.set({ "n", "i", "v" }, "<C-ScrollWheelUp>", ":lua IncreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v" }, "<C-ScrollWheelDown>", ":lua DecreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "i", "v", "c" }, "<C-ScrollWheelUp>", ":lua IncreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "i", "v", "c" }, "<C-ScrollWheelDown>", ":lua DecreaseFontSize()<CR>")
 
   SetFontSize(13)
 end
@@ -123,3 +123,6 @@ vim.keymap.set("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Close tab" })
 vim.keymap.set("n", "<A-H>", "<cmd>tabnext<cr>", { desc = "Next tab" })
 vim.keymap.set("n", "<A-L>", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
 vim.keymap.set("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close all other tabs" })
+
+-- quick switch windows
+vim.keymap.set("n", "<Tab>", "<C-w>w", { desc = "Switch Windows" })

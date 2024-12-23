@@ -1,5 +1,6 @@
 return {
   "ibhagwan/fzf-lua",
+
   opts = function(_, opts)
     local config = require("fzf-lua.config")
 
@@ -12,6 +13,21 @@ return {
     config.defaults.keymap.builtin["<c-e>"] = "preview-page-down"
     config.defaults.keymap.builtin["<c-y>"] = "preview-page-up"
 
+    opts.winopts = {
+      on_create = function()
+        -- for paste in neovide
+        vim.keymap.set("t", "<C-S-V>", [['<C-\><C-N>"'.nr2char(getchar()).'pi']], { expr = true, buffer = true })
+      end,
+    }
+
     require("fzf-lua").setup(opts)
   end,
+
+  keys = {
+    { "<leader>k", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
+    { "<leader>r", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+    { "<leader>'", "<cmd>FzfLua marks<cr>", desc = "Jump to Mark" },
+    { "<leader>m", "<cmd>FzfLua resume<cr>", desc = "Resume" },
+    { "<leader>v", LazyVim.pick("grep_visual"), mode = "v", desc = "Selection (Root Dir)" },
+  },
 }

@@ -24,14 +24,10 @@ return {
       use_default_keymaps = false,
 
       keymaps = {
-        -- Default
         ["g?"] = "actions.show_help",
         ["<CR>"] = "actions.select",
-        -- ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-        ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
         ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
         ["<C-p>"] = "actions.preview",
-        -- ["<C-c>"] = "actions.close",
         ["<C-l>"] = "actions.refresh",
         ["-"] = "actions.parent",
         ["_"] = "actions.open_cwd",
@@ -42,7 +38,6 @@ return {
         ["g."] = "actions.toggle_hidden",
         ["g\\"] = "actions.toggle_trash",
 
-        -- Custom
         ["q"] = "actions.close",
         ["<Esc>"] = "actions.close",
         ["<C-Enter>"] = {
@@ -53,10 +48,6 @@ return {
       },
     })
 
-    -- Open parent directory in current window
-    -- vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
-
-    -- Open parent directory in floating window
     vim.keymap.set("n", "-", require("oil").toggle_float)
   end,
 }
