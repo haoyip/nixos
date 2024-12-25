@@ -5,7 +5,8 @@
 vim.opt.clipboard = ""
 
 vim.opt.scrolloff = 4
-vim.opt.sidescrolloff = 4
+vim.opt.sidescrolloff = 8
+vim.opt.showtabline = 0
 
 vim.g.snacks_animate = false
 

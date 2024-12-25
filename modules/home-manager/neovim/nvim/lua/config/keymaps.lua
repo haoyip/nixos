@@ -57,10 +57,6 @@ vim.keymap.set({ "n", "i" }, "<A-k>", "")
 vim.keymap.set("c", "<A-j>", "<Down>")
 vim.keymap.set("c", "<A-k>", "<Up>")
 
--- buffers
-vim.keymap.set({ "n", "i", "v" }, "<A-a>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-vim.keymap.set({ "n", "i", "v" }, "<A-d>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-
 -- folding
 vim.keymap.set("n", "<A-e>", "zc", { desc = "Close fold under cursor" })
 vim.keymap.set("n", "<A-r>", "zo", { desc = "Open fold under cursor" })
