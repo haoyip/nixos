@@ -29,6 +29,17 @@
         "force create mode" = "0644";
         "force directory mode" = "0755";
       };
+
+      "HY" = {
+        "path" = "/data/8tb_1/HY/";
+        "valid users" = "hao";
+        "public" = "no";
+        "writable" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force create mode" = "0644";
+        "force directory mode" = "0755";
+      };
     };
   };
 }
