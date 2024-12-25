@@ -20,6 +20,11 @@ return {
       end,
     }
 
+    opts.oldfiles = {
+      -- include recently viewed files
+      include_current_session = true,
+    }
+
     require("fzf-lua").setup(opts)
   end,
 
