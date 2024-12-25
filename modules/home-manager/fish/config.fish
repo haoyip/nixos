@@ -18,6 +18,7 @@ alias jq jaq
 alias cl wl-copy
 alias http xh
 alias note "vi '/data/8tb_1/HY/Library/Notes/' -c 'cd /data/8tb_1/HY/Library/Notes/'"
+alias sshx "TERM=xterm-256color ssh"
 
 # General abbr
 abbr -a d cdh
@@ -33,7 +34,6 @@ abbr -a n nix
 abbr -a o xdg-open
 abbr -a sc systemctl
 abbr -a scs 'systemctl status'
-abbr -a ssh 'TERM=xterm-256color ssh'
 abbr -a t tldr
 abbr -a tf terraform
 
@@ -67,10 +67,3 @@ abbr -a dk docker
 abbr -a dc 'docker compose'
 abbr -a dps 'docker ps'
 abbr -a dl 'docker logs'
-
-# If in alacritty, start zellij
-if test $TERM = alacritty && not set -q ZELLIJ
-    zellij -s (tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")
-
-    kill $fish_pid
-end
