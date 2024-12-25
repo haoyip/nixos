@@ -1,5 +1,7 @@
-{
+{pkgs, ...}: {
   networking.hostName = "b450";
 
-  services.flatpak.enable = true;
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  };
 }

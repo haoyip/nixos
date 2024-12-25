@@ -93,6 +93,19 @@
         ./modules/ssh/openssh.nix
       ];
 
+      zen = buildSystem [
+        ./modules/hardware-configuration/zen.nix
+        ./modules/configuration/zen.nix
+
+        ./modules/via
+        ./modules/docker
+        ./modules/odbc
+
+        ./modules/sops
+        ./modules/ssh/zen.nix
+        ./modules/wireguard/zen.nix
+      ];
+
       mate = buildSystem [
         ./modules/hardware-configuration/mate.nix
         ./modules/configuration/mate.nix

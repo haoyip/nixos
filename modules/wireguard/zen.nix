@@ -21,7 +21,7 @@
       peers = [
         {
           publicKey = "z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno=";
-          allowedIPs = ["0.0.0.0/0"];
+          allowedIPs = ["10.0.0.1/24"];
 
           # Send keepalives every 25 seconds. Important to keep NAT tables alive.
           persistentKeepalive = 25;

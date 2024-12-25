@@ -2,8 +2,6 @@
   system.stateVersion = "25.05";
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -15,6 +13,8 @@
       "fs.inotify.max_queued_events" = 1000000;
     };
   };
+
+  services.flatpak.enable = true;
 
   services.fwupd.enable = true;
 
