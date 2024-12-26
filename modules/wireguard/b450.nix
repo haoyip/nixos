@@ -49,6 +49,16 @@
           publicKey = "0YCmPFsF9bT7V6ETehjdMvkagEak1VTePmgCicXQl2w=";
           allowedIPs = ["10.0.0.3/32"];
         }
+        {
+          # tt
+          publicKey = "SJtnhxvSPzkn2kAsopjvslPU0kH2oyW0U2ZZR/7Qry0=";
+          allowedIPs = ["10.0.0.10/32"];
+        }
+        {
+          # mi
+          publicKey = "whdOPGvaWf48QfObGzC3C2MH/zfP5nJURj763Dv10g0=";
+          allowedIPs = ["10.0.0.11/32"];
+        }
       ];
     };
   };
