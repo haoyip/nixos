@@ -122,3 +122,6 @@ vim.keymap.set("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close all other 
 
 -- quick switch windows
 vim.keymap.set("n", "<Tab>", "<C-w>w", { desc = "Switch Windows" })
+
+-- not sure which plugin is overwriting this...
+vim.keymap.set("n", "<C-i>", "<C-i>", { desc = "Jump to newer position" })
