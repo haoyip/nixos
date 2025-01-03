@@ -70,6 +70,7 @@
     rustywind
     shfmt
     stylua
+    xmlformat
   ];
 
   home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;

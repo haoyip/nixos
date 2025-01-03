@@ -7,6 +7,7 @@ return {
       nix = { "alejandra" },
       rust = { "rustywind", "leptosfmt", "rustfmt" },
       vue = { "prettier", "rustywind" },
+      xml = { "xmlformat" },
     },
   },
 }
