@@ -12,7 +12,6 @@ starship init fish | source
 zoxide init --cmd cd fish | source
 
 alias ls 'eza -l1'
-alias ji 'cd $HOME'
 alias cat bat
 alias grep rg
 alias jq jaq
@@ -23,6 +22,8 @@ alias sshx "TERM=xterm-256color ssh"
 
 # General abbr
 abbr -a d cdh
+abbr -a j cd
+abbr -a ji cdi
 abbr -a e neovide --fork
 abbr -a gg lazygit
 abbr -a l ls
@@ -66,26 +67,6 @@ abbr -a dk docker
 abbr -a dc 'docker compose'
 abbr -a dps 'docker ps'
 abbr -a dl 'docker logs'
-
-function j
-    set -l arg_count (count $argv)
-
-    if test $arg_count -eq 0
-        cd ..
-        ls -la
-    else if test $arg_count -eq 1
-        if test -f $argv[1]
-            $EDITOR $argv[1]
-        else
-            cd $argv[1]; or return
-            # zoxide jump
-            ls -la
-        end
-    else if test $arg_count -gt 1
-        cd $argv; or return # zoxide jump
-        ls -la
-    end
-end
 
 # If in alacritty and not in ssh, start zellij
 if test $TERM = alacritty && test ! $SSH_CLIENT && not set -q ZELLIJ
