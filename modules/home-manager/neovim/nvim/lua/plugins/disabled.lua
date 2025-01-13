@@ -1,5 +1,4 @@
 return {
-  { "echasnovski/mini.pairs", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
 
   -- Use nix to install lsp
