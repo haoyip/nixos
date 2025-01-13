@@ -22,6 +22,7 @@
       marksman
       nixd
       phpactor
+      intelephense
       rust-analyzer
       tailwindcss-language-server
       taplo

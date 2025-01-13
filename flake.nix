@@ -44,6 +44,7 @@
       config.allowUnfreePredicate = pkg:
         builtins.elem (pkgs.lib.getName pkg) [
           "msodbcsql18"
+          "intelephense"
         ];
     };
 
