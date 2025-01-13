@@ -47,7 +47,7 @@
         ];
     };
 
-    specialArgs = {inherit inputs pkgs;};
+    specialArgs = {inherit inputs;};
 
     commonModules = [
       {nix.settings.experimental-features = ["nix-command" "flakes"];}
@@ -69,7 +69,7 @@
     ];
 
     buildConfig = modules: {
-      inherit modules system specialArgs;
+      inherit modules system pkgs specialArgs;
     };
 
     buildSystem = modules: inputs.nixpkgs.lib.nixosSystem (buildConfig (modules ++ commonModules));
