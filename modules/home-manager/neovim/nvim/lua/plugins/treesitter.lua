@@ -22,6 +22,7 @@ return {
         "nix",
         "php",
         "php_only",
+        "phpdoc",
         "python",
         "query",
         "rust",

@@ -55,5 +55,6 @@
 
     configFile."nvim/after/queries/blade/highlights.scm".source = ./blade/highlights.scm;
     configFile."nvim/after/queries/blade/injections.scm".source = ./blade/injections.scm;
+    configFile."nvim/after/queries/html/injections.scm".source = ./html/injections.scm;
   };
 }
