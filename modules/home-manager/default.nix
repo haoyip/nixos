@@ -44,7 +44,6 @@
     easyeffects
     mpv
     wireshark
-    mqttx
 
     # dev
     bacon
