@@ -19,6 +19,8 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.kcolorchooser
+    kdePackages.keysmith
+    kdePackages.filelight
     kcalc
 
     # desktop theming
