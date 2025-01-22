@@ -103,9 +103,10 @@
         ./modules/hardware-configuration/zen.nix
         ./modules/configuration/zen.nix
 
-        ./modules/via
+        ./modules/corectrl
         ./modules/docker
         ./modules/odbc
+        ./modules/via
 
         ./modules/sops
         ./modules/ssh/zen.nix
