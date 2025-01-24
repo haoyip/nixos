@@ -100,6 +100,10 @@ vim.keymap.set("n", "<C-A-w>", "<C-w>c", { desc = "Delete Window" })
 vim.keymap.set("n", "<A-c>", "ciw", { desc = "Change inner Word" })
 vim.keymap.set("n", "<A-C>", "ciW", { desc = "Change inner WORD" })
 
+-- select inner word
+vim.keymap.set("n", "<A-v>", "viw", { desc = "Select inner Word" })
+vim.keymap.set("n", "<A-V>", "viW", { desc = "Select inner WORD" })
+
 -- quick type
 vim.keymap.set("i", "<A-f>", "->", { desc = "Quick '->'" })
 vim.keymap.set("i", "<A-g>", "<space>=><space>", { desc = "Quick ' => '" })
