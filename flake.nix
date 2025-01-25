@@ -88,8 +88,8 @@
         ./modules/via
         ./modules/samba
         ./modules/corectrl
-        ./modules/docker
-        ./modules/gitlab-runner
+        ./modules/virtualisation
+        # ./modules/gitlab-runner
         ./modules/update-ddns
         ./modules/odbc
 
@@ -103,7 +103,7 @@
         ./modules/configuration/zen.nix
 
         ./modules/corectrl
-        ./modules/docker
+        ./modules/virtualisation
         ./modules/odbc
         ./modules/via
 

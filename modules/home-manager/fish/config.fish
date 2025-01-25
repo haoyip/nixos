@@ -62,11 +62,11 @@ abbr -a ct 'cargo test'
 abbr -a ce 'cargo expand'
 abbr -a cc 'cargo check'
 
-# Docker
-abbr -a dk docker
-abbr -a dc 'docker compose'
-abbr -a dps 'docker ps'
-abbr -a dl 'docker logs'
+# Podman
+abbr -a p podman
+abbr -a pc 'podman compose'
+abbr -a ps 'podman ps'
+abbr -a pl 'podman logs'
 
 # If in alacritty and not in ssh, start zellij
 if test $TERM = alacritty && test ! $SSH_CLIENT && not set -q ZELLIJ
