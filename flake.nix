@@ -101,6 +101,7 @@
       zen = buildSystem [
         ./modules/hardware-configuration/zen.nix
         ./modules/configuration/zen.nix
+        ./modules/scripts/zen-fan.nix
 
         ./modules/corectrl
         ./modules/virtualisation
