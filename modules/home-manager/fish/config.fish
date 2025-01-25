@@ -21,6 +21,7 @@ alias note "vi '/data/8tb_1/HY/Library/Notes/' -c 'cd /data/8tb_1/HY/Library/Not
 alias sshx "TERM=xterm-256color ssh"
 
 # General abbr
+abbr -a a php artisan
 abbr -a d cdh
 abbr -a j cd
 abbr -a ji cdi
