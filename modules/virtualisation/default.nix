@@ -16,4 +16,9 @@
     podman-desktop
     podman-tui
   ];
+
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["hao"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 }
