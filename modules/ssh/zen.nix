@@ -10,10 +10,6 @@
     "private_keys/zen/to_b450" = {
       owner = "hao";
     };
-
-    "wireguard/b450/endpoint" = {
-      owner = "hao";
-    };
   };
 
   programs.ssh = {
@@ -31,7 +27,7 @@
         Port 22
 
       Host b450
-        HostName ${config.sops.secrets."wireguard/b450/endpoint".path}
+        HostName 10.0.0.1
         User hao
         IdentityFile ${config.sops.secrets."private_keys/zen/to_b450".path}
         Port 22
