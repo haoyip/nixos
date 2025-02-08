@@ -21,5 +21,18 @@ return {
         { section = "keys", gap = 1, padding = 1 },
       },
     },
+
+    picker = {
+      win = {
+        input = {
+          keys = {
+            ["<C-c>"] = { "disabled" },
+            ["<C-v>"] = { "disabled" },
+
+            ["<C-\\>"] = { "edit_vsplit", mode = { "i", "n" } },
+          },
+        },
+      },
+    },
   },
 }
