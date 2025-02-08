@@ -2,6 +2,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -67,4 +68,15 @@
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
+
+  hardware.i2c.enable = true;
+
+  # Allow user in 'i2c' group to use ddcutil without su
+  services.udev.extraRules = ''
+    KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+  '';
+
+  environment.systemPackages = with pkgs; [
+    ddcutil
+  ];
 }
