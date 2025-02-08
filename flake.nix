@@ -102,7 +102,6 @@
         ./modules/configuration/zen.nix
         ./modules/scripts/zen-fan.nix
 
-        ./modules/corectrl
         ./modules/virtualisation
         ./modules/odbc
         ./modules/via
