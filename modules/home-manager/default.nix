@@ -34,6 +34,7 @@
     wl-clipboard
     xh
     zoxide
+    ffmpeg
 
     # nix
     nh
