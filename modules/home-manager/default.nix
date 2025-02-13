@@ -35,6 +35,7 @@
     xh
     zoxide
     ffmpeg
+    yt-dlp
 
     # nix
     nh
