@@ -5,8 +5,14 @@ return {
   config = function()
     require("alternate-toggler").setup({
       alternates = {
-        ["==="] = "!==",
-        ["=="] = "!=",
+        ["/"] = "\\",
+        ["\\"] = "/",
+
+        ["on"] = "off",
+        ["off"] = "on",
+
+        ["yes"] = "no",
+        ["no"] = "yes",
       },
     })
 
