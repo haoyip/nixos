@@ -15,7 +15,6 @@
         return-youtube-dislikes
         sidebery
         ublock-origin
-        youtube-shorts-block
       ];
 
       settings = {
