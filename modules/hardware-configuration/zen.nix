@@ -12,7 +12,7 @@
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "sdhci_pci"];
   boot.initrd.kernelModules = ["dm-snapshot"];
   boot.kernelModules = ["kvm-amd"];
-  boot.kernelParams = ["amd_pstate=active" "amdgpu.dcdebugmask=0x600"];
+  boot.kernelParams = ["amd_pstate=active" "amdgpu.dcdebugmask=0x10"];
 
   boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/6dc0ebc8-644a-44e9-a164-b1248ea9eec2";
 
