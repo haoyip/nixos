@@ -2,6 +2,10 @@
   programs.git = {
     enable = true;
     delta.enable = true;
+
+    signing = {
+      format = "ssh";
+    };
   };
 
   programs.lazygit = {
