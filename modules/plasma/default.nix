@@ -21,7 +21,7 @@
     kdePackages.kcolorchooser
     kdePackages.keysmith
     kdePackages.filelight
-    kcalc
+    kdePackages.kcalc
 
     # desktop theming
     bibata-cursors
