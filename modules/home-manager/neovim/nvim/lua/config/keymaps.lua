@@ -134,3 +134,6 @@ vim.keymap.set("n", "<C-i>", "<C-i>", { desc = "Jump to newer position" })
 
 -- no terminal
 vim.keymap.set("n", "<C-/>", "", { remap = true })
+
+vim.keymap.set("n", "<A-j>", "<C-down>", { remap = true })
+vim.keymap.set("n", "<A-k>", "<C-up>", { remap = true })
