@@ -34,5 +34,23 @@ return {
         },
       },
     },
+
+    -- don't work, disable keymap as well
+    explorer = {
+      enabled = false,
+    },
+
+    -- don't work, disable keymap as well
+    terminal = {
+      enabled = false,
+    },
+  },
+
+  keys = {
+    -- no explorer
+    { "<leader>fe", false },
+    { "<leader>fE", false },
+    { "<leader>e", false },
+    { "<leader>E", false },
   },
 }

@@ -131,3 +131,6 @@ vim.keymap.set("n", "<Tab>", "<C-w>w", { desc = "Switch Windows" })
 
 -- not sure which plugin is overwriting this...
 vim.keymap.set("n", "<C-i>", "<C-i>", { desc = "Jump to newer position" })
+
+-- no terminal
+vim.keymap.set("n", "<C-/>", "", { remap = true })
