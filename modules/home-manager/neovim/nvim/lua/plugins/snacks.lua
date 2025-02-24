@@ -30,6 +30,10 @@ return {
             ["<C-v>"] = { "disabled" },
 
             ["<C-\\>"] = { "edit_vsplit", mode = { "i", "n" } },
+
+            -- Alt must be lowercase <a-j> not <A-j>
+            ["<a-j>"] = { "list_down", mode = { "i", "n" } },
+            ["<a-k>"] = { "list_up", mode = { "i", "n" } },
           },
         },
       },
