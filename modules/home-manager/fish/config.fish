@@ -37,6 +37,7 @@ abbr -a sc systemctl
 abbr -a scs 'systemctl status'
 abbr -a t tldr
 abbr -a tf terraform
+abbr -a f xdg-open . # open file explorer here
 
 # Git
 abbr -a g git
