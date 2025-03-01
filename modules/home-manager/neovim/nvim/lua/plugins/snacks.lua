@@ -56,5 +56,7 @@ return {
     { "<leader>fE", false },
     { "<leader>e", false },
     { "<leader>E", false },
+
+    { "<leader>k", "<leader><leader>", desc = "Find Files", remap = true },
   },
 }
