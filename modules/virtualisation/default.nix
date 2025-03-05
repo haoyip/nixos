@@ -13,7 +13,6 @@
   environment.systemPackages = with pkgs; [
     dive
     podman-compose
-    podman-desktop
     podman-tui
   ];
 
