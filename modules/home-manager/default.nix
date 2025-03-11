@@ -43,6 +43,7 @@
     zoxide
     ffmpeg
     yt-dlp
+    wakeonlan
 
     # nix
     nh
