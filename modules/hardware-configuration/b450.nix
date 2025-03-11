@@ -67,7 +67,7 @@
   # networking.interfaces.enp37s0.useDHCP = lib.mkDefault true;
 
   networking.wireless.iwd = {
-    enable = true;
+    enable = false;
 
     settings = {
       IPv6 = {
@@ -88,4 +88,8 @@
   environment.systemPackages = with pkgs; [
     ddcutil
   ];
+
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  networking.interfaces.enp37s0.wakeOnLan.enable = true;
 }
