@@ -54,6 +54,7 @@
     easyeffects
     mpv
     wireshark
+    vlc
 
     # dev
     bacon
