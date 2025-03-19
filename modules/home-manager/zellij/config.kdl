@@ -5,6 +5,7 @@ default_shell "fish"
 pane_frames false
 theme "catppuccin-frappe"
 default_layout "default"
+show_startup_tips false
 
 keybinds clear-defaults=true {
   shared {
