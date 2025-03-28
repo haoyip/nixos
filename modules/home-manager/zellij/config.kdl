@@ -10,11 +10,10 @@ show_startup_tips false
 keybinds clear-defaults=true {
   shared {
     bind "Ctrl b" { SwitchToMode "Tmux"; }
-    bind "Alt n" { NewPane; }
+    bind "Alt n" { NewPane "Right"; }
     bind "Alt =" "Alt +" { Resize "Increase"; }
     bind "Alt -" { Resize "Decrease"; }
     bind "Alt t" { NewTab; }
-    bind "Alt x" { CloseFocus; }
 
     bind "Alt 1" { GoToTab 1; }
     bind "Alt 2" { GoToTab 2; }
@@ -57,6 +56,8 @@ keybinds clear-defaults=true {
     bind "N" { GoToNextTab; SwitchToMode "Normal"; }
     bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
     bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
+    bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
+    bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
 
     //bind "n" "Tab" { MovePane; }
     bind "H" { MovePane "Left"; }
