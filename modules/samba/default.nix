@@ -19,6 +19,18 @@
         "writable" = "no";
       };
 
+      "media-write" = {
+        "path" = "/data/8tb_1/media/";
+        "valid users" = "hao";
+        "public" = "no";
+        "writable" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force create mode" = "0644";
+        "force directory mode" = "0755";
+        "browseable" = "no";
+      };
+
       "home" = {
         "path" = "/home/hao";
         "valid users" = "hao";
@@ -28,6 +40,7 @@
         "directory mask" = "0755";
         "force create mode" = "0644";
         "force directory mode" = "0755";
+        "browseable" = "no";
       };
 
       "HY" = {
@@ -39,6 +52,7 @@
         "directory mask" = "0755";
         "force create mode" = "0644";
         "force directory mode" = "0755";
+        "browseable" = "no";
       };
     };
   };
