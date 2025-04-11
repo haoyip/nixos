@@ -2,10 +2,10 @@
 import = ["~/.config/alacritty/theme/catppuccin-frappe.toml"]
 
 [font]
-size = 14.0
+size = 11.0
 
 [font.normal]
-family = "fantasquesansm nerd font"
+family = "jetbrainsmono nerd font"
 
 [window]
 decorations = "full"

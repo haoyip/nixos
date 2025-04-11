@@ -5,7 +5,7 @@
 local Util = require("lazyvim.util")
 
 if vim.g.neovide then
-  local guifontsize = 13
+  local guifontsize = 11
 
   function IncreaseFontSize()
     SetFontSize(guifontsize + 1)
@@ -17,17 +17,17 @@ if vim.g.neovide then
 
   function SetFontSize(size)
     guifontsize = size
-    vim.opt.guifont = "FantasqueSansM Nerd Font:h" .. guifontsize
+    vim.opt.guifont = "JetBrainsMono Nerd Font:h" .. guifontsize
   end
 
   vim.keymap.set({ "n", "i", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
   vim.keymap.set({ "n", "i", "v", "c" }, "<C-->", ":lua DecreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v", "c" }, "<C-0>", ":lua SetFontSize(13)<CR>")
+  vim.keymap.set({ "n", "i", "v", "c" }, "<C-0>", ":lua SetFontSize(11)<CR>")
 
   vim.keymap.set({ "n", "i", "v", "c" }, "<C-ScrollWheelUp>", ":lua IncreaseFontSize()<CR>")
   vim.keymap.set({ "n", "i", "v", "c" }, "<C-ScrollWheelDown>", ":lua DecreaseFontSize()<CR>")
 
-  SetFontSize(13)
+  SetFontSize(11)
 end
 
 -- typo helpers

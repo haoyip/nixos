@@ -30,6 +30,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       nerd-fonts.fantasque-sans-mono
+      nerd-fonts.jetbrains-mono
       cantarell-fonts
     ];
   };
