@@ -35,3 +35,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- Neovide
+vim.opt.linespace = -1
