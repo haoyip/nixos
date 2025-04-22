@@ -142,3 +142,6 @@ vim.keymap.set("n", "<C-/>", "", { remap = true })
 
 vim.keymap.set("n", "<A-j>", "<C-down>", { remap = true })
 vim.keymap.set("n", "<A-k>", "<C-up>", { remap = true })
+
+-- search within visual selection
+vim.keymap.set("x", "/", "<Esc>/\\%V")
