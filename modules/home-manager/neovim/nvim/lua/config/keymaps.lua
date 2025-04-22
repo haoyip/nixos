@@ -69,6 +69,11 @@ vim.keymap.set("v", "<A-/>", "gcj", { remap = true })
 vim.keymap.set("n", "<A-/>", "gccj", { remap = true })
 vim.keymap.set("i", "<A-/>", "<Esc>gccji", { remap = true })
 
+-- duplicate line, comments old line, keep cursor position
+vim.keymap.set("v", "<A-S-/>", "<Esc>mzyygccp`z:delmarks z<cr>jV", { remap = true })
+vim.keymap.set("n", "<A-S-/>", "mzyygccp`z:delmarks z<cr>j", { remap = true })
+vim.keymap.set("i", "<A-S-/>", "<Esc>mzyygccp`z:delmarks z<cr>ja", { remap = true })
+
 -- select all, copy, paste
 vim.keymap.set({ "n" }, "<leader><C-a>", "ggVG", { desc = "Selet all" })
 vim.keymap.set({ "n" }, "<C-c>", '"+yy', { desc = "Copy to system clipboard" })
