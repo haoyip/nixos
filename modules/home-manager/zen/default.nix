@@ -3,7 +3,11 @@
   inputs,
   ...
 }: {
-  programs.firefox = {
+  imports = [
+    inputs.zen-browser.homeModules.beta
+  ];
+
+  programs.zen-browser = {
     enable = true;
 
     profiles.hao = {
@@ -13,14 +17,10 @@
         disable-javascript
         multi-account-containers
         return-youtube-dislikes
-        sidebery
         ublock-origin
       ];
 
       settings = {
-        # Enable custom css
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-
         # Never ask for password
         "signon.rememberSignons" = false;
 
@@ -31,31 +31,15 @@
         "ui.key.menuAccessKey" = 17;
         "ui.key.menuAccessKeyFocuses" = false;
 
-        "browser.download.panel.shown" = true;
-        "browser.toolbars.bookmarks.visibility" = "never";
         "dom.security.https_only_mode" = true;
         "dom.private-attribution.submission.enabled" = false;
         "extensions.pocket.enabled" = false;
-        "media.ffmpeg.vaapi.enabled" = true;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
         "middlemouse.paste" = false;
 
-        "full-screen-api.transition-duration.enter" = "0 0";
-        "full-screen-api.transition-duration.leave" = "0 0";
-        "full-screen-api.transition.timeout" = 0;
         "full-screen-api.warning.delay" = 0;
         "full-screen-api.warning.timeout" = 0;
       };
-
-      userChrome = ''
-        #TabsToolbar {
-          visibility: collapse;
-        }
-
-        #sidebar-box #sidebar-header {
-          display: none !important;
-        }
-      '';
 
       search = {
         engines = {
@@ -80,13 +64,6 @@
             definedAliases = ["@np"];
           };
 
-          "NixOS Wiki" = {
-            urls = [{template = "https://wiki.nixos.org/index.php?search={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            updateInterval = 24 * 60 * 60 * 1000; # every day
-            definedAliases = ["@nw"];
-          };
-
           "Crate" = {
             urls = [{template = "https://crates.io/search?q={searchTerms}";}];
             definedAliases = ["@crate"];
@@ -107,15 +84,15 @@
             definedAliases = ["@yt"];
           };
 
-          "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
+          "google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
 
-          "Bing".metaData.hidden = true;
-          "Wikipedia (en)".metaData.hidden = true;
+          "bing".metaData.hidden = true;
+          "wikipedia".metaData.hidden = true;
         };
 
-        default = "DuckDuckGo";
+        default = "ddg";
         force = true;
-        order = ["DuckDuckGo" "Google" "Youtube" "NixOS Wiki" "Nix Packages" "Crate" "Docs.rs" "Rust std"];
+        order = ["ddg" "google" "Youtube" "Nix Packages" "Crate" "Docs.rs" "Rust std"];
       };
     };
   };

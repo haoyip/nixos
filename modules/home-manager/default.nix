@@ -1,9 +1,4 @@
-{
-  inputs,
-  system,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.stateVersion = "25.05";
 
   home.username = "hao";
@@ -13,17 +8,15 @@
     ./alacritty
     ./btop
     ./direnv
-    ./firefox
     ./fish
     ./git
     ./neovim
     ./starship
     ./zellij
+    ./zen
   ];
 
   home.packages = with pkgs; [
-    inputs.zen-browser.packages."${system}".default
-
     # cli
     bat
     eza
