@@ -37,6 +37,8 @@
     ffmpeg
     yt-dlp
     wakeonlan
+    gptfdisk
+    smartmontools
 
     # nix
     nh
