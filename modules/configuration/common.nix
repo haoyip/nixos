@@ -58,6 +58,7 @@
     extraGroups = [
       "wheel"
       "i2c"
+      "networkmanager"
     ];
   };
 
