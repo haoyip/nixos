@@ -22,6 +22,7 @@
     kdePackages.keysmith
     kdePackages.filelight
     kdePackages.kcalc
+    kdePackages.francis
 
     # desktop theming
     bibata-cursors
