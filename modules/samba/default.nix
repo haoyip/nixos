@@ -14,13 +14,13 @@
       };
 
       "media" = {
-        "path" = "/data/8tb_1/media/";
+        "path" = "/data/8tb_2/";
         "public" = "yes";
         "writable" = "no";
       };
 
       "media-write" = {
-        "path" = "/data/8tb_1/media/";
+        "path" = "/data/8tb_2/";
         "valid users" = "hao";
         "public" = "no";
         "writable" = "yes";

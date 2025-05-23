@@ -53,6 +53,16 @@
     ];
   };
 
+  fileSystems."/data/8tb_2" = {
+    device = "/dev/disk/by-uuid/b833828d-9e25-4318-b550-df10d40a6cf2";
+    fsType = "ext4";
+    options = [
+      "noatime"
+
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
+  };
+
   swapDevices = [
     {
       device = "/dev/disk/by-uuid/452fe62c-b40e-4d49-814e-007394dc8b13";
