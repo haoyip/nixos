@@ -4,9 +4,9 @@
 
 local Util = require("lazyvim.util")
 
-if vim.g.neovide then
-  local guifontsize = 11
+local guifontsize = 11
 
+if vim.g.neovide then
   function IncreaseFontSize()
     SetFontSize(guifontsize + 1)
   end
@@ -17,7 +17,7 @@ if vim.g.neovide then
 
   function SetFontSize(size)
     guifontsize = size
-    vim.opt.guifont = "JetBrainsMono Nerd Font:h" .. guifontsize
+    vim.opt.guifont = "Maple Mono NF:h" .. guifontsize
   end
 
   vim.keymap.set({ "n", "i", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
