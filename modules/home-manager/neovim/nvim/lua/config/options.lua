@@ -36,9 +36,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Neovide
-vim.opt.linespace = -1
-
 -- Find the project root directory name (e.g., "neovim" from "/path/to/neovim")
 local function GetProjectName()
   local markers = { ".git", "flake.nix" }

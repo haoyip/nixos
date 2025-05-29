@@ -4,38 +4,62 @@
 
 local Util = require("lazyvim.util")
 
-local basefontsize = 11
-local guifontsize = basefontsize
+local base_font_size = 11
+local current_font_size = base_font_size
+
+local base_tracking = -0.5
+local current_tracking = base_tracking
 
 if vim.g.neovide then
   function IncreaseFontSize()
-    SetFontSize(guifontsize + 1)
+    SetFont(current_font_size + 1, current_tracking)
   end
 
   function DecreaseFontSize()
-    SetFontSize(guifontsize - 1)
+    SetFont(current_font_size - 1, current_tracking)
   end
 
-  function SetFontSize(size)
-    guifontsize = size
-    vim.opt.guifont = "Maple Mono NF:h" .. guifontsize
+  function IncreaseTracking()
+    SetFont(current_font_size, current_tracking + 0.5)
+  end
+
+  function DecreaseTracking()
+    SetFont(current_font_size, current_tracking - 0.5)
+  end
+
+  function SetFont(size, tracking)
+    current_font_size = size
+    current_tracking = tracking
+    vim.opt.guifont = "Maple Mono NF:h" .. current_font_size .. ":w" .. current_tracking
+    vim.opt.linespace = -2
   end
 
   vim.keymap.set({ "n", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
   vim.keymap.set({ "n", "v", "c" }, "<C-->", ":lua DecreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "v", "c" }, "<C-0>", ":lua SetFontSize(" .. basefontsize .. ")<CR>")
-
   vim.keymap.set({ "n", "v", "c" }, "<C-ScrollWheelUp>", ":lua IncreaseFontSize()<CR>")
   vim.keymap.set({ "n", "v", "c" }, "<C-ScrollWheelDown>", ":lua DecreaseFontSize()<CR>")
-
   vim.keymap.set({ "i" }, "<C-=>", "<esc>:lua IncreaseFontSize()<CR>a")
   vim.keymap.set({ "i" }, "<C-->", "<esc>:lua DecreaseFontSize()<CR>a")
-  vim.keymap.set({ "i" }, "<C-0>", "<esc>:lua SetFontSize(" .. basefontsize .. ")<CR>a")
-
   vim.keymap.set({ "i" }, "<C-ScrollWheelUp>", "<esc>:lua IncreaseFontSize()<CR>a")
   vim.keymap.set({ "i" }, "<C-ScrollWheelDown>", "<esc>:lua DecreaseFontSize()<CR>a")
 
-  SetFontSize(basefontsize)
+  vim.keymap.set({ "n", "v", "c" }, "<C-A-=>", ":lua IncreaseTracking()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-A-->", ":lua DecreaseTracking()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-A-ScrollWheelUp>", ":lua IncreaseTracking()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-A-ScrollWheelDown>", ":lua DecreaseTracking()<CR>")
+  vim.keymap.set({ "i" }, "<C-A-=>", "<esc>:lua IncreaseTracking()<CR>a")
+  vim.keymap.set({ "i" }, "<C-A->", "<esc>:lua DecreaseTracking()<CR>a")
+  vim.keymap.set({ "i" }, "<C-A-ScrollWheelUp>", "<esc>:lua IncreaseTracking()<CR>a")
+  vim.keymap.set({ "i" }, "<C-A-ScrollWheelDown>", "<esc>:lua DecreaseTracking()<CR>a")
+
+  vim.keymap.set({ "n", "v", "c" }, "<C-0>", ":lua SetFont(" .. base_font_size .. "," .. base_tracking .. ")<CR>")
+  vim.keymap.set({ "i" }, "<C-0>", "<esc>:lua SetFont(" .. base_font_size .. "," .. base_tracking .. ")<CR>a")
+
+  SetFont(base_font_size, base_tracking)
+
+  vim.keymap.set("n", "<leader>e", function()
+    vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+  end, { desc = "Toggle Neovide Fullscreen" })
 end
 
 -- typo helpers
