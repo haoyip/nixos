@@ -4,7 +4,8 @@
 
 local Util = require("lazyvim.util")
 
-local guifontsize = 11
+local basefontsize = 11
+local guifontsize = basefontsize
 
 if vim.g.neovide then
   function IncreaseFontSize()
@@ -20,14 +21,21 @@ if vim.g.neovide then
     vim.opt.guifont = "Maple Mono NF:h" .. guifontsize
   end
 
-  vim.keymap.set({ "n", "i", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v", "c" }, "<C-->", ":lua DecreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v", "c" }, "<C-0>", ":lua SetFontSize(11)<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-->", ":lua DecreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-0>", ":lua SetFontSize(" .. basefontsize .. ")<CR>")
 
-  vim.keymap.set({ "n", "i", "v", "c" }, "<C-ScrollWheelUp>", ":lua IncreaseFontSize()<CR>")
-  vim.keymap.set({ "n", "i", "v", "c" }, "<C-ScrollWheelDown>", ":lua DecreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-ScrollWheelUp>", ":lua IncreaseFontSize()<CR>")
+  vim.keymap.set({ "n", "v", "c" }, "<C-ScrollWheelDown>", ":lua DecreaseFontSize()<CR>")
 
-  SetFontSize(11)
+  vim.keymap.set({ "i" }, "<C-=>", "<esc>:lua IncreaseFontSize()<CR>a")
+  vim.keymap.set({ "i" }, "<C-->", "<esc>:lua DecreaseFontSize()<CR>a")
+  vim.keymap.set({ "i" }, "<C-0>", "<esc>:lua SetFontSize(" .. basefontsize .. ")<CR>a")
+
+  vim.keymap.set({ "i" }, "<C-ScrollWheelUp>", "<esc>:lua IncreaseFontSize()<CR>a")
+  vim.keymap.set({ "i" }, "<C-ScrollWheelDown>", "<esc>:lua DecreaseFontSize()<CR>a")
+
+  SetFontSize(basefontsize)
 end
 
 -- typo helpers
