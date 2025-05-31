@@ -59,6 +59,16 @@
           publicKey = "whdOPGvaWf48QfObGzC3C2MH/zfP5nJURj763Dv10g0=";
           allowedIPs = ["10.0.0.11/32"];
         }
+        {
+          # dp
+          publicKey = "UYR/ePhKGqhb/Xl6ll75vaZIXgLGbpuSMqC5/jtWZSY=";
+          allowedIPs = ["10.0.0.12/32"];
+        }
+        {
+          # dp phone
+          publicKey = "OliYKQBMXsnppPJM6Jv9bW/sVXSrSqFRqyPutmt54wM=";
+          allowedIPs = ["10.0.0.13/32"];
+        }
       ];
     };
   };
