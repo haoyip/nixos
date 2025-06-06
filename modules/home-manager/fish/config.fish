@@ -72,7 +72,7 @@ abbr -a ps 'podman ps'
 abbr -a pl 'podman logs'
 
 # If in alacritty and not in ssh, start zellij
-if test $TERM = alacritty && test ! $SSH_CLIENT && not set -q ZELLIJ
+if test "$TERM" = alacritty; and not set -q SSH_CLIENT; and not set -q ZELLIJ
     zellij -s (tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")
 
     kill $fish_pid
