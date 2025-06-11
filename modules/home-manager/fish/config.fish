@@ -11,7 +11,7 @@ set fish_cursor_visual block
 starship init fish | source
 zoxide init --cmd cd fish | source
 
-alias ls 'eza -l1'
+alias ls 'eza -l1 --icons'
 alias cat bat
 alias grep rg
 alias jq jaq
