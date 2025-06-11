@@ -2,6 +2,6 @@
   networking.hostName = "zen";
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_15;
   };
 }

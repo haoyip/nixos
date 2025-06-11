@@ -2,6 +2,6 @@
   networking.hostName = "b450";
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_15;
   };
 }
