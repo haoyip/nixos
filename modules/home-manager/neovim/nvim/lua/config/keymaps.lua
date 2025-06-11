@@ -163,11 +163,11 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabnew %<cr>", { desc = "New tab" })
-vim.keymap.set("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Close tab" })
-vim.keymap.set("n", "<A-H>", "<cmd>tabnext<cr>", { desc = "Next tab" })
-vim.keymap.set("n", "<A-L>", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
-vim.keymap.set("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close all other tabs" })
+vim.keymap.set("n", "<A-T>", "<cmd>tabnew %<cr>", { desc = "New tab" })
+vim.keymap.set("n", "<A-D>", "<cmd>tabclose<cr>", { desc = "Close tab" })
+vim.keymap.set("n", "<A-L>", "<cmd>tabnext<cr>", { desc = "Next tab" })
+vim.keymap.set("n", "<A-H>", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
+vim.keymap.set("n", "<A-O>", "<cmd>tabonly<cr>", { desc = "Close all other tabs" })
 
 -- quick switch windows
 vim.keymap.set("n", "<Tab>", "<C-w>w", { desc = "Switch Windows" })
