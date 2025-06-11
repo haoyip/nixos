@@ -40,6 +40,7 @@
     gptfdisk
     smartmontools
     pastel
+    caligula
 
     # nix
     nh
