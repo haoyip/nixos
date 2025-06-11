@@ -183,6 +183,3 @@ vim.keymap.set("n", "<A-k>", "<C-up>", { remap = true })
 
 -- search within visual selection
 vim.keymap.set("x", "/", "<Esc>/\\%V")
-
--- keep cursor in place after join line
-vim.keymap.set("n", "J", "mzJ`z:delmarks z<cr>")
