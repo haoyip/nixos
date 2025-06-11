@@ -27,6 +27,4 @@ if vim.g.neovide then
       end)
     end,
   })
-
-  vim.cmd("colorscheme evergarden-fall")
 end
