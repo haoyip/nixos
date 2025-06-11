@@ -39,6 +39,7 @@
     wakeonlan
     gptfdisk
     smartmontools
+    pastel
 
     # nix
     nh
