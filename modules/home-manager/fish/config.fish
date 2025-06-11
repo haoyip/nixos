@@ -11,6 +11,8 @@ set fish_cursor_visual block
 starship init fish | source
 zoxide init --cmd cd fish | source
 
+export MANPAGER='nvim +Man!'
+
 alias ls 'eza -l1 --icons'
 alias cat bat
 alias grep rg
