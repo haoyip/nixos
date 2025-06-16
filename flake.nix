@@ -33,6 +33,11 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    bacon-ls = {
+      url = "github:crisidev/bacon-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {...}: let
@@ -44,6 +49,8 @@
         (final: prev: {
           zjstatus = inputs.zjstatus.packages.${prev.system}.default;
         })
+
+        inputs.bacon-ls.overlay.${system}
       ];
 
       config.allowUnfreePredicate = pkg:
@@ -103,6 +110,7 @@
         ./modules/configuration/zen.nix
         ./modules/scripts/zen-fan.nix
         ./modules/scripts/zen-wifi.nix
+        ./modules/scripts/zen-vpn.nix
 
         ./modules/virtualisation
         ./modules/odbc

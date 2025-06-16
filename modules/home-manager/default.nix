@@ -6,6 +6,7 @@
 
   imports = [
     ./alacritty
+    ./bacon
     ./btop
     ./direnv
     ./fish
@@ -54,7 +55,6 @@
     vlc
 
     # dev
-    bacon
     bunyan-rs
     cargo-deny
     cargo-expand

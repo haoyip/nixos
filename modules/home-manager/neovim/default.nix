@@ -14,6 +14,7 @@
       gcc
 
       # language server
+      bacon-ls
       docker-compose-language-service
       dockerfile-language-server-nodejs
       hadolint

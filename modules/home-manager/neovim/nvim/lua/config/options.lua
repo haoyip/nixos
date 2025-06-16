@@ -69,3 +69,5 @@ end
 -- Dynamic Title
 vim.o.title = true
 vim.o.titlestring = "%{%v:lua.FormatTitle()%}"
+
+vim.g.lazyvim_rust_diagnostics = "bacon-ls"
