@@ -188,3 +188,9 @@ vim.keymap.set("x", "/", "<Esc>/\\%V")
 vim.keymap.set("n", "<leader>cw", function()
   require("tiny-code-action").code_action()
 end)
+
+-- open file explorer on root dir
+vim.keymap.set("n", "<leader>fo", ":!xdg-open .<cr>")
+
+-- open file explorer on current buffer
+vim.keymap.set("n", "<leader>fO", ":!xdg-open %:p:h<cr>")
