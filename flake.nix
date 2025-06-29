@@ -92,7 +92,6 @@
         ./modules/configuration/b450.nix
         ./modules/wireguard/b450.nix
 
-        ./modules/via
         ./modules/samba
         ./modules/corectrl
         ./modules/virtualisation
@@ -114,7 +113,6 @@
 
         ./modules/virtualisation
         ./modules/odbc
-        ./modules/via
 
         ./modules/sops
         ./modules/ssh/zen.nix
