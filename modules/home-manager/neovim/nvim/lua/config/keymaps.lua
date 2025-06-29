@@ -183,3 +183,8 @@ vim.keymap.set("n", "<A-k>", "<C-up>", { remap = true })
 
 -- search within visual selection
 vim.keymap.set("x", "/", "<Esc>/\\%V")
+
+-- tiny code action
+vim.keymap.set("n", "<leader>cw", function()
+  require("tiny-code-action").code_action()
+end)
