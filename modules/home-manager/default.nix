@@ -68,6 +68,7 @@
     flyctl
     just
     php84Packages.php-codesniffer
+    phpactor
 
     # php84 is mark as broken
     php83Packages.php-cs-fixer

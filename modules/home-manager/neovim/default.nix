@@ -22,7 +22,6 @@
       markdownlint-cli2
       marksman
       nixd
-      phpactor
       rust-analyzer
       tailwindcss-language-server
       taplo
