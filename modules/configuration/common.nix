@@ -2,6 +2,8 @@
   system.stateVersion = "25.05";
 
   boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_16;
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
