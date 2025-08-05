@@ -68,6 +68,7 @@
     doctl
     flyctl
     just
+    opentofu
     php84Packages.php-codesniffer
     phpactor
 

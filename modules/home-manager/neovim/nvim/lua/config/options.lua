@@ -111,3 +111,14 @@ vim.lsp.config["vtsls"] = {
 
 vim.lsp.enable("vtsls")
 vim.lsp.enable("vue_ls")
+
+vim.lsp.config["tofu_ls"] = {
+  filetypes = {
+    "opentofu",
+    "opentofu-vars",
+    "terraform",
+    "terraform-vars",
+  },
+}
+
+vim.lsp.enable("tofu_ls")
