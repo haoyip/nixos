@@ -1,8 +1,5 @@
 return {
   "saghen/blink.cmp",
-
-  dependencies = { "archie-judd/blink-cmp-words" },
-
   opts = {
     keymap = {
       preset = "enter",
@@ -29,32 +26,6 @@ return {
         function(cmp)
           cmp.show({ providers = { "snippets" } })
         end,
-      },
-    },
-
-    sources = {
-      default = { "lsp", "path", "lazydev" },
-      providers = {
-        dictionary = {
-          name = "blink-cmp-words",
-          module = "blink-cmp-words.dictionary",
-          -- All available options
-          opts = {
-            -- The number of characters required to trigger completion.
-            dictionary_search_threshold = 3,
-
-            -- See above
-            score_offset = 0,
-
-            -- See above
-            pointer_symbols = { "!", "&", "^" },
-          },
-        },
-      },
-
-      per_filetype = {
-        text = { "dictionary" },
-        markdown = { "dictionary" },
       },
     },
   },
