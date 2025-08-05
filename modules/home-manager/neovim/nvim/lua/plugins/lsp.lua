@@ -26,14 +26,6 @@ return {
       },
 
       nixd = {},
-
-      volar = {
-        init_options = {
-          vue = {
-            hybridMode = true,
-          },
-        },
-      },
     },
   },
 }
