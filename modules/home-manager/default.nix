@@ -65,6 +65,7 @@
     cargo-watch
     cargo-wizard
     distrobox
+    doctl
     flyctl
     just
     php84Packages.php-codesniffer
