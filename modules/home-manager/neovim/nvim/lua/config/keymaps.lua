@@ -147,6 +147,9 @@ vim.keymap.set("n", "<A-C>", "ciW", { desc = "Change inner WORD" })
 vim.keymap.set("n", "<A-v>", "viw", { desc = "Select inner Word" })
 vim.keymap.set("n", "<A-V>", "viW", { desc = "Select inner WORD" })
 
+-- delete line
+vim.keymap.set("n", "<A-x>", "dd", { desc = "Delete line" })
+
 -- quick type
 vim.keymap.set("i", "<A-f>", "->", { desc = "Quick '->'" })
 vim.keymap.set("i", "<A-g>", "<space>=><space>", { desc = "Quick ' => '" })
