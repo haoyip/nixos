@@ -7,7 +7,7 @@ local Util = require("lazyvim.util")
 local base_font_size = 11
 local current_font_size = base_font_size
 
-local base_tracking = -0.5
+local base_tracking = -1
 local current_tracking = base_tracking
 
 if vim.g.neovide then
