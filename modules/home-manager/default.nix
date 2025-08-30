@@ -50,10 +50,17 @@
     nvd
 
     # desktop apps
+    anki
+    anydesk
     easyeffects
+    krita
     mpv
-    wireshark
+    onlyoffice-bin
+    qbittorrent
+    todoist-electron
+    ungoogled-chromium
     vlc
+    wireshark
 
     # dev
     bunyan-rs
