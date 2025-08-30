@@ -53,10 +53,7 @@
         inputs.bacon-ls.overlay.${system}
       ];
 
-      config.allowUnfreePredicate = pkg:
-        builtins.elem (pkgs.lib.getName pkg) [
-          "msodbcsql18"
-        ];
+      config.allowUnfree = true;
     };
 
     specialArgs = {inherit inputs;};
