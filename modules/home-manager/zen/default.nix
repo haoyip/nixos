@@ -64,6 +64,12 @@
             definedAliases = ["@np"];
           };
 
+          "MyNixOS" = {
+            urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@mn"];
+          };
+
           "Crate" = {
             urls = [{template = "https://crates.io/search?q={searchTerms}";}];
             definedAliases = ["@crate"];
@@ -92,7 +98,7 @@
 
         default = "ddg";
         force = true;
-        order = ["ddg" "google" "Youtube" "Nix Packages" "Crate" "Docs.rs" "Rust std"];
+        order = ["ddg" "google" "Youtube" "Nix Packages" "MyNixOS" "Crate" "Docs.rs" "Rust std"];
       };
     };
   };
