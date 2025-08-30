@@ -8,6 +8,7 @@
     ./alacritty
     ./bacon
     ./btop
+    ./datagrip
     ./direnv
     ./fish
     ./git
