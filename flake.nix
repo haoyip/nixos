@@ -108,6 +108,7 @@
         ./modules/scripts/zen-wifi.nix
         ./modules/scripts/zen-vpn.nix
 
+        ./modules/game
         ./modules/virtualisation
         ./modules/odbc
 
