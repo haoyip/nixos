@@ -23,6 +23,7 @@
   '';
 
   boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/08c779b2-1244-4a9c-a21f-2bbb568f3e34";
+  boot.initrd.luks.devices."8tb_1".device = "/dev/disk/by-uuid/8bf54ff6-bd1c-4669-af77-52aee73283f0";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/3363-D424";
@@ -43,7 +44,7 @@
   };
 
   fileSystems."/data/8tb_1" = {
-    device = "/dev/disk/by-uuid/9fc6b93d-2949-4df3-bcd4-daf36d233a69";
+    device = "/dev/disk/by-uuid/f8dbcefa-e211-4248-a59c-952510ed926a";
     fsType = "btrfs";
     options = [
       "noatime"
