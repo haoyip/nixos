@@ -55,6 +55,7 @@
     easyeffects
     krita
     mpv
+    jellyfin-mpv-shim
     onlyoffice-bin
     qbittorrent
     todoist-electron
