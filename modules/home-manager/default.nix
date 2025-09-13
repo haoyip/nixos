@@ -71,7 +71,6 @@
     cargo-machete
     cargo-nextest
     cargo-outdated
-    cargo-watch
     cargo-wizard
     distrobox
     doctl
