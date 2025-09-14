@@ -100,6 +100,7 @@
         ./modules/ssh/b450.nix
         ./modules/ssh/openssh.nix
 
+        ./modules/caddy
         ./modules/immich
         ./modules/jellyfin
       ];
