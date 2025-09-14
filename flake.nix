@@ -99,6 +99,8 @@
         ./modules/sops
         ./modules/ssh/b450.nix
         ./modules/ssh/openssh.nix
+
+        ./modules/jellyfin
       ];
 
       zen = buildSystem [
