@@ -79,6 +79,7 @@
     opentofu
     php84Packages.php-codesniffer
     phpactor
+    tree-sitter
 
     # php84 is mark as broken
     php83Packages.php-cs-fixer
