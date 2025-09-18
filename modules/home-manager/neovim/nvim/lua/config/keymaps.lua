@@ -86,8 +86,8 @@ vim.keymap.set({ "n", "i" }, "<A-j>", "")
 vim.keymap.set({ "n", "i" }, "<A-k>", "")
 
 -- view command histories
-vim.keymap.set("c", "<A-j>", "<Down>")
-vim.keymap.set("c", "<A-k>", "<Up>")
+vim.keymap.set("c", "<C-j>", "<Down>")
+vim.keymap.set("c", "<C-k>", "<Up>")
 
 -- folding
 vim.keymap.set("n", "<A-e>", "zc", { desc = "Close fold under cursor" })
