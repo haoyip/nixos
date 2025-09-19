@@ -78,11 +78,9 @@
     just
     opentofu
     php84Packages.php-codesniffer
+    php84Packages.php-cs-fixer
     phpactor
     tree-sitter
-
-    # php84 is mark as broken
-    php83Packages.php-cs-fixer
 
     # linter, formatter
     alejandra
