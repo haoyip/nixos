@@ -122,3 +122,15 @@ vim.lsp.config["tofu_ls"] = {
 }
 
 vim.lsp.enable("tofu_ls")
+
+vim.lsp.config["lua_ls"] = {
+  settings = {
+    Lua = {
+      hint = { enable = true },
+    },
+  },
+}
+
+vim.lsp.enable("lua_ls")
+
+vim.lsp.enable("nixd")
