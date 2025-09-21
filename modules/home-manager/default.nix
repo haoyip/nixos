@@ -43,6 +43,7 @@
     smartmontools
     pastel
     caligula
+    speedtest-cli
 
     # nix
     nh
