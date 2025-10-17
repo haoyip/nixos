@@ -44,6 +44,7 @@
     pastel
     caligula
     speedtest-cli
+    rsync
 
     # nix
     nh
