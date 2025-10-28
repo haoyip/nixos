@@ -7,6 +7,7 @@ vim.opt.clipboard = ""
 vim.opt.scrolloff = 4
 vim.opt.sidescrolloff = 8
 vim.opt.showtabline = 0
+vim.o.winborder = "rounded"
 
 vim.g.snacks_animate = false
 
