@@ -26,7 +26,6 @@
 
     zjstatus = {
       url = "github:dj95/zjstatus";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zen-browser = {

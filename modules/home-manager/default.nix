@@ -58,7 +58,7 @@
     krita
     mpv
     jellyfin-mpv-shim
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     qbittorrent
     todoist-electron
     ungoogled-chromium
