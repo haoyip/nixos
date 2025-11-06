@@ -26,10 +26,11 @@
     };
 
     packages = with pkgs; [
+      liberation_ttf
+      maple-mono.NF
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
-      maple-mono.NF
     ];
   };
 
