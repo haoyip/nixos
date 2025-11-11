@@ -96,4 +96,6 @@
       };
     };
   };
+
+  programs.kdeconnect.enable = true;
 }

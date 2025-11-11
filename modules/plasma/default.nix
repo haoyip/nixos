@@ -38,6 +38,4 @@
     wayland-utils
     xdg-utils
   ];
-
-  programs.kdeconnect.enable = true;
 }
