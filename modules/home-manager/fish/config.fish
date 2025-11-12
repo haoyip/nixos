@@ -35,12 +35,12 @@ abbr -a la 'ls -la'
 abbr -a m 'zellij -s $(tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")'
 abbr -a n nix
 abbr -a nf 'nix flake'
-abbr -a o xdg-open
 abbr -a sc systemctl
 abbr -a scs 'systemctl status'
 abbr -a t tldr
 abbr -a tf tofu
-abbr -a f xdg-open . # open file explorer here
+abbr -a o open
+abbr -a f 'open .' # open file explorer here
 
 # Git
 abbr -a g git
@@ -91,6 +91,11 @@ end
 # Bind Alt+R in both insert and default modes
 for mode in insert default
     bind -M $mode alt-r toggle_tldr
+end
+
+function open
+    xdg-open $argv >/dev/null 2>&1 &
+    disown
 end
 
 # If in alacritty and not in ssh, start zellij
