@@ -73,6 +73,26 @@ abbr -a pc 'podman compose'
 abbr -a ps 'podman ps'
 abbr -a pl 'podman logs'
 
+function toggle_tldr --description 'Toggle tldr prefix on the current commandline'
+    set cmd (commandline)
+
+    if string match -q 'tldr *' -- $cmd
+        # If it already starts with "tldr ", remove it
+        set new_cmd (string replace -r '^tldr\s+' '' $cmd)
+    else
+        # Otherwise, prepend "tldr "
+        set new_cmd "tldr $cmd"
+    end
+
+    commandline -r "$new_cmd"
+    commandline -f repaint
+end
+
+# Bind Alt+R in both insert and default modes
+for mode in insert default
+    bind -M $mode alt-r toggle_tldr
+end
+
 # If in alacritty and not in ssh, start zellij
 if test "$TERM" = alacritty; and not set -q SSH_CLIENT; and not set -q ZELLIJ
     zellij -s (tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")
