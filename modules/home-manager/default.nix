@@ -45,6 +45,7 @@
     caligula
     speedtest-cli
     rsync
+    dua
 
     # nix
     nh
