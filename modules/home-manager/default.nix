@@ -46,6 +46,7 @@
     speedtest-cli
     rsync
     dua
+    usbutils
 
     # nix
     nh
