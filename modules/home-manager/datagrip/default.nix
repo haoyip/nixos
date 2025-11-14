@@ -7,5 +7,6 @@
     enable = true;
 
     configFile."ideavim/ideavimrc".source = ./ideavimrc;
+    configFile."JetBrains/DataGrip2025.2/datagrip64.vmoptions".source = ./datagrip64.vmoptions;
   };
 }
