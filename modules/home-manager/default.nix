@@ -47,6 +47,7 @@
     rsync
     dua
     usbutils
+    pciutils
 
     # nix
     nh
