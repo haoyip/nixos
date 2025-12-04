@@ -2,7 +2,7 @@
   system.stateVersion = "25.11";
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
 
     loader = {
       systemd-boot.enable = true;
