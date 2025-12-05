@@ -63,7 +63,6 @@
     jellyfin-mpv-shim
     onlyoffice-desktopeditors
     qbittorrent
-    todoist-electron
     ungoogled-chromium
     vlc
     wireshark
