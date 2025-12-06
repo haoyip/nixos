@@ -94,6 +94,7 @@
         # ./modules/gitlab-runner
         ./modules/update-ddns
         ./modules/odbc
+        ./modules/game
 
         ./modules/sops
         ./modules/ssh/b450.nix
