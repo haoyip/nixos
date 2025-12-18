@@ -195,3 +195,7 @@ vim.keymap.set("n", "<leader>fo", ":!xdg-open .<cr>")
 
 -- open file explorer on current buffer
 vim.keymap.set("n", "<leader>fO", ":!xdg-open %:p:h<cr>")
+
+-- scroll up down faster
+vim.keymap.set("n", "<C-E>", "3<C-E>")
+vim.keymap.set("n", "<C-Y>", "3<C-Y>")
