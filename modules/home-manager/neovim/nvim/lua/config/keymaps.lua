@@ -130,12 +130,6 @@ end, { desc = "Format" })
 vim.keymap.set("n", "<A-i>", vim.lsp.buf.hover, { desc = "Show hover" })
 vim.keymap.set("n", "<A-o>", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
--- toggle lsp virtual_lines
-vim.keymap.set("n", "<leader>o", function()
-  local current = vim.diagnostic.config().virtual_lines
-  vim.diagnostic.config({ virtual_lines = not current })
-end, { desc = "Toggle Line Diagnostics" })
-
 -- window
 vim.keymap.set("n", "<C-A-w>", "<C-w>c", { desc = "Delete Window" })
 

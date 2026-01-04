@@ -19,7 +19,6 @@ alias grep rg
 alias jq jaq
 alias cl wl-copy
 alias http xh
-alias note "vi '/data/8tb_1/HY/Library/Notes/' -c 'cd /data/8tb_1/HY/Library/Notes/'"
 alias sshx "TERM=xterm-256color ssh"
 alias mpvhdr "ENABLE_HDR_WSI=1 mpv --vo=gpu-next --target-colorspace-hint --gpu-api=vulkan --gpu-context=x11vk"
 

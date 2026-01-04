@@ -66,6 +66,7 @@
     ungoogled-chromium
     vlc
     wireshark
+    obsidian
 
     # dev
     bunyan-rs
