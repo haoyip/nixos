@@ -8,6 +8,7 @@ return {
       rust = { "rustywind", "leptosfmt", "rustfmt" },
       vue = { "prettier", "rustywind" },
       xml = { "xmlformat" },
+      php = { "mago_format" },
     },
   },
 }

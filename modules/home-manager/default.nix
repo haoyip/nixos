@@ -81,9 +81,8 @@
     doctl
     flyctl
     just
+    mago
     opentofu
-    php84Packages.php-codesniffer
-    php84Packages.php-cs-fixer
     phpactor
     tree-sitter
 
