@@ -12,11 +12,23 @@
     enableGitIntegration = true;
   };
 
-  programs.lazygit.enable = true;
+  programs.lazygit = {
+    enable = true;
+
+    settings = {
+      git = {
+        pagers = [
+          {
+            colorArg = "always";
+            pager = "delta --dark --paging=never";
+          }
+        ];
+      };
+    };
+  };
 
   xdg = {
     enable = true;
     configFile."git/config".source = ./.gitconfig;
-    configFile."lazygit/config.yml".source = ./lazygit.yml;
   };
 }
