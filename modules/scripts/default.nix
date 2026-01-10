@@ -14,6 +14,10 @@
       nh os switch . --hostname $(cat /etc/hostname)
     '')
 
+    (pkgs.writeShellScriptBin "nixos-boot" ''
+      nh os boot . --hostname $(cat /etc/hostname)
+    '')
+
     (pkgs.writeShellScriptBin "wake-b450" ''
       wakeonlan $(cat ${config.sops.secrets."mac/b450".path})
     '')
