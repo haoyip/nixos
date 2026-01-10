@@ -21,33 +21,33 @@
   home.packages = with pkgs; [
     # cli
     bat
+    caligula
+    dua
     eza
     fastfetch
     fd
+    ffmpeg
     fswatch
     fzf
+    gptfdisk
     jaq
     lsof
     nmap
-    psmisc
+    pastel
+    pciutils
     pgcli
+    psmisc
     ripgrep
+    rsync
+    smartmontools
+    speedtest-cli
     tealdeer
+    usbutils
+    wakeonlan
     wl-clipboard
     xh
-    zoxide
-    ffmpeg
     yt-dlp
-    wakeonlan
-    gptfdisk
-    smartmontools
-    pastel
-    caligula
-    speedtest-cli
-    rsync
-    dua
-    usbutils
-    pciutils
+    zoxide
 
     # nix
     nh
@@ -58,15 +58,15 @@
     anki
     anydesk
     easyeffects
+    jellyfin-mpv-shim
     krita
     mpv
-    jellyfin-mpv-shim
+    obsidian
     onlyoffice-desktopeditors
     qbittorrent
     ungoogled-chromium
     vlc
     wireshark
-    obsidian
 
     # dev
     bunyan-rs
