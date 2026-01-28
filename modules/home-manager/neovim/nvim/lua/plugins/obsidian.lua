@@ -12,12 +12,13 @@ return {
         path = "~/HY/Notes",
       },
     },
+    legacy_commands = false,
   },
 
   keys = {
     { "<leader>o<CR>", "<cmd>Obsidian<CR>", { desc = "Obsidian" } },
-    { "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Obsidian Open" } },
-    { "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Obsidian New" } },
-    { "<leader>o/", "<cmd>ObsidianSearch<CR>", { desc = "Obsidian Search" } },
+    { "<leader>oo", "<cmd>Obsidian open<CR>", { desc = "Obsidian Open" } },
+    { "<leader>on", "<cmd>Obsidian new<CR>", { desc = "Obsidian New" } },
+    { "<leader>o/", "<cmd>Obsidian search<CR>", { desc = "Obsidian Search" } },
   },
 }
