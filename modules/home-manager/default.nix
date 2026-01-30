@@ -56,7 +56,6 @@
 
     # desktop apps
     anki
-    anydesk
     easyeffects
     jellyfin-mpv-shim
     krita
