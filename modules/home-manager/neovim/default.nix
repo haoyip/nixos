@@ -21,7 +21,7 @@
       lua-language-server
       markdownlint-cli2
       marksman
-      nixd
+      nil
       rust-analyzer
       tailwindcss-language-server
       taplo
@@ -42,9 +42,6 @@
 
     settings = {};
   };
-
-  # for nixd
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   xdg = {
     enable = true;
