@@ -23,6 +23,7 @@
   home.packages = with pkgs; [
     # cli
     caligula
+    cotp
     dua
     eza
     fastfetch
