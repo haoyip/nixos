@@ -1,0 +1,21 @@
+[mgr]
+prepend_keymap = [
+	{ on = "-", run = "leave" },
+	{ on = "<Esc>", run = "quit" },
+
+  { on = "l", run = "plugin smart-enter" },
+
+  { on = ["<A-j>"], run = "plugin zoxide", desc = "zoxide" },
+
+  { on = "=", run = 'shell -- ya emit cd "$YAZI_CWD"', desc = "Go to cwd" },
+  { on = [ "g", "r" ], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"', desc = "Go to git root" },
+
+  { on = [ "c", "c" ], run = 'shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list', desc = "Copy selected files to the system clipboard" },
+  { on = [ "c", "p" ], run = 'Copy path', desc = "Copy file path" },
+
+  { on = ["z", "z", "c"], run = "shell --confirm 'cd \"$(dirname \"$@\")\" && zip -r \"$(basename \"$@\").zip\" \"$(basename \"$@\")\"'", args = ["{hover}"], desc = "Compress (.zip)" },
+  { on = ["z", "z", "d"], run = "shell --confirm 'unzip \"$@\"'", args = ["{hover}"], desc = "Decompress (.zip)" },
+
+  { on = ["z", "g", "c"], run = "shell --confirm 'cd \"$(dirname \"$@\")\" && tar -czf \"$(basename \"$@\").tar.gz\" \"$(basename \"$@\")\"'", args = ["{hover}"], desc = "Compress (.tar.gz)" },
+  { on = ["z", "g", "d"], run = "shell --confirm 'tar -xzf \"$@\"'", args = ["{hover}"], desc = "Decompress (.tar.gz)" },
+]

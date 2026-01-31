@@ -15,6 +15,7 @@
     ./git
     ./neovim
     ./starship
+    ./yazi
     ./zellij
     ./zen
   ];
@@ -42,11 +43,13 @@
     smartmontools
     speedtest-cli
     tealdeer
+    unzip
     usbutils
     wakeonlan
     wl-clipboard
     xh
     yt-dlp
+    zip
     zoxide
 
     # nix

@@ -39,7 +39,6 @@ abbr -a scs 'systemctl status'
 abbr -a t tldr
 abbr -a tf tofu
 abbr -a o open
-abbr -a f 'open .' # open file explorer here
 
 # Git
 abbr -a g git
@@ -102,4 +101,17 @@ if test "$TERM" = alacritty; and not set -q SSH_CLIENT; and not set -q ZELLIJ
     zellij -s (tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")
 
     kill $fish_pid
+end
+
+# yazi
+function f
+    set -x YAZI_CWD $PWD
+
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
 end
