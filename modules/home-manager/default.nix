@@ -7,6 +7,7 @@
   imports = [
     ./alacritty
     ./bacon
+    ./bat
     ./btop
     ./datagrip
     ./direnv
@@ -20,7 +21,6 @@
 
   home.packages = with pkgs; [
     # cli
-    bat
     caligula
     dua
     eza
