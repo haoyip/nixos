@@ -56,7 +56,6 @@
 
     # desktop apps
     anki
-    easyeffects
     jellyfin-mpv-shim
     krita
     mpv
@@ -96,4 +95,6 @@
   ];
 
   home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;
+
+  services.easyeffects.enable = true;
 }
