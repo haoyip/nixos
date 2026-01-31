@@ -11,4 +11,4 @@ family = "maple mono nf"
 [window]
 decorations = "full"
 dynamic_title = true
-startup_mode = "Maximized"
+padding = { x = 2, y = 2 }
