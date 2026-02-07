@@ -13,6 +13,7 @@
     ./direnv
     ./fish
     ./git
+    ./mime.nix
     ./neovim
     ./starship
     ./yazi
@@ -60,6 +61,7 @@
 
     # desktop apps
     anki
+    imv
     jellyfin-mpv-shim
     krita
     mpv
