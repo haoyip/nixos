@@ -11,6 +11,7 @@
     configFile = {
       "yazi/keymap.toml".source = ./keymap.toml;
       "yazi/theme.toml".source = ./theme.toml;
+      "yazi/yazi.toml".source = ./yazi.toml;
 
       "xdg-desktop-portal-termfilechooser/config" = {
         force = true;
