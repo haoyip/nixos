@@ -28,5 +28,16 @@
         '';
       };
     };
+
+    # Fix "Open in File Explorer" from other app
+    desktopEntries.yazi = {
+      name = "Yazi";
+      genericName = "File Manager";
+      exec = "alacritty -e yazi %u";
+      terminal = false;
+      categories = ["System" "FileTools" "FileManager"];
+      mimeType = ["inode/directory"];
+      icon = ./yazi.png;
+    };
   };
 }
