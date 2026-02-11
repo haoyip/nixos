@@ -13,7 +13,7 @@
     ./direnv
     ./fish
     ./git
-    ./mime.nix
+    ./mime
     ./neovim
     ./starship
     ./yazi
