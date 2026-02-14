@@ -44,6 +44,7 @@
     rsync
     smartmontools
     speedtest-cli
+    sshfs
     tealdeer
     unzip
     usbutils
