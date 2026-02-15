@@ -84,7 +84,6 @@
     cargo-wizard
     distrobox
     doctl
-    flyctl
     just
     mago
     opentofu
