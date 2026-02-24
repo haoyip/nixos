@@ -39,6 +39,8 @@
 
         "full-screen-api.warning.delay" = 0;
         "full-screen-api.warning.timeout" = 0;
+
+        "zen.theme.content-element-separation" = 0;
       };
 
       search = {
