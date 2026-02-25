@@ -96,13 +96,6 @@ function open
     disown
 end
 
-# If in alacritty and not in ssh, start zellij
-if test "$TERM" = alacritty; and not set -q SSH_CLIENT; and not set -q ZELLIJ
-    zellij -s (tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")
-
-    kill $fish_pid
-end
-
 # yazi
 function f
     set -x YAZI_CWD $PWD

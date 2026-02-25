@@ -5,13 +5,13 @@
   home.homeDirectory = "/home/hao";
 
   imports = [
-    ./alacritty
     ./bacon
     ./bat
     ./btop
     ./datagrip
     ./direnv
     ./fish
+    ./foot
     ./git
     ./mime
     ./neovim
