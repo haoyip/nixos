@@ -8,6 +8,7 @@ return {
         "blade",
         "c",
         "css",
+        "dart",
         "fish",
         "git_config",
         "gitcommit",
