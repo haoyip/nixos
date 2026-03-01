@@ -66,6 +66,7 @@
     jellyfin-mpv-shim
     krita
     mpv
+    obs-studio
     obsidian
     onlyoffice-desktopeditors
     qbittorrent
