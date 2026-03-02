@@ -41,6 +41,13 @@
         "full-screen-api.warning.timeout" = 0;
 
         "zen.theme.content-element-separation" = 0;
+
+        "browser.ai.control.default" = false;
+        "browser.ai.control.linkPreviewKeyPoints" = false;
+        "browser.ai.control.pdfjsAltText" = false;
+        "browser.ai.control.sidebarChatbot" = false;
+        "browser.ai.control.smartTabGroups" = false;
+        "browser.ai.control.translations" = false;
       };
 
       search = {
