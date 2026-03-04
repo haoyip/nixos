@@ -67,10 +67,11 @@
       {programs.nix-ld.enable = true;}
 
       ./modules/configuration/common.nix
-      ./modules/plasma
+      # ./modules/plasma
       ./modules/firewall
       ./modules/scripts
       ./modules/maintenance
+      ./modules/niri
 
       inputs.home-manager.nixosModules.home-manager
       {
