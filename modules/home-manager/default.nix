@@ -14,6 +14,7 @@
     ./foot
     ./git
     ./mime
+    ./niri
     ./neovim
     ./starship
     ./yazi

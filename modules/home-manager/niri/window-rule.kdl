@@ -1,0 +1,63 @@
+window-rule {
+  geometry-corner-radius 8
+  clip-to-geometry true
+}
+
+window-rule {
+  match is-window-cast-target=true
+
+  shadow {
+    on
+    color "#7d0d2d"
+  }
+}
+
+window-rule {
+  match is-floating=true
+
+  focus-ring {
+    off
+  }
+
+  border {
+    on
+    width 2
+    active-gradient from="#e5989b" to="#ffb4a2" angle=-45 relative-to="workspace-view" in="oklch longer hue"
+    inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    urgent-color "#9b0000"
+  }
+}
+
+window-rule {
+  match app-id="zen-beta"
+  open-maximized-to-edges true
+}
+
+window-rule {
+  match app-id="zen-beta" title="^Picture-in-Picture$"
+  open-floating true
+
+  default-floating-position x=32 y=32 relative-to="bottom-right"
+  default-column-width { fixed 800; }
+  default-window-height { fixed 450; }
+}
+
+window-rule {
+  match app-id="steam"
+  open-maximized-to-edges true
+}
+
+window-rule {
+  match app-id=".virt-manager-wrapped"
+  open-maximized-to-edges true
+}
+
+window-rule {
+  match app-id="jetbrains-datagrip" title="datagrip"
+  open-maximized-to-edges true
+}
+
+window-rule {
+  match app-id="neovide"
+  open-maximized-to-edges true
+}

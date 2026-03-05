@@ -1,0 +1,17 @@
+binds {
+  Mod+Z hotkey-overlay-title="Session Menu" repeat=false {
+    spawn-sh "noctalia-shell ipc call sessionMenu toggle"
+  }
+  Mod+W hotkey-overlay-title="Calendar" repeat=false {
+    spawn-sh "noctalia-shell ipc call calendar toggle"
+  }
+  Mod+D hotkey-overlay-title="Launcher" repeat=false {
+    spawn-sh "noctalia-shell ipc call launcher toggle"
+  }
+  Mod+R hotkey-overlay-title="Dismiss Notifications" repeat=false {
+    spawn-sh "noctalia-shell ipc call notifications dismissAll"
+  }
+  Mod+T hotkey-overlay-title="Settings" repeat=false {
+    spawn-sh "noctalia-shell ipc call settings toggle"
+  }
+}

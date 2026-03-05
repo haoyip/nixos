@@ -1,0 +1,40 @@
+binds {
+  // Sink
+  XF86AudioRaiseVolume allow-when-locked=true {
+    spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1.0"
+  }
+  XF86AudioLowerVolume allow-when-locked=true {
+    spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+  }
+  XF86AudioMute allow-when-locked=true repeat=false {
+    spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  }
+  Mod+TouchpadScrollDown {
+    spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1.0"
+  }
+  Mod+TouchpadScrollUp {
+    spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+  }
+
+  // Source
+  Shift+XF86AudioRaiseVolume allow-when-locked=true {
+    spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+ --limit 1.0"
+  }
+  Shift+XF86AudioLowerVolume allow-when-locked=true {
+    spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-"
+  }
+  Shift+XF86AudioMute allow-when-locked=true repeat=false {
+    spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  }
+  XF86AudioMicMute allow-when-locked=true {
+    spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  }
+
+  // Brightness
+  XF86MonBrightnessUp allow-when-locked=true {
+    spawn-sh "brightnessctl set +2%"
+  }
+  XF86MonBrightnessDown allow-when-locked=true {
+    spawn-sh "brightnessctl set 2%-"
+  }
+}
