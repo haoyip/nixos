@@ -24,7 +24,6 @@
       nil
       rust-analyzer
       tailwindcss-language-server
-      taplo
       tofu-ls
       vscode-langservers-extracted
       vtsls
