@@ -43,11 +43,6 @@ window-rule {
 }
 
 window-rule {
-  match app-id="steam"
-  open-maximized-to-edges true
-}
-
-window-rule {
   match app-id=".virt-manager-wrapped"
   open-maximized-to-edges true
 }
