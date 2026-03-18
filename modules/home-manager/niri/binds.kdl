@@ -82,8 +82,8 @@ binds {
   Mod+Alt+H { set-column-width "-10%"; }
   Mod+Alt+L { set-column-width "+10%"; }
 
-  Mod+Alt+J { set-window-height "-10%"; }
-  Mod+Alt+K { set-window-height "+10%"; }
+  Mod+Alt+J { set-window-height "+10%"; }
+  Mod+Alt+K { set-window-height "-10%"; }
 
   Mod+V { toggle-window-floating; }
   Mod+Shift+V { switch-focus-between-floating-and-tiling; }
