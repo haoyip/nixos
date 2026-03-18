@@ -105,4 +105,12 @@
   home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;
 
   services.easyeffects.enable = true;
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Tela";
+      package = pkgs.tela-icon-theme;
+    };
+  };
 }
