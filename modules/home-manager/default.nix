@@ -108,6 +108,8 @@
 
   gtk = {
     enable = true;
+    gtk4.theme = null;
+
     iconTheme = {
       name = "Tela";
       package = pkgs.tela-icon-theme;

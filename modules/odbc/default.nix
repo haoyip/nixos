@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    unixODBCDrivers.msodbcsql18
+    unixodbcDrivers.msodbcsql18
   ];
 
-  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [
+  environment.unixODBCDrivers = with pkgs.unixodbcDrivers; [
     msodbcsql18
   ];
 }
