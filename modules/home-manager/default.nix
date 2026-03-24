@@ -69,7 +69,7 @@
     mpv
     obs-studio
     obsidian
-    onlyoffice-desktopeditors
+    libreoffice
     qbittorrent
     ungoogled-chromium
     vlc
