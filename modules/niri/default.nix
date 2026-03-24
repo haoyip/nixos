@@ -105,8 +105,13 @@
 
       if [ -n "$shellpid" ] && [ -e "/proc/$shellpid/cwd" ]; then
           dir=$(readlink "/proc/$shellpid/cwd")
-          cd "$dir" || exit
-          exec neovide
+
+          # Use direnv exec if .envrc exists
+          if [ -f "$dir/.envrc" ]; then
+              cd "$dir" && exec direnv exec . neovide
+          else
+              cd "$dir" && exec neovide
+          fi
       else
           # fallback if directory can't be determined
           exec neovide
