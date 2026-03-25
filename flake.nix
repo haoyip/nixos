@@ -96,7 +96,6 @@
         ./modules/samba
         ./modules/corectrl
         ./modules/virtualisation
-        # ./modules/gitlab-runner
         ./modules/update-ddns
         ./modules/odbc
         ./modules/game
