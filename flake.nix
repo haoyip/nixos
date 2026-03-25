@@ -67,7 +67,6 @@
       {programs.nix-ld.enable = true;}
 
       ./modules/configuration/common.nix
-      # ./modules/plasma
       ./modules/firewall
       ./modules/scripts
       ./modules/maintenance
