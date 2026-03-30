@@ -49,6 +49,7 @@ in {
         "text/plain" = ["neovide.desktop"];
         "text/markdown" = ["neovide.desktop"];
         "text/x-shellscript" = ["neovide.desktop"];
+        "text/x-log" = ["neovide.desktop"];
         "application/json" = ["neovide.desktop"];
         "application/yaml" = ["neovide.desktop"];
 
