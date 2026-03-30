@@ -135,4 +135,29 @@ vim.lsp.config["lua_ls"] = {
 vim.lsp.enable("lua_ls")
 
 vim.lsp.enable("nil_ls")
-vim.lsp.enable("phpactor")
+
+vim.lsp.enable("intelephense")
+
+vim.lsp.config["intelephense"] = {
+  cmd = { "intelephense", "--stdio" },
+  init_options = {
+    storagePath = "/tmp/intelephense", -- Use system temp directory
+    globalStoragePath = "/tmp/intelephense/global",
+  },
+  settings = {
+    intelephense = {
+      files = {
+        exclude = {
+          "**/.direnv/**",
+        },
+      },
+    },
+  },
+  -- Prevent Intelephense from treating home directory as a workspace root
+  on_new_config = function(new_config, new_root_dir)
+    if new_root_dir == vim.fn.expand("~") then
+      new_config.init_options = new_config.init_options or {}
+      new_config.init_options.storagePath = "/tmp/intelephense"
+    end
+  end,
+}

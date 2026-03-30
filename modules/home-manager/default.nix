@@ -86,10 +86,10 @@
     cargo-wizard
     distrobox
     doctl
+    intelephense
     just
     mago
     opentofu
-    phpactor
     tree-sitter
 
     # linter, formatter
