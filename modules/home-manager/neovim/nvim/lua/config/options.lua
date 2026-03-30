@@ -161,3 +161,7 @@ vim.lsp.config["intelephense"] = {
     end
   end,
 }
+
+vim.lsp.enable("oxfmt")
+
+vim.lsp.enable("oxlint")

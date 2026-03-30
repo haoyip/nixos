@@ -29,10 +29,6 @@
       vtsls
       vue-language-server
       yaml-language-server
-
-      # nodejs runtime for prettier to work
-      nodejs
-      nodePackages.prettier
     ];
   };
 
