@@ -28,6 +28,13 @@ in {
         reverse_proxy localhost:8096
       '';
     };
+
+    virtualHosts."drive.${domain}" = {
+      extraConfig = ''
+        ${tls}
+        reverse_proxy localhost:9200
+      '';
+    };
   };
 
   networking.firewall.allowedTCPPorts = [443];

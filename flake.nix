@@ -107,6 +107,7 @@
         ./modules/caddy
         ./modules/immich
         ./modules/jellyfin
+        ./modules/opencloud
       ];
 
       zen = buildSystem [
