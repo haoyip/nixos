@@ -40,11 +40,6 @@
 
       peers = [
         {
-          # mate
-          publicKey = "U28aes2XdMRnnhYFWcvDDly/eWUm/VLE7o13kFdGRFU=";
-          allowedIPs = ["10.0.0.2/32"];
-        }
-        {
           # zen
           publicKey = "0YCmPFsF9bT7V6ETehjdMvkagEak1VTePmgCicXQl2w=";
           allowedIPs = ["10.0.0.3/32"];

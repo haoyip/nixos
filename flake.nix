@@ -125,12 +125,6 @@
         ./modules/ssh/zen.nix
         ./modules/wireguard/zen.nix
       ];
-
-      mate = buildSystem [
-        ./modules/hardware-configuration/mate.nix
-        ./modules/configuration/mate.nix
-        ./modules/wireguard/mate.nix
-      ];
     };
   };
 }
