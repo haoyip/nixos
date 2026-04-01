@@ -59,7 +59,6 @@
     # nix
     nh
     nix-output-monitor
-    nvd
 
     # desktop apps
     anki
