@@ -132,8 +132,7 @@ vim.keymap.set({ "n", "v" }, "<A-f>", function()
 end, { desc = "Format" })
 
 -- lsp
-vim.keymap.set("n", "<A-i>", vim.lsp.buf.hover, { desc = "Show hover" })
-vim.keymap.set("n", "<A-o>", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+vim.keymap.set("n", "<A-m>", vim.lsp.buf.hover, { desc = "Show hover" })
 
 -- window
 vim.keymap.set("n", "<C-A-w>", "<C-w>c", { desc = "Delete Window" })
@@ -198,3 +197,20 @@ vim.keymap.set("n", "<leader>fO", ":!xdg-open %:p:h<cr>")
 -- scroll up down faster
 vim.keymap.set("n", "<C-E>", "3<C-E>")
 vim.keymap.set("n", "<C-Y>", "3<C-Y>")
+
+-- treesitter node incremental selections
+vim.keymap.set({ "n", "x", "o" }, "<A-o>", function()
+  if vim.treesitter.get_parser(nil, nil, { error = false }) then
+    require("vim.treesitter._select").select_parent(vim.v.count1)
+  else
+    vim.lsp.buf.selection_range(vim.v.count1)
+  end
+end, { desc = "Select parent treesitter node or outer incremental lsp selections" })
+
+vim.keymap.set({ "n", "x", "o" }, "<A-i>", function()
+  if vim.treesitter.get_parser(nil, nil, { error = false }) then
+    require("vim.treesitter._select").select_child(vim.v.count1)
+  else
+    vim.lsp.buf.selection_range(-vim.v.count1)
+  end
+end, { desc = "Select child treesitter node or inner incremental lsp selections" })
