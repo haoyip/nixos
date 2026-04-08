@@ -7,6 +7,11 @@ return {
       rust = { "rustywind", "leptosfmt", "rustfmt", "dioxus" },
       xml = { "xmlformat" },
       php = { "pint" },
+      vue = { "oxfmt" },
+      json = { "oxfmt" },
+      jsonc = { "oxfmt" },
+      typescript = { "oxfmt" },
+      javascript = { "oxfmt" },
     },
   },
 }
