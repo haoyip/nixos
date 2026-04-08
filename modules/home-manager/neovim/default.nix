@@ -1,13 +1,11 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+    withPython3 = false;
+    withRuby = false;
 
     extraPackages = with pkgs; [
       # treesitter build tools
