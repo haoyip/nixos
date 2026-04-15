@@ -1,2 +1,5 @@
+[mgr]
+show_hidden = true
+
 [opener]
 open = [{ run = "xdg-open %s $argv >/dev/null 2>&1 & disown", desc = "Open" }]
