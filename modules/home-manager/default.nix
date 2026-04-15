@@ -113,5 +113,10 @@
       name = "Tela";
       package = pkgs.tela-icon-theme;
     };
+
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      size = 32;
+    };
   };
 }
