@@ -27,6 +27,9 @@
       vtsls
       vue-language-server
       yaml-language-server
+
+      # file watcher
+      inotify-tools
     ];
   };
 

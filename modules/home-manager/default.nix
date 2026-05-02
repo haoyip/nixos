@@ -34,6 +34,7 @@
     fswatch
     fzf
     gptfdisk
+    inotify-tools
     jaq
     lsof
     nmap
