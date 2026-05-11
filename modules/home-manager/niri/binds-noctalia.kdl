@@ -14,4 +14,7 @@ binds {
   Mod+T hotkey-overlay-title="Settings" repeat=false {
     spawn-sh "noctalia-shell ipc call settings toggle"
   }
+  Mod+Shift+R hotkey-overlay-title="Restart Noctalia Shell" repeat=false {
+    spawn "noctalia-restart"
+  }
 }

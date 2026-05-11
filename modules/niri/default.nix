@@ -1,19 +1,10 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [
-    inputs.noctalia.nixosModules.default
-  ];
-
-  services.noctalia-shell.enable = true;
-
+{pkgs, ...}: {
   environment.defaultPackages = with pkgs; [
     bibata-cursors
     brightnessctl
     hyprpicker
     niri
+    noctalia-shell
     xdg-utils
     xwayland-satellite
   ];
@@ -116,6 +107,16 @@
           # fallback if directory can't be determined
           exec neovide
       fi
+    '')
+
+    (pkgs.writeShellScriptBin "noctalia-restart" ''
+      pkill -f noctalia-shell || true
+
+      while pgrep -f noctalia-shell >/dev/null; do
+        sleep 0.1
+      done
+
+      exec noctalia-shell
     '')
   ];
 }
