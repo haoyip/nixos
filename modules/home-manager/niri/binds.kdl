@@ -102,4 +102,6 @@ binds {
   Mod+Ctrl+X { clear-dynamic-cast-target; }
 
   Mod+Shift+E { quit; }
+
+  Mod+Shift+O repeat=false { spawn "toggle-laptop-output"; }
 }
