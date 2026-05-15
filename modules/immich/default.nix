@@ -1,4 +1,4 @@
-{...}: let
+{lib, ...}: let
   mediaLocation = "/data/8tb_1/immich";
 in {
   services.immich = {
@@ -15,4 +15,12 @@ in {
   ];
 
   users.users.immich.extraGroups = ["video" "render"];
+
+  systemd.services.immich-server = {
+    wantedBy = lib.mkForce [];
+  };
+
+  systemd.services.immich-machine-learning = {
+    wantedBy = lib.mkForce [];
+  };
 }

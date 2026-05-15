@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   services.opencloud = {
     enable = true;
     url = "https://drive.lelezhu.lol";
@@ -10,5 +10,9 @@
       PROXY_TLS = "false";
       IDM_ADMIN_PASSWORD = "password";
     };
+  };
+
+  systemd.services.opencloud = {
+    wantedBy = lib.mkForce [];
   };
 }
