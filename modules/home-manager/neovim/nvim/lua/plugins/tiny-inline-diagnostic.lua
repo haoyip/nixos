@@ -1,12 +1,24 @@
 return {
-  "rachartier/tiny-inline-diagnostic.nvim",
-  event = "VeryLazy", -- Or `LspAttach`
-  priority = 1000, -- needs to be loaded in first
-  config = function()
-    vim.diagnostic.config({ virtual_text = false })
-
-    require("tiny-inline-diagnostic").setup({
-      preset = "powerline",
-    })
-  end,
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", -- Or `LspAttach`
+    priority = 1000, -- needs to be loaded in first
+    config = function()
+      require("tiny-inline-diagnostic").setup({
+        preset = "powerline",
+        options = {
+          multilines = {
+            enabled = true,
+          },
+          show_source = {
+            enabled = true,
+          },
+        },
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = { diagnostics = { virtual_text = false } },
+  },
 }
