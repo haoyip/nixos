@@ -198,6 +198,9 @@ vim.keymap.set("n", "<leader>fO", ":!xdg-open %:p:h<cr>")
 vim.keymap.set("n", "<C-E>", "3<C-E>")
 vim.keymap.set("n", "<C-Y>", "3<C-Y>")
 
+-- save without autocommand
+vim.keymap.set({ "n", "i" }, "<C-S-S>", "<cmd>noau w<cr>")
+
 -- treesitter node incremental selections
 vim.keymap.set({ "n", "x", "o" }, "<A-o>", function()
   if vim.treesitter.get_parser(nil, nil, { error = false }) then
