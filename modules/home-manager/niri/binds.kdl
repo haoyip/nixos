@@ -103,5 +103,5 @@ binds {
 
   Mod+Shift+E { quit; }
 
-  Mod+Shift+O repeat=false { spawn "toggle-laptop-output"; }
+  Mod+Shift+O allow-when-locked=true repeat=false { spawn "toggle-laptop-output"; }
 }
