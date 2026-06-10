@@ -74,6 +74,7 @@
     ungoogled-chromium
     vlc
     wireshark
+    remmina
 
     # dev
     bunyan-rs
