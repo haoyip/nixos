@@ -56,6 +56,7 @@
     yt-dlp
     zip
     zoxide
+    gpclient
 
     # nix
     nh
