@@ -11,7 +11,7 @@
     ./datagrip
     ./direnv
     ./fish
-    ./foot
+    ./kitty
     ./git
     ./mime
     ./niri

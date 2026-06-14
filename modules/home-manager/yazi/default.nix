@@ -21,7 +21,7 @@
           [filechooser]
           cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
           default_dir=$HOME
-          env=TERMCMD='foot -T "File Chooser"'
+          env=TERMCMD='kitty -T "File Chooser"'
           open_mode=suggested
           save_mode=last
         '';
@@ -32,7 +32,7 @@
     desktopEntries.yazi = {
       name = "Yazi";
       genericName = "File Manager";
-      exec = "foot yazi";
+      exec = "kitty yazi";
       terminal = false;
       categories = ["System" "FileTools" "FileManager"];
       mimeType = ["inode/directory"];

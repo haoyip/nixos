@@ -68,20 +68,27 @@
   };
 
   environment.systemPackages = [
-    # Spawn foot in the current working directory of the focused terminal's shell,
+    # Spawn kitty in the current working directory of the focused terminal's shell,
     # falling back to the default directory if no shell process is detected.
-    (pkgs.writeShellScriptBin "foot-smart" ''
+    (pkgs.writeShellScriptBin "kitty-smart" ''
       # Get focused window PID
       termpid=$(niri msg focused-window | rg '^  PID:' | awk '{print $2}')
 
       # Try to find shell child
-      shellpid=$(pgrep -P "$termpid" | head -n1)
+      if [ -z "$shellpid" ]; then
+        shellpid=$(pgrep -P "$termpid" | while read -r pid; do
+          cmd=$(ps -o comm= -p "$pid")
+          case "$cmd" in
+            fish|bash|zsh|sh) echo "$pid"; break ;;
+          esac
+        done)
+      fi
 
       if [ -n "$shellpid" ] && [ -e "/proc/$shellpid/cwd" ]; then
           dir=$(readlink "/proc/$shellpid/cwd")
-          exec foot -D "$dir"
+          exec kitty "$dir"
       else
-          exec foot
+          exec kitty
       fi
     '')
 
@@ -92,7 +99,14 @@
       termpid=$(niri msg focused-window | rg '^  PID:' | awk '{print $2}')
 
       # Try to find shell child
-      shellpid=$(pgrep -P "$termpid" | head -n1)
+      if [ -z "$shellpid" ]; then
+        shellpid=$(pgrep -P "$termpid" | while read -r pid; do
+          cmd=$(ps -o comm= -p "$pid")
+          case "$cmd" in
+            fish|bash|zsh|sh) echo "$pid"; break ;;
+          esac
+        done)
+      fi
 
       if [ -n "$shellpid" ] && [ -e "/proc/$shellpid/cwd" ]; then
           dir=$(readlink "/proc/$shellpid/cwd")
