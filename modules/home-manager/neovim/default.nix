@@ -30,6 +30,9 @@
 
       # file watcher
       inotify-tools
+
+      # allow for preview pdf
+      ghostscript
     ];
   };
 
