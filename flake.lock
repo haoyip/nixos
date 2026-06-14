@@ -163,10 +163,10 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1774872328,
-        "narHash": "sha256-SkToW7DYSxJNtDJ5gV8Hl/rrt2uxOJQf8Iacrmhko1A=",
+        "lastModified": 1781419978,
+        "narHash": "sha256-Wq7OLpWKjknupdegeAXe2RbElzeYcST90Pg3kAWWlfs=",
         "ref": "main",
-        "rev": "0f09f2d471a1629e5a4784e33adca630e995f0c9",
+        "rev": "c16203881f7425a02173b9e447853a6d749ede30",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab/haoyiphoh/nixos-secrets.git"
