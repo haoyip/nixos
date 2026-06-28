@@ -163,3 +163,5 @@ vim.lsp.config["intelephense"] = {
 }
 
 vim.lsp.enable("oxlint")
+
+require("vim._core.ui2").enable({})
