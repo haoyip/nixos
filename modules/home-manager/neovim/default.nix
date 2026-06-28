@@ -20,6 +20,7 @@
       markdownlint-cli2
       marksman
       nil
+      phpantom-lsp
       rust-analyzer
       tailwindcss-language-server
       tofu-ls

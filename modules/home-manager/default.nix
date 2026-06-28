@@ -88,7 +88,6 @@
     cargo-wizard
     distrobox
     doctl
-    intelephense
     just
     mago
     opentofu
