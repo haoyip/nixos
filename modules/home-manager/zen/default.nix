@@ -40,6 +40,7 @@
         "full-screen-api.warning.timeout" = 0;
 
         "zen.theme.content-element-separation" = 0;
+        "zen.boosts.enabled" = false;
 
         "browser.ai.control.default" = false;
         "browser.ai.control.linkPreviewKeyPoints" = false;
