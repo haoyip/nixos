@@ -4,10 +4,22 @@
   modulesPath,
   pkgs,
   ...
-}: {
+}: let
+  # https://wiki.archlinux.org/title/ASUS_Zenbook_UM5606
+  edid = pkgs.runCommand "edid-firmware" {} ''
+    install -Dm644 ${./edid_mclk_fix.bin} \
+      $out/lib/firmware/edid/edid_mclk_fix.bin
+  '';
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
+
+  hardware.firmware = [edid];
+
+  boot.initrd.extraFiles = {
+    "lib/firmware/edid/edid_mclk_fix.bin" = "${edid}/lib/firmware/edid/edid_mclk_fix.bin";
+  };
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "sdhci_pci"];
   boot.initrd.kernelModules = ["dm-snapshot"];
@@ -19,6 +31,8 @@
     "zswap.compressor=zstd"
     "zswap.max_pool_percent=20"
     "zswap.shrinker_enabled=1"
+
+    "drm.edid_firmware=eDP-1:edid/edid_mclk_fix.bin"
   ];
 
   boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/6dc0ebc8-644a-44e9-a164-b1248ea9eec2";
