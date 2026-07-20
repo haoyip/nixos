@@ -15,7 +15,6 @@ export MANPAGER='nvim +Man!'
 
 alias ls 'eza -l1 --icons'
 alias cat bat
-alias grep rg
 alias jq jaq
 alias cl wl-copy
 alias http xh
