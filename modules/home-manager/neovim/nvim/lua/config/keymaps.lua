@@ -30,8 +30,8 @@ if vim.g.neovide then
   function SetFont(size, tracking)
     current_font_size = size
     current_tracking = tracking
-    vim.opt.guifont = "Maple Mono NF:h" .. current_font_size .. ":w" .. current_tracking
-    vim.opt.linespace = -2
+    vim.opt.guifont = "JetBrainsMono Nerd Font:h" .. current_font_size .. ":w" .. current_tracking
+    vim.opt.linespace = -1
   end
 
   vim.keymap.set({ "n", "v", "c" }, "<C-=>", ":lua IncreaseFontSize()<CR>")
