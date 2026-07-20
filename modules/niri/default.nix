@@ -140,5 +140,11 @@
         niri msg output eDP-1 off
       fi
     '')
+
+    (pkgs.writeShellScriptBin "lock-if-only-laptop" ''
+      if [ "$(niri msg outputs | grep "^Output" | wc -l)" -eq 1 ]; then
+        noctalia-shell ipc call sessionMenu lockAndSuspend
+      fi
+    '')
   ];
 }

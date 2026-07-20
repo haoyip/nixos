@@ -56,7 +56,7 @@ gestures {
 
 switch-events {
   lid-close {
-    spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"
+    spawn "lock-if-only-laptop"
   }
 }
 
