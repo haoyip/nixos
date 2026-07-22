@@ -42,6 +42,7 @@
     pciutils
     pgcli
     psmisc
+    radeontop
     ripgrep
     rsync
     smartmontools
