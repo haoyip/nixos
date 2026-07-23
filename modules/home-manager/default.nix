@@ -15,7 +15,6 @@
     ./git
     ./mime
     ./niri
-    ./neovim
     ./starship
     ./yazi
     ./zellij
@@ -77,6 +76,7 @@
     vlc
     wireshark
     remmina
+    neovide
 
     # dev
     bunyan-rs

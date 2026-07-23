@@ -33,8 +33,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    bacon-ls = {
-      url = "github:crisidev/bacon-ls";
+    neovim = {
+      url = "git+file:///home/hao/.vi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -48,8 +48,6 @@
         (final: prev: {
           zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
         })
-
-        inputs.bacon-ls.overlay.${system}
       ];
 
       config.allowUnfree = true;

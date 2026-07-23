@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   system.stateVersion = "25.11";
 
   boot = {
@@ -73,6 +77,8 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+
+    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
   environment.variables = {
