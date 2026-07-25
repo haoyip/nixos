@@ -87,7 +87,6 @@
     cargo-nextest
     cargo-outdated
     cargo-wizard
-    distrobox
     doctl
     just
     mago
