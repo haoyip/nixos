@@ -89,7 +89,6 @@
     cargo-wizard
     doctl
     just
-    mago
     opentofu
   ];
 
