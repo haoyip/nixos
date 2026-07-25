@@ -92,16 +92,6 @@
     just
     mago
     opentofu
-    tree-sitter
-
-    # linter, formatter
-    alejandra
-    blade-formatter
-    leptosfmt
-    rustywind
-    shfmt
-    stylua
-    xmlformat
   ];
 
   home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;
