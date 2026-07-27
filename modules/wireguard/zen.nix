@@ -5,7 +5,10 @@
 }: {
   sops.secrets = {
     "wireguard/zen/private_key" = {};
-    "wireguard/b450/endpoint" = {};
+
+    "home/ddns/zone_id" = {};
+    "home/ddns/record_id" = {};
+    "home/ddns/api_token" = {};
   };
 
   networking.firewall.allowedUDPPorts = [51700];
@@ -19,19 +22,12 @@
       listenPort = 51700;
 
       preUp = ''
-        endpoint_host="$(cat ${config.sops.secrets."wireguard/b450/endpoint".path})"
-
-        for i in {1..10}; do
-          ip_line=$(${pkgs.getent}/bin/getent hosts "$endpoint_host") && break
-          sleep 1
-        done
-
-        if [ -z "$ip_line" ]; then
-          echo "Failed to resolve endpoint after retries: $endpoint_host"
-          exit 1
-        fi
-
-        endpoint_ip=$(echo "$ip_line" | ${pkgs.gawk}/bin/awk '{ print $1 }')
+        endpoint_ip=$(
+          ${pkgs.curl}/bin/curl "https://api.cloudflare.com/client/v4/zones/$(cat ${config.sops.secrets."home/ddns/zone_id".path})/dns_records/$(cat ${config.sops.secrets."home/ddns/record_id".path})" \
+            -H "Authorization: Bearer $(cat ${config.sops.secrets."home/ddns/api_token".path})" \
+            | ${pkgs.jaq}/bin/jaq .result.content \
+            | tr -d '"'
+        )
 
         echo "$endpoint_ip" > /tmp/wg-b450-endpoint-ip
       '';
@@ -68,19 +64,12 @@
       listenPort = 51700;
 
       preUp = ''
-        endpoint_host="$(cat ${config.sops.secrets."wireguard/b450/endpoint".path})"
-
-        for i in {1..10}; do
-          ip_line=$(${pkgs.getent}/bin/getent hosts "$endpoint_host") && break
-          sleep 1
-        done
-
-        if [ -z "$ip_line" ]; then
-          echo "Failed to resolve endpoint after retries: $endpoint_host"
-          exit 1
-        fi
-
-        endpoint_ip=$(echo "$ip_line" | ${pkgs.gawk}/bin/awk '{ print $1 }')
+        endpoint_ip=$(
+          ${pkgs.curl}/bin/curl "https://api.cloudflare.com/client/v4/zones/$(cat ${config.sops.secrets."home/ddns/zone_id".path})/dns_records/$(cat ${config.sops.secrets."home/ddns/record_id".path})" \
+            -H "Authorization: Bearer $(cat ${config.sops.secrets."home/ddns/api_token".path})" \
+            | ${pkgs.jaq}/bin/jaq .result.content \
+            | tr -d '"'
+        )
 
         echo "$endpoint_ip" > /tmp/wg-b450-endpoint-ip
       '';
