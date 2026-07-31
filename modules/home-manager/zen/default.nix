@@ -23,8 +23,8 @@
         # Never ask for password
         "signon.rememberSignons" = false;
 
-        # DNS over HTTPS
-        "network.trr.mode" = 3;
+        # Use host DNS resolver
+        "network.trr.mode" = 5;
 
         # Disable alt key to show menu
         "ui.key.menuAccessKey" = 17;

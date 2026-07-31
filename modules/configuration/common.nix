@@ -2,7 +2,10 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  hasIPv6Internet = true;
+  StateDirectory = "dnscrypt-proxy";
+in {
   system.stateVersion = "25.11";
 
   boot = {
@@ -38,10 +41,36 @@
     ];
   };
 
-  networking.nameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-  ];
+  networking = {
+    nameservers = ["127.0.0.1" "::1"];
+    networkmanager.dns = "none";
+  };
+
+  # See https://wiki.nixos.org/wiki/Encrypted_DNS
+  services.dnscrypt-proxy = {
+    enable = true;
+    # See https://github.com/DNSCrypt/dnscrypt-proxy/blob/master/dnscrypt-proxy/example-dnscrypt-proxy.toml
+    settings = {
+      sources.public-resolvers = {
+        urls = [
+          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
+          "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
+        ];
+        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3"; # See https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
+        cache_file = "/var/lib/${StateDirectory}/public-resolvers.md";
+      };
+
+      # Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
+      ipv6_servers = hasIPv6Internet;
+      block_ipv6 = ! (hasIPv6Internet);
+
+      require_dnssec = true;
+      require_nolog = true;
+      require_nofilter = true;
+    };
+  };
+
+  systemd.services.dnscrypt-proxy.serviceConfig.StateDirectory = StateDirectory;
 
   time.timeZone = "Asia/Kuala_Lumpur";
 
