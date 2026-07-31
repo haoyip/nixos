@@ -1,5 +1,31 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  sops.secrets = {
+    "home/samba/hao" = {owner = "hao";};
+  };
+
   environment.systemPackages = [
+    (pkgs.writeShellScriptBin "vpn-b450" ''
+      sudo -i -u root bash <<EOF
+      set -e
+
+      if systemctl is-active --quiet wg-quick-b450-all.service; then
+        systemctl stop wg-quick-b450-all.service
+        systemctl start wg-quick-b450.service
+
+        echo 'vpn stopped'
+      else
+        systemctl stop wg-quick-b450.service
+        systemctl start wg-quick-b450-all.service
+
+        echo 'vpn started'
+      fi
+      EOF
+    '')
+
     (pkgs.writeShellScriptBin "fan" ''
       set_fan_state() {
         local state_value
@@ -83,6 +109,26 @@
       esac
 
       exit
+    '')
+
+    (pkgs.writeShellScriptBin "mount-media" ''
+      sudo mkdir -p /mnt/media
+      sudo mount -t cifs //192.168.0.100/media-write /mnt/media -o username=hao,password=$(cat ${config.sops.secrets."home/samba/hao".path}),uid=1000,gid=1000
+    '')
+
+    (pkgs.writeShellScriptBin "mount-media-remote" ''
+      sudo mkdir -p /mnt/media
+      sudo mount -t cifs //10.0.0.1/media-write /mnt/media -o username=hao,password=$(cat ${config.sops.secrets."home/samba/hao".path}),uid=1000,gid=1000
+    '')
+
+    (pkgs.writeShellScriptBin "mount-hy" ''
+      sudo mkdir -p /mnt/HY
+      sudo mount -t cifs //192.168.0.100/HY /mnt/HY -o username=hao,password=$(cat ${config.sops.secrets."home/samba/hao".path}),uid=1000,gid=1000
+    '')
+
+    (pkgs.writeShellScriptBin "mount-hy-remote" ''
+      sudo mkdir -p /mnt/HY
+      sudo mount -t cifs //10.0.0.1/HY /mnt/HY -o username=hao,password=$(cat ${config.sops.secrets."home/samba/hao".path}),uid=1000,gid=1000
     '')
   ];
 }
