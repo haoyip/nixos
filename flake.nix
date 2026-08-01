@@ -101,6 +101,7 @@
         ./modules/immich
         ./modules/jellyfin
         ./modules/opencloud
+        ./modules/vaultwarden
       ];
 
       zen = buildSystem [

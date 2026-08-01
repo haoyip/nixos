@@ -35,6 +35,17 @@ in {
         reverse_proxy localhost:9200
       '';
     };
+
+    virtualHosts."vault.${domain}" = {
+      extraConfig = ''
+
+        encode zstd gzip
+
+        reverse_proxy :${toString config.services.vaultwarden.config.ROCKET_PORT} {
+            header_up X-Real-IP {remote_host}
+        }
+      '';
+    };
   };
 
   networking.firewall.allowedTCPPorts = [443];
