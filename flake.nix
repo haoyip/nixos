@@ -85,6 +85,7 @@
         ./modules/hardware-configuration/b450.nix
         ./modules/configuration/b450.nix
         ./modules/wireguard/b450.nix
+        ./modules/backup/b450.nix
 
         ./modules/samba
         ./modules/corectrl
