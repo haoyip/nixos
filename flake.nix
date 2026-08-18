@@ -108,6 +108,7 @@
         ./modules/hardware-configuration/zen.nix
         ./modules/configuration/zen.nix
         ./modules/scripts/zen.nix
+        ./modules/backup/zen.nix
 
         ./modules/game
         ./modules/virtualisation
