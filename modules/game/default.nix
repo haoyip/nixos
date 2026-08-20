@@ -5,6 +5,11 @@
   environment.defaultPackages = with pkgs; [
     mangohud
     mangojuice
-    libretro.swanstation
+
+    (retroarch.withCores (cores:
+      with cores; [
+        libretro.swanstation
+        libretro.pcsx2
+      ]))
   ];
 }
