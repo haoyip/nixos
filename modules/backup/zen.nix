@@ -1,7 +1,5 @@
 {pkgs, ...}: {
-  systemd.services.backup = {
-    description = "rsync backup";
-
+  systemd.services.hy-backup = {
     serviceConfig = {
       Type = "oneshot";
       User = "hao";
@@ -20,15 +18,13 @@
     };
   };
 
-  systemd.timers.backup = {
-    description = "rsync backup timers";
-
+  systemd.timers.hy-backup = {
     wantedBy = ["timers.target"];
 
     timerConfig = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "24h";
+      OnCalendar = "04:00";
       Persistent = true;
+      OnBootSec = "1min";
     };
   };
 }

@@ -27,8 +27,9 @@ in {
     wantedBy = ["timers.target"];
 
     timerConfig = {
-      OnCalendar = "daily";
+      OnCalendar = "05:00";
       Persistent = true;
+      OnBootSec = "1min";
     };
   };
 }
