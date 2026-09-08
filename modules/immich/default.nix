@@ -3,12 +3,15 @@
 in {
   services.immich = {
     enable = true;
+    host = "0.0.0.0";
     port = 2283;
     mediaLocation = "${mediaLocation}";
 
     # `null` will give access to all devices.
     accelerationDevices = null;
   };
+
+  networking.firewall.allowedTCPPorts = [2283];
 
   systemd.tmpfiles.rules = [
     "d ${mediaLocation} 0750 immich immich -"
