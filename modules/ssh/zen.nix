@@ -6,10 +6,6 @@
     "private_keys/me_github" = {
       owner = "hao";
     };
-    "private_keys/digitalocean" = {
-      owner = "hao";
-    };
-
     "private_keys/zen/to_b450" = {
       owner = "hao";
     };

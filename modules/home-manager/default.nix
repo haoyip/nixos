@@ -86,7 +86,6 @@
     cargo-nextest
     cargo-outdated
     cargo-wizard
-    doctl
     just
     opentofu
   ];
