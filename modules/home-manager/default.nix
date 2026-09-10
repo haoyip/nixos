@@ -18,7 +18,7 @@
     ./starship
     ./yazi
     ./zellij
-    ./zen
+    ./zen-browser
   ];
 
   home.packages = with pkgs; [
