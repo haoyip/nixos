@@ -15,7 +15,6 @@
         bitwarden
         cookie-quick-manager
         multi-account-containers
-        return-youtube-dislikes
         ublock-origin
       ];
 
