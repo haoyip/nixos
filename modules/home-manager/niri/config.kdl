@@ -7,7 +7,7 @@ include "./binds-noctalia.kdl"
 include "./binds-volume-brightness.kdl"
 include "./window-rule.kdl"
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 prefer-no-csd
 screenshot-path "~/Documents/screenshot-%Y-%m-%dT%H:%M:%S.png"
@@ -84,17 +84,5 @@ layout {
     active-gradient from="#e5989b" to="#ffb4a2" angle=-45 relative-to="workspace-view" in="oklch longer hue"
     inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     urgent-color "#9b0000"
-  }
-}
-
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
-}
-
-layer-rule {
-  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
-  background-effect {
-    xray false
   }
 }

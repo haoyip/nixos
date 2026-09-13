@@ -4,7 +4,7 @@
     brightnessctl
     hyprpicker
     niri
-    noctalia-shell
+    noctalia
     xdg-utils
     xwayland-satellite
   ];
@@ -65,6 +65,8 @@
 
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
   };
 
   environment.systemPackages = [
@@ -124,13 +126,13 @@
     '')
 
     (pkgs.writeShellScriptBin "noctalia-restart" ''
-      pkill -f noctalia-shell || true
+      pkill -f noctalia || true
 
-      while pgrep -f noctalia-shell >/dev/null; do
+      while pgrep -f noctalia >/dev/null; do
         sleep 0.1
       done
 
-      exec noctalia-shell
+      exec noctalia
     '')
 
     (pkgs.writeShellScriptBin "toggle-laptop-output" ''
@@ -143,7 +145,7 @@
 
     (pkgs.writeShellScriptBin "lock-if-only-laptop" ''
       if [ "$(niri msg outputs | grep "^Output" | wc -l)" -eq 1 ]; then
-        noctalia-shell ipc call sessionMenu lockAndSuspend
+        noctalia msg session lock-and-suspend
       fi
     '')
   ];

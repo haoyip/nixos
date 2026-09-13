@@ -1,20 +1,31 @@
 binds {
-  Mod+Z hotkey-overlay-title="Session Menu" repeat=false {
-    spawn-sh "noctalia-shell ipc call sessionMenu toggle"
+  Mod+Z { spawn-sh "noctalia msg panel-toggle session"; }
+  Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
+  Mod+R { spawn-sh "noctalia msg notification-clear-active"; }
+  Mod+T { spawn-sh "noctalia msg settings-toggle"; }
+}
+
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
   }
-  Mod+W hotkey-overlay-title="Calendar" repeat=false {
-    spawn-sh "noctalia-shell ipc call calendar toggle"
-  }
-  Mod+D hotkey-overlay-title="Launcher" repeat=false {
-    spawn-sh "noctalia-shell ipc call launcher toggle"
-  }
-  Mod+R hotkey-overlay-title="Dismiss Notifications" repeat=false {
-    spawn-sh "noctalia-shell ipc call notifications dismissAll"
-  }
-  Mod+T hotkey-overlay-title="Settings" repeat=false {
-    spawn-sh "noctalia-shell ipc call settings toggle"
-  }
-  Mod+Shift+R hotkey-overlay-title="Restart Noctalia Shell" repeat=false {
-    spawn "noctalia-restart"
-  }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
 }
