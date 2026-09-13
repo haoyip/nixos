@@ -2,13 +2,15 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  domain = "tingb.xyz";
+  publicKey = "z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno=";
+in {
   sops.secrets = {
     "wireguard/zen/private_key" = {};
 
-    "home/ddns/zone_id" = {};
-    "home/ddns/record_id" = {};
-    "home/ddns/api_token" = {};
+    "porkbun/api_key" = {};
+    "porkbun/secret_key" = {};
   };
 
   networking.firewall.allowedUDPPorts = [51700];
@@ -20,13 +22,15 @@
       autostart = true;
       address = ["10.0.0.3/24"];
       listenPort = 51700;
+      dns = ["10.0.0.1"];
 
       preUp = ''
         endpoint_ip=$(
-          ${pkgs.curl}/bin/curl "https://api.cloudflare.com/client/v4/zones/$(cat ${config.sops.secrets."home/ddns/zone_id".path})/dns_records/$(cat ${config.sops.secrets."home/ddns/record_id".path})" \
-            -H "Authorization: Bearer $(cat ${config.sops.secrets."home/ddns/api_token".path})" \
-            | ${pkgs.jaq}/bin/jaq .result.content \
-            | tr -d '"'
+          ${pkgs.curl}/bin/curl -fsSL \
+            "https://api.porkbun.com/api/json/v3/dns/retrieveByNameType/${domain}/A" \
+            -H "X-API-Key: $(cat ${config.sops.secrets."porkbun/api_key".path})" \
+            -H "X-Secret-API-Key: $(cat ${config.sops.secrets."porkbun/secret_key".path})" \
+            | ${pkgs.jaq}/bin/jaq -r '.records[0].content'
         )
 
         echo "$endpoint_ip" > /tmp/wg-b450-endpoint-ip
@@ -42,12 +46,12 @@
 
         echo "$endpoint_ip"
 
-        wg set b450 peer z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno= endpoint "$endpoint_ip:51700"
+        wg set b450 peer ${publicKey} endpoint "$endpoint_ip:51700"
       '';
 
       peers = [
         {
-          publicKey = "z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno=";
+          publicKey = publicKey;
           allowedIPs = ["10.0.0.0/24"];
 
           # Send keepalives every 25 seconds. Important to keep NAT tables alive.
@@ -62,13 +66,15 @@
       autostart = false;
       address = ["10.0.0.3/24"];
       listenPort = 51700;
+      dns = ["10.0.0.1"];
 
       preUp = ''
         endpoint_ip=$(
-          ${pkgs.curl}/bin/curl "https://api.cloudflare.com/client/v4/zones/$(cat ${config.sops.secrets."home/ddns/zone_id".path})/dns_records/$(cat ${config.sops.secrets."home/ddns/record_id".path})" \
-            -H "Authorization: Bearer $(cat ${config.sops.secrets."home/ddns/api_token".path})" \
-            | ${pkgs.jaq}/bin/jaq .result.content \
-            | tr -d '"'
+          ${pkgs.curl}/bin/curl -fsSL \
+            "https://api.porkbun.com/api/json/v3/dns/retrieveByNameType/${domain}/A" \
+            -H "X-API-Key: $(cat ${config.sops.secrets."porkbun/api_key".path})" \
+            -H "X-Secret-API-Key: $(cat ${config.sops.secrets."porkbun/secret_key".path})" \
+            | ${pkgs.jaq}/bin/jaq -r '.records[0].content'
         )
 
         echo "$endpoint_ip" > /tmp/wg-b450-endpoint-ip
@@ -84,12 +90,12 @@
 
         echo "$endpoint_ip"
 
-        wg set b450-all peer z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno= endpoint "$endpoint_ip:51700"
+        wg set b450-all peer ${publicKey} endpoint "$endpoint_ip:51700"
       '';
 
       peers = [
         {
-          publicKey = "z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno=";
+          publicKey = publicKey;
           allowedIPs = ["0.0.0.0/0"];
 
           # Send keepalives every 25 seconds. Important to keep NAT tables alive.

@@ -6,8 +6,6 @@
   macB450 = config.sops.secrets."mac/b450".path;
 
   gp1Gateway = config.sops.secrets."gp-1/gateway".path;
-  gp1User = config.sops.secrets."gp-1/user".path;
-  gp1Pass = config.sops.secrets."gp-1/password".path;
 in {
   sops.secrets = {
     "mac/b450" = {
@@ -15,8 +13,6 @@ in {
     };
 
     "gp-1/gateway" = {owner = "hao";};
-    "gp-1/user" = {owner = "hao";};
-    "gp-1/password" = {owner = "hao";};
   };
 
   environment.systemPackages = [
@@ -34,13 +30,8 @@ in {
 
     (pkgs.writeShellScriptBin "gp-1" ''
       gateway="$(cat ${gp1Gateway})"
-      user="$(cat ${gp1User})"
-      pass="$(cat ${gp1Pass})"
 
-      exec sudo gpclient connect "$gateway" \
-        -u "$user" \
-        --passwd-on-stdin \
-        --as-gateway <<< "$pass"
+      exec sudo gpclient connect "$gateway" --as-gateway
     '')
   ];
 }
