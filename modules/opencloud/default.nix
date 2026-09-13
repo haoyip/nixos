@@ -1,7 +1,7 @@
 {lib, ...}: {
   services.opencloud = {
     enable = true;
-    url = "https://drive.lelezhu.lol";
+    url = "https://drive.tingb.xyz";
     address = "localhost";
     port = 9200;
     stateDir = "/data/8tb_1/opencloud";

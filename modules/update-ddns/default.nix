@@ -2,11 +2,12 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  domain = "tingb.xyz";
+in {
   sops.secrets = {
-    "home/ddns/zone_id" = {};
-    "home/ddns/record_id" = {};
-    "home/ddns/api_token" = {};
+    "porkbun/api_key" = {};
+    "porkbun/secret_key" = {};
   };
 
   systemd.timers."update-ddns" = {
@@ -25,10 +26,11 @@
       IP="$(${pkgs.curl}/bin/curl -4fsSL https://api.ipify.org)"
 
       ${pkgs.curl}/bin/curl -fsSL \
-        "https://api.cloudflare.com/client/v4/zones/$(cat ${config.sops.secrets."home/ddns/zone_id".path})/dns_records/$(cat ${config.sops.secrets."home/ddns/record_id".path})" \
-        -X PATCH \
+        "https://api.porkbun.com/api/json/v3/dns/editByNameType/${domain}/A" \
+        -X POST \
         -H "Content-Type: application/json" \
-        -H "Authorization: Bearer $(cat ${config.sops.secrets."home/ddns/api_token".path})" \
+        -H "X-API-Key: $(cat ${config.sops.secrets."porkbun/api_key".path})" \
+        -H "X-Secret-API-Key: $(cat ${config.sops.secrets."porkbun/secret_key".path})" \
         --data "{\"content\": \"$IP\"}"
     '';
 
