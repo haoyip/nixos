@@ -50,8 +50,8 @@
           allowedIPs = ["10.0.0.10/32"];
         }
         {
-          # mi
-          publicKey = "whdOPGvaWf48QfObGzC3C2MH/zfP5nJURj763Dv10g0=";
+          # p9
+          publicKey = "tEusjLDr+G+/hxX08TY5QeQLmPUKJwEGBGErwp2cjW4=";
           allowedIPs = ["10.0.0.11/32"];
         }
       ];
