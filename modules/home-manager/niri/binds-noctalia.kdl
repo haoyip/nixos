@@ -3,6 +3,12 @@ binds {
   Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
   Mod+R { spawn-sh "noctalia msg notification-clear-active"; }
   Mod+T { spawn-sh "noctalia msg settings-toggle"; }
+
+  Print { spawn-sh "noctalia msg screenshot-annotate"; }
+  Mod+S { spawn-sh "noctalia msg screenshot-annotate"; }
+
+  Shift+Print { spawn-sh "noctalia msg screenshot-fullscreen"; }
+  Mod+Shift+S { spawn-sh "noctalia msg screenshot-fullscreen"; }
 }
 
 // Floating Noctalia settings window.

@@ -88,15 +88,6 @@ binds {
   Mod+V { toggle-window-floating; }
   Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-  Print { screenshot; }
-  Mod+S { screenshot; }
-
-  Shift+Print { screenshot-screen; }
-  Mod+Shift+S { screenshot-screen; }
-
-  Alt+Print { screenshot-window; }
-  Mod+Alt+S { screenshot-window; }
-
   Mod+X { set-dynamic-cast-window; }
   Mod+Shift+X { set-dynamic-cast-monitor; }
   Mod+Ctrl+X { clear-dynamic-cast-target; }
