@@ -76,6 +76,7 @@
     wireshark
     remmina
     neovide
+    godot
 
     # dev
     bunyan-rs
