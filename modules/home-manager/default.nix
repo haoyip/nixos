@@ -77,6 +77,7 @@
     remmina
     neovide
     godot
+    anydesk
 
     # dev
     bunyan-rs
