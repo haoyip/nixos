@@ -71,8 +71,12 @@
       {programs.nix-ld.enable = true;}
 
       ./modules/configuration/common.nix
-      ./modules/scripts
       ./modules/maintenance
+      ./modules/scripts
+      ./modules/sops
+    ];
+
+    desktopModules = [
       ./modules/niri
 
       inputs.home-manager.nixosModules.home-manager
@@ -91,43 +95,9 @@
     buildSystem = modules: inputs.nixpkgs.lib.nixosSystem (buildConfig (modules ++ commonModules));
   in {
     nixosConfigurations = {
-      b450 = buildSystem [
-        ./modules/hardware-configuration/b450.nix
-        ./modules/configuration/b450.nix
-        ./modules/wireguard/b450.nix
-        ./modules/backup/b450.nix
+      b450 = buildSystem [./modules/hosts/b450];
 
-        ./modules/samba
-        ./modules/virtualisation
-        ./modules/update-ddns
-        ./modules/odbc
-        ./modules/game
-
-        ./modules/sops
-        ./modules/ssh/b450.nix
-        ./modules/ssh/openssh.nix
-
-        ./modules/caddy
-        ./modules/immich
-        ./modules/jellyfin
-        ./modules/opencloud
-        ./modules/vaultwarden
-      ];
-
-      zen = buildSystem [
-        ./modules/hardware-configuration/zen.nix
-        ./modules/configuration/zen.nix
-        ./modules/scripts/zen.nix
-        ./modules/backup/zen.nix
-
-        ./modules/game
-        ./modules/virtualisation
-        ./modules/odbc
-
-        ./modules/sops
-        ./modules/ssh/zen.nix
-        ./modules/wireguard/zen.nix
-      ];
+      zen = buildSystem (desktopModules ++ [./modules/hosts/zen]);
     };
   };
 }
