@@ -90,6 +90,7 @@
     cargo-wizard
     just
     opentofu
+    opencode
   ];
 
   home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;
