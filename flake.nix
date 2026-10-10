@@ -71,13 +71,13 @@
       {programs.nix-ld.enable = true;}
 
       ./modules/configuration/common.nix
-      ./modules/maintenance
-      ./modules/scripts
-      ./modules/sops
+      ./modules/maintenance.nix
+      ./modules/scripts.nix
+      ./modules/sops.nix
     ];
 
     desktopModules = [
-      ./modules/niri
+      ./modules/niri.nix
 
       inputs.home-manager.nixosModules.home-manager
       {

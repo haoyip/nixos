@@ -7,18 +7,18 @@
   imports = [
     ./bacon
     ./bat
-    ./btop
+    ./btop.nix
     ./datagrip
-    ./direnv
+    ./direnv.nix
     ./fish
     ./kitty
     ./git
-    ./mime
+    ./mime.nix
     ./niri
     ./starship
     ./yazi
     ./zellij
-    ./zen-browser
+    ./zen-browser.nix
   ];
 
   home.packages = with pkgs; [
