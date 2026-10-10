@@ -71,7 +71,6 @@
       {programs.nix-ld.enable = true;}
 
       ./modules/configuration/common.nix
-      ./modules/firewall
       ./modules/scripts
       ./modules/maintenance
       ./modules/niri
