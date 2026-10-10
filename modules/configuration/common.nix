@@ -15,12 +15,6 @@ in {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-
-    kernel.sysctl = {
-      "fs.inotify.max_user_instances" = 1000000;
-      "fs.inotify.max_user_watches" = 1000000;
-      "fs.inotify.max_queued_events" = 1000000;
-    };
   };
 
   services.fwupd.enable = true;
