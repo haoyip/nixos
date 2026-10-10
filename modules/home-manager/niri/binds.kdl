@@ -74,7 +74,7 @@ binds {
   Mod+BracketLeft { consume-or-expel-window-left; }
   Mod+BracketRight { consume-or-expel-window-right; }
 
-  Mod+F repeat=false { maximize-column; }
+  Mod+F repeat=false { maximize-window-to-edges; }
   Mod+Shift+F repeat=false { fullscreen-window; }
 
   Mod+C { center-column; }
