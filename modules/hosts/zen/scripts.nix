@@ -2,12 +2,32 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  macB450 = config.sops.secrets."mac/b450".path;
+
+  gp1Gateway = config.sops.secrets."gp-1/gateway".path;
+in {
   sops.secrets = {
     "home/samba/hao" = {owner = "hao";};
+
+    "mac/b450" = {
+      owner = "hao";
+    };
+
+    "gp-1/gateway" = {owner = "hao";};
   };
 
   environment.systemPackages = [
+    (pkgs.writeShellScriptBin "wake-b450" ''
+      exec wakeonlan "$(cat ${macB450})"
+    '')
+
+    (pkgs.writeShellScriptBin "gp-1" ''
+      gateway="$(cat ${gp1Gateway})"
+
+      exec sudo gpclient connect "$gateway" --as-gateway
+    '')
+
     (pkgs.writeShellScriptBin "vpn-b450" ''
       sudo -i -u root bash <<EOF
       set -e
