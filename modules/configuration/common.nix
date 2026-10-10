@@ -131,6 +131,4 @@ in {
       };
     };
   };
-
-  programs.kdeconnect.enable = true;
 }
