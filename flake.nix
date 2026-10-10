@@ -98,7 +98,6 @@
         ./modules/backup/b450.nix
 
         ./modules/samba
-        ./modules/corectrl
         ./modules/virtualisation
         ./modules/update-ddns
         ./modules/odbc
