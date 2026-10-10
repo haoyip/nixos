@@ -14,7 +14,6 @@
     ./kitty
     ./git
     ./mime.nix
-    ./niri
     ./starship
     ./yazi
     ./zellij

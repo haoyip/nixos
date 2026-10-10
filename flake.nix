@@ -77,7 +77,7 @@
     ];
 
     desktopModules = [
-      ./modules/niri.nix
+      ./modules/niri
 
       inputs.home-manager.nixosModules.home-manager
       {
