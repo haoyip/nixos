@@ -54,8 +54,14 @@
           anydesk = prev.anydesk.overrideAttrs (old: {
             postFixup =
               builtins.replaceStrings
-              ["--prefix GDK_BACKEND : x11"]
-              ["--set GDK_BACKEND x11"]
+              [
+                "--prefix GDK_BACKEND : x11"
+                "--set GTK_THEME Adwaita"
+              ]
+              [
+                "--set GDK_BACKEND x11"
+                "--set GTK_THEME Adwaita --set GDK_SCALE 2"
+              ]
               old.postFixup;
           });
         })
