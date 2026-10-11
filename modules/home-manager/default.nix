@@ -67,7 +67,6 @@
     krita
     mpv
     obs-studio
-    obsidian
     libreoffice
     qbittorrent
     ungoogled-chromium
