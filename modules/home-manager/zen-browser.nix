@@ -11,13 +11,6 @@
     enable = true;
 
     profiles.hao = {
-      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-        bitwarden
-        cookie-quick-manager
-        multi-account-containers
-        ublock-origin
-      ];
-
       settings = {
         # Never ask for password
         "signon.rememberSignons" = false;
