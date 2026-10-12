@@ -15,6 +15,14 @@ in {
 
   networking.firewall.allowedUDPPorts = [51700];
 
+  networking.resolvconf.extraOptions = ["timeout:1" "attempts:1"];
+
+  # openresolv treats 127.0.0.1 as a "local nameserver" and, with the default
+  # resolv_conf_local_only=YES, orders it first and drops the following
+  # non-local nameserver (10.0.0.1). Clear the list so the wg `dns` order
+  # (10.0.0.1 then 127.0.0.1) is preserved.
+  networking.resolvconf.extraConfig = "local_nameservers=";
+
   networking.wg-quick.interfaces = {
     b450 = {
       privateKeyFile = config.sops.secrets."wireguard/zen/private_key".path;
@@ -22,7 +30,7 @@ in {
       autostart = true;
       address = ["10.0.0.3/24"];
       listenPort = 51700;
-      dns = ["10.0.0.1"];
+      dns = ["10.0.0.1" "127.0.0.1"];
 
       preUp = ''
         endpoint_ip=$(
