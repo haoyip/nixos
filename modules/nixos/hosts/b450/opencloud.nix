@@ -1,6 +1,11 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   services.opencloud = {
     enable = true;
+    package = pkgs.opencloud;
     url = "https://drive.tingb.xyz";
     address = "localhost";
     port = 9200;
