@@ -150,16 +150,12 @@
     '')
   ];
 
-  home-manager.users.hao = {
-    xdg = {
-      enable = true;
-
-      configFile."niri/binds-app.kdl".source = ./binds-app.kdl;
-      configFile."niri/binds-noctalia.kdl".source = ./binds-noctalia.kdl;
-      configFile."niri/binds-volume-brightness.kdl".source = ./binds-volume-brightness.kdl;
-      configFile."niri/binds.kdl".source = ./binds.kdl;
-      configFile."niri/config.kdl".source = ./config.kdl;
-      configFile."niri/window-rule.kdl".source = ./window-rule.kdl;
-    };
-  };
+  systemd.tmpfiles.rules = [
+    "L+ /home/hao/.config/niri/binds-app.kdl - - - - ${./binds-app.kdl}"
+    "L+ /home/hao/.config/niri/binds-noctalia.kdl - - - - ${./binds-noctalia.kdl}"
+    "L+ /home/hao/.config/niri/binds-volume-brightness.kdl - - - - ${./binds-volume-brightness.kdl}"
+    "L+ /home/hao/.config/niri/binds.kdl - - - - ${./binds.kdl}"
+    "L+ /home/hao/.config/niri/config.kdl - - - - ${./config.kdl}"
+    "L+ /home/hao/.config/niri/window-rule.kdl - - - - ${./window-rule.kdl}"
+  ];
 }

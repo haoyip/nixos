@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,14 +71,7 @@
 
     desktopModules = [
       ./modules/niri
-
-      inputs.home-manager.nixosModules.home-manager
-      {
-        home-manager.users.hao = import ./modules/home-manager;
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {inherit inputs pkgs system;};
-      }
+      ./modules/user
     ];
 
     buildConfig = modules: {

@@ -1,26 +1,19 @@
 {pkgs, ...}: {
-  home.stateVersion = "25.11";
-
-  home.username = "hao";
-  home.homeDirectory = "/home/hao";
-
   imports = [
-    ./bacon
-    ./bat
-    ./btop.nix
-    ./datagrip
-    ./direnv.nix
-    ./fish
-    ./kitty
-    ./git
+    ./programs.nix
+    ./gtk.nix
     ./mime.nix
-    ./starship
+    ./kitty
+    ./btop.nix
+    ./bacon
+    ./datagrip
     ./yazi
     ./zellij
+    ./easyeffects.nix
     ./zen-browser.nix
   ];
 
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     # cli
     caligula
     dua
@@ -53,7 +46,6 @@
     xh
     yt-dlp
     zip
-    zoxide
     gpclient
 
     # nix
@@ -91,22 +83,7 @@
     opencode
   ];
 
-  home.file.".cargo/cargo-generate.toml".source = ./cargo-generate.toml;
-
-  services.easyeffects.enable = true;
-
-  gtk = {
-    enable = true;
-    gtk4.theme = null;
-
-    iconTheme = {
-      name = "Tela";
-      package = pkgs.tela-icon-theme;
-    };
-
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      size = 32;
-    };
-  };
+  systemd.tmpfiles.rules = [
+    "L+ /home/hao/.cargo/cargo-generate.toml - - - - ${./cargo-generate.toml}"
+  ];
 }
