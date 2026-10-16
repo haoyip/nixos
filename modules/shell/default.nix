@@ -1,8 +1,65 @@
 {pkgs, ...}: {
+  imports = [
+    ./btop.nix
+    ./bacon
+    ./yazi
+    ./zellij
+  ];
+
   environment.systemPackages = with pkgs; [
+    # cli
     bat
+    caligula
     delta
+    dua
+    eza
+    fastfetch
+    fd
+    ffmpeg
     fishPlugins.fzf-fish
+    fswatch
+    fzf
+    gpclient
+    gptfdisk
+    inotify-tools
+    jaq
+    lsof
+    nmap
+    pastel
+    pciutils
+    pgcli
+    psmisc
+    radeontop
+    ripgrep
+    rsync
+    smartmontools
+    speedtest-cli
+    sshfs
+    tealdeer
+    unzip
+    usbutils
+    wakeonlan
+    wl-clipboard
+    xh
+    yt-dlp
+    zip
+
+    # nix
+    nh
+    nix-output-monitor
+
+    # dev
+    bunyan-rs
+    cargo-deny
+    cargo-expand
+    cargo-generate
+    cargo-machete
+    cargo-nextest
+    cargo-outdated
+    cargo-wizard
+    just
+    opencode
+    opentofu
   ];
 
   programs = {
@@ -19,7 +76,6 @@
 
     zoxide = {
       enable = true;
-      enableFishIntegration = true;
     };
 
     direnv.enable = true;
@@ -66,5 +122,7 @@
   systemd.tmpfiles.rules = [
     "L+ /home/hao/.config/bat/config - - - - ${pkgs.writeText "bat-config" "--theme=catppuccin-frappe"}"
     "L+ /home/hao/.config/bat/themes - - - - ${./bat/themes}"
+
+    "L+ /home/hao/.cargo/cargo-generate.toml - - - - ${./cargo-generate.toml}"
   ];
 }

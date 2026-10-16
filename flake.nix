@@ -60,30 +60,25 @@
       config.allowUnfree = true;
     };
 
-    specialArgs = {inherit inputs;};
-
-    commonModules = [
-      {nix.settings.experimental-features = ["nix-command" "flakes"];}
-      {programs.nix-ld.enable = true;}
-
-      ./modules/common
-    ];
-
-    desktopModules = [
-      ./modules/niri
-      ./modules/user
-    ];
-
-    buildConfig = modules: {
-      inherit modules system pkgs specialArgs;
-    };
-
-    buildSystem = modules: inputs.nixpkgs.lib.nixosSystem (buildConfig (modules ++ commonModules));
+    buildSystem = modules:
+      inputs.nixpkgs.lib.nixosSystem {
+        inherit modules system pkgs;
+        specialArgs = {inherit inputs;};
+      };
   in {
     nixosConfigurations = {
-      b450 = buildSystem [./modules/hosts/b450];
+      b450 = buildSystem [
+        ./modules/nixos/common
+        ./modules/nixos/hosts/b450
+        ./modules/shell
+      ];
 
-      zen = buildSystem (desktopModules ++ [./modules/hosts/zen]);
+      zen = buildSystem [
+        ./modules/nixos/common
+        ./modules/nixos/hosts/zen
+        ./modules/shell
+        ./modules/desktop
+      ];
     };
   };
 }

@@ -6,6 +6,8 @@
   hasIPv6Internet = true;
   StateDirectory = "dnscrypt-proxy";
 in {
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   system.stateVersion = "25.11";
 
   boot = {
@@ -93,4 +95,6 @@ in {
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
+
+  programs.nix-ld.enable = true;
 }
