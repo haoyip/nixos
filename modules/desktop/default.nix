@@ -1,30 +1,31 @@
 {pkgs, ...}: {
   imports = [
-    ./niri
-    ./kitty
-    ./gtk.nix
-    ./mime.nix
-    ./easyeffects.nix
-    ./zen-browser.nix
     ./datagrip
+    ./easyeffects.nix
+    ./game.nix
+    ./gtk.nix
+    ./kitty
+    ./mime.nix
+    ./niri
+    ./zen-browser.nix
   ];
 
   environment.systemPackages = with pkgs; [
     # desktop apps
     anki
+    anydesk
+    godot
     imv
     jellyfin-mpv-shim
     krita
-    mpv
-    obs-studio
     libreoffice
+    mpv
+    neovide
+    obs-studio
     qbittorrent
+    remmina
     ungoogled-chromium
     vlc
     wireshark
-    remmina
-    neovide
-    godot
-    anydesk
   ];
 }
