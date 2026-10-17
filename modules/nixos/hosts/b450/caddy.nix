@@ -1,10 +1,9 @@
 {
   config,
+  domain,
   pkgs,
   ...
-}: let
-  domain = "tingb.xyz";
-in {
+}: {
   sops.secrets = {
     "porkbun/api_key" = {
       owner = "caddy";

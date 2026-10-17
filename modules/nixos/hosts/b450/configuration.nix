@@ -1,6 +1,4 @@
-{...}: let
-  domain = "tingb.xyz";
-in {
+{domain, ...}: {
   networking.hostName = "b450";
 
   networking.firewall.interfaces.wg0 = {

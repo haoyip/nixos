@@ -1,9 +1,9 @@
 {
   config,
+  domain,
   pkgs,
   ...
 }: let
-  domain = "tingb.xyz";
   publicKey = "z9kZBdl+8fdYX0I/gqDHTShrsv7OGwMCm6V5hyXutno=";
 in {
   sops.secrets = {

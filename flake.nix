@@ -63,7 +63,10 @@
     buildSystem = modules:
       inputs.nixpkgs.lib.nixosSystem {
         inherit modules system pkgs;
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          domain = "tingb.xyz";
+        };
       };
   in {
     nixosConfigurations = {
