@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  username,
   ...
 }: let
   hasIPv6Internet = true;
@@ -63,10 +64,10 @@ in {
     jack.enable = true;
   };
 
-  users.users.hao = {
+  users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.fish;
-    description = "hao";
+    description = username;
     extraGroups = [
       "wheel"
       "i2c"

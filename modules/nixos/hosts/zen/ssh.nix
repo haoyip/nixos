@@ -1,13 +1,13 @@
-{config, ...}: {
+{config, username, ...}: {
   sops.secrets = {
     "private_keys/me_gitlab" = {
-      owner = "hao";
+      owner = username;
     };
     "private_keys/me_github" = {
-      owner = "hao";
+      owner = username;
     };
     "private_keys/zen/to_b450" = {
-      owner = "hao";
+      owner = username;
     };
   };
 
@@ -27,7 +27,7 @@
 
       Host b450
         HostName 10.0.0.1
-        User hao
+        User ${username}
         IdentityFile ${config.sops.secrets."private_keys/zen/to_b450".path}
         Port 22
     '';

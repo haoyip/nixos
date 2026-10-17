@@ -1,8 +1,8 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   systemd.services.hy-backup = {
     serviceConfig = {
       Type = "oneshot";
-      User = "hao";
+      User = username;
 
       ExecStart = ''
         ${pkgs.rsync}/bin/rsync \
@@ -12,7 +12,7 @@
           --delete \
           --rsync-path="flock /run/lock/hy-backup.lock rsync" \
           -e ${pkgs.openssh}/bin/ssh \
-          /home/hao/HY/ \
+          /home/${username}/HY/ \
           b450:/data/8tb_1/HY/
       '';
     };

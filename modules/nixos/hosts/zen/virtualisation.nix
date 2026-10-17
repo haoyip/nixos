@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   virtualisation = {
     containers.enable = true;
 
@@ -25,5 +25,5 @@
   ];
 
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["hao"];
+  users.groups.libvirtd.members = [username];
 }

@@ -1,7 +1,7 @@
-{config, ...}: {
+{config, username, ...}: {
   sops.secrets = {
     "authorized_keys/b450/zen" = {
-      owner = "hao";
+      owner = username;
     };
   };
 

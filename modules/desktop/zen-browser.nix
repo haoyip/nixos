@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  username,
   ...
 }: let
   zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;
@@ -54,14 +55,14 @@
     [Profile0]
     Default=1
     IsRelative=1
-    Name=hao
-    Path=hao
+    Name=${username}
+    Path=${username}
   '';
 in {
   environment.systemPackages = [zen];
 
   systemd.tmpfiles.rules = [
-    "L+ /home/hao/.config/zen/profiles.ini - - - - ${profilesIni}"
-    "L+ /home/hao/.config/zen/hao/user.js - - - - ${userJs}"
+    "L+ /home/${username}/.config/zen/profiles.ini - - - - ${profilesIni}"
+    "L+ /home/${username}/.config/zen/${username}/user.js - - - - ${userJs}"
   ];
 }

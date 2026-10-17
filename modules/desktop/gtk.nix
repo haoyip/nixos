@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, username, ...}: let
   settings = ''
     [Settings]
     gtk-cursor-theme-name=Bibata-Modern-Ice
@@ -21,7 +21,7 @@ in {
   };
 
   systemd.tmpfiles.rules = [
-    "L+ /home/hao/.config/gtk-3.0/settings.ini - - - - ${settingsFile}"
-    "L+ /home/hao/.config/gtk-4.0/settings.ini - - - - ${settingsFile}"
+    "L+ /home/${username}/.config/gtk-3.0/settings.ini - - - - ${settingsFile}"
+    "L+ /home/${username}/.config/gtk-4.0/settings.ini - - - - ${settingsFile}"
   ];
 }

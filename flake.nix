@@ -65,6 +65,7 @@
         inherit modules system pkgs;
         specialArgs = {
           inherit inputs;
+          username = "hao";
           domain = "tingb.xyz";
         };
       };

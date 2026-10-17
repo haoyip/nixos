@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   environment.defaultPackages = with pkgs; [
     bibata-cursors
     brightnessctl
@@ -15,7 +15,7 @@
     settings = {
       initial_session = {
         command = "niri-session";
-        user = "hao";
+        user = username;
       };
 
       default_session = {
@@ -151,11 +151,11 @@
   ];
 
   systemd.tmpfiles.rules = [
-    "L+ /home/hao/.config/niri/binds-app.kdl - - - - ${./binds-app.kdl}"
-    "L+ /home/hao/.config/niri/binds-noctalia.kdl - - - - ${./binds-noctalia.kdl}"
-    "L+ /home/hao/.config/niri/binds-volume-brightness.kdl - - - - ${./binds-volume-brightness.kdl}"
-    "L+ /home/hao/.config/niri/binds.kdl - - - - ${./binds.kdl}"
-    "L+ /home/hao/.config/niri/config.kdl - - - - ${./config.kdl}"
-    "L+ /home/hao/.config/niri/window-rule.kdl - - - - ${./window-rule.kdl}"
+    "L+ /home/${username}/.config/niri/binds-app.kdl - - - - ${./binds-app.kdl}"
+    "L+ /home/${username}/.config/niri/binds-noctalia.kdl - - - - ${./binds-noctalia.kdl}"
+    "L+ /home/${username}/.config/niri/binds-volume-brightness.kdl - - - - ${./binds-volume-brightness.kdl}"
+    "L+ /home/${username}/.config/niri/binds.kdl - - - - ${./binds.kdl}"
+    "L+ /home/${username}/.config/niri/config.kdl - - - - ${./config.kdl}"
+    "L+ /home/${username}/.config/niri/window-rule.kdl - - - - ${./window-rule.kdl}"
   ];
 }

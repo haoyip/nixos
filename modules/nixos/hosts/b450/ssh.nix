@@ -1,11 +1,11 @@
-{config, ...}: {
+{config, username, ...}: {
   sops.secrets = {
     "private_keys/me_gitlab" = {
-      owner = "hao";
+      owner = username;
     };
 
     "private_keys/me_github" = {
-      owner = "hao";
+      owner = username;
     };
   };
 

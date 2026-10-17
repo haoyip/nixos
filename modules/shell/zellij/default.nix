@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, username, ...}: let
   defaultLayout = pkgs.writeText "zellij-default.kdl" ''
     layout {
       default_tab_template {
@@ -38,8 +38,8 @@ in {
   environment.systemPackages = [pkgs.zellij];
 
   systemd.tmpfiles.rules = [
-    "L+ /home/hao/.config/zellij/config.kdl - - - - ${./config.kdl}"
-    "L+ /home/hao/.config/zellij/themes - - - - ${./themes}"
-    "L+ /home/hao/.config/zellij/layouts/default.kdl - - - - ${defaultLayout}"
+    "L+ /home/${username}/.config/zellij/config.kdl - - - - ${./config.kdl}"
+    "L+ /home/${username}/.config/zellij/themes - - - - ${./themes}"
+    "L+ /home/${username}/.config/zellij/layouts/default.kdl - - - - ${defaultLayout}"
   ];
 }

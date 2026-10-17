@@ -1,4 +1,4 @@
-{
+{username, ...}: {
   services.samba = {
     enable = true;
     openFirewall = true;
@@ -21,7 +21,7 @@
 
       "media-write" = {
         "path" = "/data/8tb_2/";
-        "valid users" = "hao";
+        "valid users" = username;
         "public" = "no";
         "writable" = "yes";
         "create mask" = "0644";
@@ -32,8 +32,8 @@
       };
 
       "home" = {
-        "path" = "/home/hao";
-        "valid users" = "hao";
+        "path" = "/home/${username}";
+        "valid users" = username;
         "public" = "no";
         "writable" = "yes";
         "create mask" = "0644";
@@ -45,7 +45,7 @@
 
       "HY" = {
         "path" = "/data/8tb_1/HY/";
-        "valid users" = "hao";
+        "valid users" = username;
         "public" = "no";
         "writable" = "yes";
         "create mask" = "0644";

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   imports = [
     ./btop.nix
     ./bacon
@@ -120,9 +120,9 @@
   };
 
   systemd.tmpfiles.rules = [
-    "L+ /home/hao/.config/bat/config - - - - ${pkgs.writeText "bat-config" "--theme=catppuccin-frappe"}"
-    "L+ /home/hao/.config/bat/themes - - - - ${./bat/themes}"
+    "L+ /home/${username}/.config/bat/config - - - - ${pkgs.writeText "bat-config" "--theme=catppuccin-frappe"}"
+    "L+ /home/${username}/.config/bat/themes - - - - ${./bat/themes}"
 
-    "L+ /home/hao/.cargo/cargo-generate.toml - - - - ${./cargo-generate.toml}"
+    "L+ /home/${username}/.cargo/cargo-generate.toml - - - - ${./cargo-generate.toml}"
   ];
 }

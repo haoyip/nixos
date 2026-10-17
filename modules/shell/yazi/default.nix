@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, username, ...}: let
   termfilechooserConfig = pkgs.writeText "termfilechooser-config" ''
     [filechooser]
     cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
@@ -25,10 +25,10 @@ in {
   ];
 
   systemd.tmpfiles.rules = [
-    "L+ /home/hao/.config/yazi/keymap.toml - - - - ${./keymap.toml}"
-    "L+ /home/hao/.config/yazi/theme.toml - - - - ${./theme.toml}"
-    "L+ /home/hao/.config/yazi/yazi.toml - - - - ${./yazi.toml}"
-    "L+ /home/hao/.config/yazi/plugins/smart-enter.yazi - - - - ${pkgs.yaziPlugins.smart-enter}"
-    "L+ /home/hao/.config/xdg-desktop-portal-termfilechooser/config - - - - ${termfilechooserConfig}"
+    "L+ /home/${username}/.config/yazi/keymap.toml - - - - ${./keymap.toml}"
+    "L+ /home/${username}/.config/yazi/theme.toml - - - - ${./theme.toml}"
+    "L+ /home/${username}/.config/yazi/yazi.toml - - - - ${./yazi.toml}"
+    "L+ /home/${username}/.config/yazi/plugins/smart-enter.yazi - - - - ${pkgs.yaziPlugins.smart-enter}"
+    "L+ /home/${username}/.config/xdg-desktop-portal-termfilechooser/config - - - - ${termfilechooserConfig}"
   ];
 }
