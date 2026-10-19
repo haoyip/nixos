@@ -63,6 +63,8 @@ in {
 
   networking.networkmanager.enable = true;
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   # Disable NetworkManager's internal DNS resolution
   networking.networkmanager.dns = "none";
 
