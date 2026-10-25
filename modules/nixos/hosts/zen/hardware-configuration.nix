@@ -17,9 +17,9 @@ in {
 
   hardware.firmware = [edid];
 
-  boot.initrd.extraFiles = {
-    "lib/firmware/edid/edid_mclk_fix.bin" = "${edid}/lib/firmware/edid/edid_mclk_fix.bin";
-  };
+  boot.initrd.extraFirmwarePaths = [
+    "edid/edid_mclk_fix.bin"
+  ];
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "sdhci_pci"];
   boot.initrd.kernelModules = ["dm-snapshot"];
