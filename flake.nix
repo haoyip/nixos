@@ -42,17 +42,23 @@
           # yields `x11:wayland` when GDK_BACKEND is already set. GTK only
           # accepts comma-separated backends, so force `x11` outright.
           anydesk = prev.anydesk.overrideAttrs (old: {
-            postFixup =
-              builtins.replaceStrings
-              [
-                "--prefix GDK_BACKEND : x11"
-                "--set GTK_THEME Adwaita"
-              ]
-              [
-                "--set GDK_BACKEND x11"
-                "--set GTK_THEME Adwaita --set GDK_SCALE 2"
-              ]
-              old.postFixup;
+            postFixup = ''
+              patchelf \
+                --set-interpreter $(cat $NIX_CC/nix-support/dynamic-linker) \
+                $out/bin/anydesk
+
+              wrapProgram $out/bin/anydesk \
+                --prefix PATH : ${
+                prev.lib.makeBinPath [
+                  prev.lsb-release
+                  prev.pciutils
+                ]
+              } \
+                --set GDK_BACKEND x11 \
+                --suffix PATH : ${prev.lib.makeBinPath [prev.net-tools]} \
+                --set GTK_THEME Adwaita --set GDK_SCALE 2 \
+                --prefix LD_LIBRARY_PATH : ${prev.lib.makeLibraryPath old.buildInputs}
+            '';
           });
         })
       ];
