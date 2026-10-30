@@ -129,11 +129,11 @@
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1788075413,
-        "narHash": "sha256-gq3SBMGHB0PvK9l58IF+XubR3/OXy+8tfi27I/Wn6X4=",
+        "lastModified": 1793370849,
+        "narHash": "sha256-G8Pkb2VQH1SEQ/HCmMyfyR3Or5CaPv3PN4tXt1jvOXw=",
         "ref": "refs/heads/main",
-        "rev": "bdacb3a42925f8714a636ba75f1a8030ba10d044",
-        "revCount": 18,
+        "rev": "867ccda496e23d6635469ecb85e41a45a5e540dc",
+        "revCount": 19,
         "type": "git",
         "url": "file:///home/hao/.vi"
       },

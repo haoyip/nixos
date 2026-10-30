@@ -20,7 +20,6 @@
     krita
     libreoffice
     mpv
-    neovide
     obs-studio
     qbittorrent
     remmina

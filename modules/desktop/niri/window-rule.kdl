@@ -56,8 +56,3 @@ window-rule {
   match app-id="jetbrains-datagrip" title="datagrip"
   open-maximized-to-edges true
 }
-
-window-rule {
-  match app-id="neovide"
-  open-maximized-to-edges true
-}

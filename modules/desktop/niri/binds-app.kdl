@@ -2,9 +2,6 @@ binds {
   Mod+Return hotkey-overlay-title="Terminal" repeat=false {
     spawn "ghostty-smart"
   }
-  Mod+E hotkey-overlay-title="Neovide" repeat=false {
-    spawn "neovide-smart"
-  }
   Mod+B hotkey-overlay-title="Zen Browser" repeat=false {
     spawn "zen-beta"
   }

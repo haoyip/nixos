@@ -98,37 +98,6 @@
       fi
     '')
 
-    # Spawn neovide in the current working directory of the focused terminal's shell,
-    # falling back to the default directory if no shell process is detected.
-    (pkgs.writeShellScriptBin "neovide-smart" ''
-      # Get focused window PID
-      termpid=$(niri msg focused-window | rg '^  PID:' | awk '{print $2}')
-
-      # Try to find shell child
-      if [ -z "$shellpid" ]; then
-        shellpid=$(pgrep -P "$termpid" | while read -r pid; do
-          cmd=$(ps -o comm= -p "$pid")
-          case "$cmd" in
-            fish|bash|zsh|sh) echo "$pid"; break ;;
-          esac
-        done)
-      fi
-
-      if [ -n "$shellpid" ] && [ -e "/proc/$shellpid/cwd" ]; then
-          dir=$(readlink "/proc/$shellpid/cwd")
-
-          # Use direnv exec if .envrc exists
-          if [ -f "$dir/.envrc" ]; then
-              cd "$dir" && exec direnv exec . neovide
-          else
-              cd "$dir" && exec neovide
-          fi
-      else
-          # fallback if directory can't be determined
-          exec neovide
-      fi
-    '')
-
     (pkgs.writeShellScriptBin "noctalia-restart" ''
       pkill -f noctalia || true
 

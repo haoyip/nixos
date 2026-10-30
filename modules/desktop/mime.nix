@@ -1,4 +1,4 @@
-let
+{pkgs, ...}: let
   audioMimeTypes = [
     "audio/mpeg"
     "audio/mp4"
@@ -35,7 +35,33 @@ let
       value = ["mpv.desktop"];
     })
     audioMimeTypes);
+
+  nvimGhostty = pkgs.writeShellScriptBin "nvim-ghostty" ''
+    exec ${pkgs.ghostty}/bin/ghostty -e nvim "$@"
+  '';
+
+  nvimTerminal = pkgs.makeDesktopItem {
+    name = "nvim-ghostty";
+    desktopName = "nvim (ghostty)";
+    genericName = "Text Editor";
+    comment = "Edit text files in a terminal window";
+    icon = "nvim";
+    exec = "${nvimGhostty}/bin/nvim-ghostty %F";
+    terminal = false;
+    categories = ["Utility" "TextEditor" "Development"];
+
+    mimeTypes = [
+      "text/plain"
+      "text/markdown"
+      "text/x-shellscript"
+      "text/x-log"
+      "application/json"
+      "application/yaml"
+    ];
+  };
 in {
+  environment.systemPackages = [nvimTerminal];
+
   xdg.mime.defaultApplications =
     audioDefaults
     // {
@@ -44,12 +70,12 @@ in {
       "image/webp" = ["imv.desktop"];
       "image/gif" = ["imv.desktop"];
 
-      "text/plain" = ["neovide.desktop"];
-      "text/markdown" = ["neovide.desktop"];
-      "text/x-shellscript" = ["neovide.desktop"];
-      "text/x-log" = ["neovide.desktop"];
-      "application/json" = ["neovide.desktop"];
-      "application/yaml" = ["neovide.desktop"];
+      "text/plain" = ["nvim-ghostty.desktop"];
+      "text/markdown" = ["nvim-ghostty.desktop"];
+      "text/x-shellscript" = ["nvim-ghostty.desktop"];
+      "text/x-log" = ["nvim-ghostty.desktop"];
+      "application/json" = ["nvim-ghostty.desktop"];
+      "application/yaml" = ["nvim-ghostty.desktop"];
 
       "inode/directory" = ["yazi.desktop"];
 

@@ -26,7 +26,7 @@ abbr -a a php artisan
 abbr -a d cdh
 abbr -a j cd
 abbr -a ji cdi
-abbr -a e neovide --fork
+abbr -a e vi
 abbr -a gg lazygit
 abbr -a l ls
 abbr -a la 'ls -la'
