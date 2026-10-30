@@ -1,9 +1,12 @@
-{pkgs, username, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   imports = [
     ./btop.nix
     ./bacon
     ./yazi
-    ./zellij
   ];
 
   environment.systemPackages = with pkgs; [

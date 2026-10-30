@@ -30,7 +30,6 @@ abbr -a e neovide --fork
 abbr -a gg lazygit
 abbr -a l ls
 abbr -a la 'ls -la'
-abbr -a m 'zellij -s $(tr -dc a-z0-9 </dev/urandom | head -c 3 ; echo "")'
 abbr -a n nix
 abbr -a nf 'nix flake'
 abbr -a sc systemctl

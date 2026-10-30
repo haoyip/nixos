@@ -14,10 +14,6 @@
       flake = false;
     };
 
-    zjstatus = {
-      url = "github:dj95/zjstatus";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,8 +32,6 @@
       inherit system;
       overlays = [
         (final: prev: {
-          zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
-
           # nixpkgs wraps anydesk with `--prefix GDK_BACKEND : x11`, which
           # yields `x11:wayland` when GDK_BACKEND is already set. GTK only
           # accepts comma-separated backends, so force `x11` outright.
