@@ -98,16 +98,6 @@
       fi
     '')
 
-    (pkgs.writeShellScriptBin "noctalia-restart" ''
-      pkill -f noctalia || true
-
-      while pgrep -f noctalia >/dev/null; do
-        sleep 0.1
-      done
-
-      exec noctalia
-    '')
-
     (pkgs.writeShellScriptBin "toggle-laptop-output" ''
       if [[ $(niri msg --json outputs | ${pkgs.jaq}/bin/jaq '."eDP-1".current_mode == null') == "true" ]]; then
         niri msg output eDP-1 on
