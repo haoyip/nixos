@@ -1,9 +1,13 @@
-{pkgs, username, ...}: let
+{
+  pkgs,
+  username,
+  ...
+}: let
   termfilechooserConfig = pkgs.writeText "termfilechooser-config" ''
     [filechooser]
     cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
     default_dir=$HOME
-    env=TERMCMD='kitty -T "File Chooser"'
+    env=TERMCMD='ghostty --title="File Chooser" -e'
     open_mode=suggested
     save_mode=last
   '';
@@ -12,7 +16,7 @@
     name = "yazi";
     desktopName = "Yazi";
     genericName = "File Manager";
-    exec = "kitty yazi";
+    exec = "ghostty -e yazi";
     terminal = false;
     categories = ["System" "FileTools" "FileManager"];
     mimeTypes = ["inode/directory"];

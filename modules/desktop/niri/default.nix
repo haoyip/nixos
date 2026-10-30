@@ -1,4 +1,8 @@
-{pkgs, username, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   environment.defaultPackages = with pkgs; [
     bibata-cursors
     brightnessctl
@@ -70,9 +74,9 @@
   };
 
   environment.systemPackages = [
-    # Spawn kitty in the current working directory of the focused terminal's shell,
+    # Spawn ghostty in the current working directory of the focused terminal's shell,
     # falling back to the default directory if no shell process is detected.
-    (pkgs.writeShellScriptBin "kitty-smart" ''
+    (pkgs.writeShellScriptBin "ghostty-smart" ''
       # Get focused window PID
       termpid=$(niri msg focused-window | rg '^  PID:' | awk '{print $2}')
 
@@ -88,9 +92,9 @@
 
       if [ -n "$shellpid" ] && [ -e "/proc/$shellpid/cwd" ]; then
           dir=$(readlink "/proc/$shellpid/cwd")
-          exec kitty "$dir"
+          exec ghostty --working-directory="$dir"
       else
-          exec kitty
+          exec ghostty
       fi
     '')
 

@@ -1,0 +1,14 @@
+# https://github.com/sahaj-b/cursor-shaders
+custom-shader = cursor_warp.glsl
+
+adjust-cell-height = -4
+adjust-cell-width = -2
+adjust-cursor-thickness = 2
+background-blur = true
+background-opacity = 0.7
+font-family = Maple Mono NF
+font-feature = calt
+font-size = 13
+theme = Catppuccin Frappe
+window-padding-x = 4
+window-padding-y = 4

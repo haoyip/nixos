@@ -3,8 +3,8 @@
     ./datagrip
     ./easyeffects.nix
     ./game.nix
+    ./ghostty
     ./gtk.nix
-    ./kitty
     ./mime.nix
     ./niri
     ./zen-browser.nix
