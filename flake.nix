@@ -18,6 +18,11 @@
       url = "git+file:///home/hao/.vi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    asus-fan = {
+      url = "github:/ThatOneCalculator/asus-5606-fan-state";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {...}: let

@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "asus-fan": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784227168,
+        "narHash": "sha256-WG9ak8vA9N/JmAbhCpAVqeSgBt32h8KK68jIFdNb33E=",
+        "owner": "ThatOneCalculator",
+        "repo": "asus-5606-fan-state",
+        "rev": "a49457b70456f4e90336d20060c50dd336849d1f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThatOneCalculator",
+        "repo": "asus-5606-fan-state",
+        "type": "github"
+      }
+    },
     "bacon-ls": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -185,6 +205,7 @@
     },
     "root": {
       "inputs": {
+        "asus-fan": "asus-fan",
         "mysecrets": "mysecrets",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs_4",

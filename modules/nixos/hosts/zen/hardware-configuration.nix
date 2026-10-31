@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   modulesPath,
   pkgs,
@@ -13,7 +14,10 @@
 in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.asus-fan.nixosModules.default
   ];
+
+  services.asus-fan-state.enable = true;
 
   hardware.firmware = [edid];
 
