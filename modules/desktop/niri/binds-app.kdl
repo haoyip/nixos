@@ -2,13 +2,10 @@ binds {
   Mod+Return hotkey-overlay-title="Terminal" repeat=false {
     spawn "ghostty-smart"
   }
-  Mod+B hotkey-overlay-title="Zen Browser" repeat=false {
-    spawn "zen-beta"
+  Mod+N hotkey-overlay-title="Floorp" repeat=false {
+    spawn "floorp"
   }
-  Mod+N hotkey-overlay-title="Zen Browser Blank Window" repeat=false {
-    spawn "zen-beta" "--blank-window"
-  }
-  Mod+P hotkey-overlay-title="Zen Browser Private Window" repeat=false {
-    spawn "zen-beta" "--private-window"
+  Mod+P hotkey-overlay-title="Floorp Private Window" repeat=false {
+    spawn "floorp" "--private-window"
   }
 }

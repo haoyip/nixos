@@ -7,7 +7,7 @@
     ./gtk.nix
     ./mime.nix
     ./niri
-    ./zen-browser.nix
+    ./floorp.nix
   ];
 
   environment.systemPackages = with pkgs; [
