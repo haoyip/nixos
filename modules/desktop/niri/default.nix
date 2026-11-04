@@ -74,30 +74,6 @@
   };
 
   environment.systemPackages = [
-    # Spawn ghostty in the current working directory of the focused terminal's shell,
-    # falling back to the default directory if no shell process is detected.
-    (pkgs.writeShellScriptBin "ghostty-smart" ''
-      # Get focused window PID
-      termpid=$(niri msg focused-window | rg '^  PID:' | awk '{print $2}')
-
-      # Try to find shell child
-      if [ -z "$shellpid" ]; then
-        shellpid=$(pgrep -P "$termpid" | while read -r pid; do
-          cmd=$(ps -o comm= -p "$pid")
-          case "$cmd" in
-            fish|bash|zsh|sh) echo "$pid"; break ;;
-          esac
-        done)
-      fi
-
-      if [ -n "$shellpid" ] && [ -e "/proc/$shellpid/cwd" ]; then
-          dir=$(readlink "/proc/$shellpid/cwd")
-          exec ghostty --working-directory="$dir"
-      else
-          exec ghostty
-      fi
-    '')
-
     (pkgs.writeShellScriptBin "toggle-laptop-output" ''
       if [[ $(niri msg --json outputs | ${pkgs.jaq}/bin/jaq '."eDP-1".current_mode == null') == "true" ]]; then
         niri msg output eDP-1 on

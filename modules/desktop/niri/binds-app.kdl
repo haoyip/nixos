@@ -1,6 +1,6 @@
 binds {
   Mod+Return hotkey-overlay-title="Terminal" repeat=false {
-    spawn "ghostty-smart"
+    spawn "ghostty"
   }
   Mod+N hotkey-overlay-title="Floorp" repeat=false {
     spawn "floorp"
