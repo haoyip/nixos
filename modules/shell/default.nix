@@ -55,7 +55,6 @@
     bunyan-rs
     cargo-deny
     cargo-expand
-    cargo-generate
     cargo-machete
     cargo-nextest
     cargo-outdated
@@ -125,7 +124,5 @@
   systemd.tmpfiles.rules = [
     "L+ /home/${username}/.config/bat/config - - - - ${pkgs.writeText "bat-config" "--theme=catppuccin-frappe"}"
     "L+ /home/${username}/.config/bat/themes - - - - ${./bat/themes}"
-
-    "L+ /home/${username}/.cargo/cargo-generate.toml - - - - ${./cargo-generate.toml}"
   ];
 }
