@@ -75,6 +75,7 @@
         ./modules/nixos/common
         ./modules/nixos/hosts/b450
         ./modules/shell
+        ./modules/desktop/lite.nix
       ];
 
       zen = buildSystem [
