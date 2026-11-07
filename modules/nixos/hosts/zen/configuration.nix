@@ -11,6 +11,6 @@
     vimAlias = true;
     defaultEditor = true;
 
-    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.full;
   };
 }

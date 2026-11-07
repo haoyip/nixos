@@ -43,6 +43,6 @@
     vimAlias = true;
     defaultEditor = true;
 
-    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.light;
+    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 }
