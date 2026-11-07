@@ -85,19 +85,19 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1789287381,
-        "narHash": "sha256-aT+11hiPDhR9c5ILDD1UBQQ+d+BbX1FZg2bJ8eFFdfM=",
+        "lastModified": 1794039750,
+        "narHash": "sha256-B11pE38Rndb4l+W+cKBPEfpGEtP9h5fDqWQK74+fUGY=",
         "ref": "main",
-        "rev": "baa4977803367f925db671c49c8fb4df5508de1e",
+        "rev": "4ad9e3a5f30b6d6020a8f4954e85390e8cb712d0",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@gitlab/haoyiphoh/nixos-secrets.git"
+        "url": "ssh://git@github/haoyip/nixos-secrets.git"
       },
       "original": {
         "ref": "main",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@gitlab/haoyiphoh/nixos-secrets.git"
+        "url": "ssh://git@github/haoyip/nixos-secrets.git"
       }
     },
     "naersk": {
@@ -128,11 +128,11 @@
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1793370849,
-        "narHash": "sha256-G8Pkb2VQH1SEQ/HCmMyfyR3Or5CaPv3PN4tXt1jvOXw=",
+        "lastModified": 1793929060,
+        "narHash": "sha256-fcVny79P4Htr3//AUVVOZSZ0VniYGAbR7tDkgHw0G1g=",
         "ref": "refs/heads/main",
-        "rev": "867ccda496e23d6635469ecb85e41a45a5e540dc",
-        "revCount": 19,
+        "rev": "b7b1d4b34457c8bfa138f9694b243c2e528400f7",
+        "revCount": 22,
         "type": "git",
         "url": "file:///home/hao/.vi"
       },
@@ -191,11 +191,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1793341285,
-        "narHash": "sha256-LOv16TsMYV2/8BUYnhSxHkOASe7es2ORbqMeLlZJ8Hc=",
-        "rev": "1c89083e451e891152365b799595cf7790a43325",
+        "lastModified": 1793726008,
+        "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o=",
+        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1105037.1c89083e451e/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -236,11 +236,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793052255,
-        "narHash": "sha256-Y/JIHTnMlOabDfyaSBubWGLDIVGihLEUuoMhFvQKaDo=",
+        "lastModified": 1793995029,
+        "narHash": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "60182817ee048ac94b4c68ea76d5ef2e8aac730d",
+        "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
         "type": "github"
       },
       "original": {

@@ -10,7 +10,7 @@
     };
 
     mysecrets = {
-      url = "git+ssh://git@gitlab/haoyiphoh/nixos-secrets.git?ref=main&shallow=1";
+      url = "git+ssh://git@github/haoyip/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
 
