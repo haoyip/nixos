@@ -22,9 +22,6 @@
     KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
   '';
 
-  # boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/08c779b2-1244-4a9c-a21f-2bbb568f3e34";
-  # boot.initrd.luks.devices."8tb_1".device = "/dev/disk/by-uuid/8bf54ff6-bd1c-4669-af77-52aee73283f0";
-
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/5e7160b7-924d-4752-988e-8d52dd7ecdd6";
     fsType = "ext4";
@@ -40,24 +37,15 @@
     {device = "/dev/disk/by-uuid/10e5e802-6eb0-48f0-9928-de2dcc8a22eb";}
   ];
 
-  # fileSystems."/data/8tb_1" = {
-  #   device = "/dev/disk/by-uuid/f8dbcefa-e211-4248-a59c-952510ed926a";
-  #   fsType = "btrfs";
-  #   options = [
-  #     "noatime"
-  #     "compress=zstd:3"
-  #
-  #     "nofail" # Prevent system from failing if this drive doesn't mount
-  #   ];
-  # };
-
-  fileSystems."/data/8tb_2" = {
-    device = "/dev/disk/by-uuid/b833828d-9e25-4318-b550-df10d40a6cf2";
-    fsType = "ext4";
+  fileSystems."/data/8tb_1" = {
+    device = "/dev/disk/by-uuid/f8dbcefa-e211-4248-a59c-952510ed926a";
+    fsType = "btrfs";
     options = [
       "noatime"
+      "compress=zstd:3"
 
-      "nofail" # Prevent system from failing if this drive doesn't mount
+      # unlock after boot
+      "noauto"
     ];
   };
 

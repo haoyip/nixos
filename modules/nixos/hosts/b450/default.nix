@@ -9,6 +9,7 @@
     ./opencloud.nix
     ./openssh.nix
     ./samba.nix
+    ./scripts.nix
     ./ssh.nix
     ./update-ddns.nix
     ./vaultwarden.nix

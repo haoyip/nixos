@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   services.jellyfin = {
     enable = true;
   };
@@ -8,4 +12,8 @@
     pkgs.jellyfin-web
     pkgs.jellyfin-ffmpeg
   ];
+
+  systemd.services.jellyfin = {
+    wantedBy = lib.mkForce [];
+  };
 }

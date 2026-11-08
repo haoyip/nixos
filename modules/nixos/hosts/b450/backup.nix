@@ -17,6 +17,11 @@
   };
 in {
   systemd.services.hy-snapshot = {
+    unitConfig = {
+      # Skip if not mounted
+      ConditionPathIsMountPoint = "/data/8tb_1";
+    };
+
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${hy-snapshot}/bin/hy-snapshot";
