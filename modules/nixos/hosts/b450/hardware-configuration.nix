@@ -61,4 +61,15 @@
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   networking.interfaces.enp37s0.wakeOnLan.enable = true;
+
+  networking.networkmanager.enable = true;
+
+  systemd.services.NetworkManager-wait-online.enable = false;
+
+  # Disable NetworkManager's internal DNS resolution
+  networking.networkmanager.dns = "none";
+
+  # These options are unnecessary when managing DNS ourselves
+  networking.useDHCP = false;
+  networking.dhcpcd.enable = false;
 }
