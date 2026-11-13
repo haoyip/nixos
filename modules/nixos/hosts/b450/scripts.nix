@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = [
     (pkgs.writeShellApplication {
-      name = "unlock-data";
+      name = "unlock";
       text = ''
         set -euo pipefail
 
@@ -40,8 +40,20 @@
           sudo ${pkgs.util-linux}/bin/mount "$mount_point"
         fi
 
-        echo "Data disk ready. Start data services with:"
-        echo "  sudo systemctl start immich-server immich-machine-learning opencloud vaultwarden jellyfin dnsmasq"
+        echo "Data disk ready."
+      '';
+    })
+
+    (pkgs.writeShellApplication {
+      name = "serve";
+      text = ''
+        set -euo pipefail
+
+        echo "Starting services...."
+
+        sudo systemctl start immich-server immich-machine-learning opencloud vaultwarden jellyfin dnsmasq
+
+        echo "Services ready."
       '';
     })
   ];
