@@ -14,6 +14,7 @@
     # desktop apps
     anki
     anydesk
+    aseprite
     godot
     imv
     jellyfin-mpv-shim
