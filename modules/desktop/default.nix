@@ -21,6 +21,7 @@
     krita
     libreoffice
     mpv
+    musescore
     obs-studio
     qbittorrent
     remmina
