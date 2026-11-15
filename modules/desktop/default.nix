@@ -24,6 +24,7 @@
     musescore
     obs-studio
     qbittorrent
+    readest
     remmina
     ungoogled-chromium
     vlc
