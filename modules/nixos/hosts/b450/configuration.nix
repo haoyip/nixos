@@ -24,6 +24,7 @@
         "/drive.${domain}/10.0.0.1"
         "/mail.${domain}/10.0.0.1"
         "/vault.${domain}/10.0.0.1"
+        "/anki.${domain}/10.0.0.1"
       ];
 
       # Forward everything else to dnscrypt-proxy

@@ -51,7 +51,7 @@
 
         echo "Starting services...."
 
-        sudo systemctl start immich-server immich-machine-learning opencloud vaultwarden jellyfin dnsmasq
+        sudo systemctl start immich-server immich-machine-learning opencloud vaultwarden jellyfin anki-sync-server dnsmasq
 
         echo "Services ready."
       '';

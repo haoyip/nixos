@@ -1,5 +1,6 @@
 {
   imports = [
+    ./anki-sync-server.nix
     ./backup.nix
     ./caddy.nix
     ./configuration.nix

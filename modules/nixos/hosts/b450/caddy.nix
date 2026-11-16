@@ -64,6 +64,12 @@
         }
       '';
     };
+
+    virtualHosts."anki.${domain}" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:${toString config.services.anki-sync-server.port}
+      '';
+    };
   };
 
   networking.firewall.interfaces.wg0.allowedTCPPorts = [443];
