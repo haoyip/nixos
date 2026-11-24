@@ -14,9 +14,14 @@
       flake = false;
     };
 
-    neovim = {
-      url = "git+file:///home/hao/.vi";
+    nvf = {
+      url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    diffbandit = {
+      url = "github:CoreyKaylor/diffbandit.nvim";
+      flake = false;
     };
 
     asus-fan = {
@@ -60,11 +65,15 @@
       config.allowUnfree = true;
     };
 
+    neovim = import ./modules/neovim/package.nix {
+      inherit inputs pkgs;
+    };
+
     buildSystem = modules:
       inputs.nixpkgs.lib.nixosSystem {
         inherit modules system pkgs;
         specialArgs = {
-          inherit inputs;
+          inherit inputs neovim;
           username = "hao";
           domain = "tingb.xyz";
         };
@@ -84,5 +93,12 @@
         ./modules/desktop
       ];
     };
+
+    packages.${system} =
+      neovim
+      // {
+        nvim = neovim.default;
+        nvim-full = neovim.full;
+      };
   };
 }

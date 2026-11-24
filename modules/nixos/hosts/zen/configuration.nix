@@ -1,5 +1,5 @@
 {
-  inputs,
+  neovim,
   pkgs,
   ...
 }: {
@@ -11,6 +11,8 @@
     vimAlias = true;
     defaultEditor = true;
 
-    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.full;
+    package = (neovim.full).overrideAttrs (old: {
+      meta = pkgs.neovim-unwrapped.meta // (old.meta or {});
+    });
   };
 }

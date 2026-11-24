@@ -1,5 +1,5 @@
 {
-  inputs,
+  neovim,
   pkgs,
   domain,
   ...
@@ -44,6 +44,8 @@
     vimAlias = true;
     defaultEditor = true;
 
-    package = inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = (neovim.default).overrideAttrs (old: {
+      meta = pkgs.neovim-unwrapped.meta // (old.meta or {});
+    });
   };
 }
