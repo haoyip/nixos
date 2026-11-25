@@ -87,7 +87,7 @@
 
       config = {
         user = {
-          email = "haoyiphoh@protonmail.com";
+          email = "haoyiphoh@gmail.com";
           name = "haoyiphoh";
         };
 
